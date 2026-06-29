@@ -668,8 +668,7 @@ function copyLineMessage(){
   }).catch(() => prompt('請複製以下訊息傳送給大樹教育 LINE：', msg));
 }
 function sendToLine(){
-  copyLineMessage();
-  setTimeout(() => window.open(LINE_REGISTRATION_URL, '_blank'), 200);
+  window.open(LINE_REGISTRATION_URL, '_blank');
 }
 
 document.addEventListener('keydown', (e) => {
