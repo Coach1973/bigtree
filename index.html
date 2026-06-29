@@ -679,6 +679,15 @@ document.addEventListener('keydown', (e) => {
     else if(rm.classList.contains('show')) hideRegisterModal();
   }
 });
+
+// URL hash 直達報名：?register / #register / #report 都觸發
+window.addEventListener('load', () => {
+  const h = location.hash.toLowerCase();
+  const s = location.search.toLowerCase();
+  if(h === '#register' || h === '#report' || h === '#報名' || s.includes('register')){
+    showRegisterModal();
+  }
+});
 </script>
 
 </body>
