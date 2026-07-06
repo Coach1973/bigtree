@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026/7/1 創業 × 政府 × AI 主題講座｜大樹教練</title>
+<meta name="description" content="想創業又怕踩雷？想擴張又卡資金？想用 AI 又怕不會？7/1 一個下午，3 個答案——大樹教練 × 32 年美業實戰 × 政府貸款方案 × AI 軍師。台南維悅酒店，600 元三大限量贈禮。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2a28;
+  --ink-soft:#4b5b58;
+  --paper:#faf6ee;
+  --paper-2:#f1e9d8;
+  --paper-3:#fffef7;
+  --deep:#163b35;
+  --deep-2:#0f2a26;
+  --deep-3:#1f4a43;
+  --teal-soft:#b9d6c8;
+  --accent:#e07a3c;
+  --accent-2:#c25e22;
+  --accent-soft:#fcd2b5;
+  --gold:#b58a4f;
+  --line-green:#06c755;
+  --line-soft:rgba(28,42,40,.12);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#dad0bc;font-family:"Noto Sans TC",system-ui,-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ====== EDM 直式容器（窄欄） ====== */
+.edm{
+  max-width:480px;margin:24px auto;
+  background:var(--paper);
+  border-radius:20px;overflow:hidden;
+  box-shadow:0 30px 80px -30px rgba(15,42,38,.45);
+}
+
+/* ====== 1. 頂部小 banner ====== */
+.top-bar{
+  background:linear-gradient(95deg,var(--deep-2),var(--deep-3));
+  color:var(--paper);padding:14px 24px;
+  font-size:12.5px;letter-spacing:.08em;font-weight:500;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+}
+.top-bar b{font-weight:900;color:#fff}
+.top-bar .tag{
+  background:var(--accent);color:#fff;padding:3px 10px;border-radius:4px;
+  font-size:11px;letter-spacing:.1em;font-weight:800;
+}
+
+/* ====== 2. 主視覺：三段問句 ====== */
+.hero{
+  padding:44px 28px 32px;text-align:left;
+  background:
+    radial-gradient(380px 220px at 100% -10%, rgba(224,122,60,.18), transparent 60%),
+    radial-gradient(300px 180px at -10% 110%, rgba(22,59,53,.15), transparent 60%),
+    var(--paper);
+}
+.hero .questions{
+  font-family:"Noto Sans TC",sans-serif;
+  font-weight:700;
+  font-size:18px;
+  line-height:1.85;
+  color:var(--ink);
+  letter-spacing:.02em;
+  padding-left:18px;
+  border-left:3px solid var(--accent);
+}
+.hero .questions .q{display:block}
+.hero .questions .q em{font-style:normal;color:var(--accent-2);font-weight:900}
+.hero .arrow-row{
+  display:flex;align-items:center;gap:10px;
+  margin:24px 0 16px;
+}
+.hero .arrow-row .arrow-line{flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.hero .arrow-row .arrow-mark{
+  color:var(--accent-2);font-family:"Noto Serif TC",serif;font-weight:900;font-size:22px;
+}
+.hero .answer{
+  font-family:"Noto Serif TC",serif;
+  font-weight:900;font-size:24px;
+  color:var(--deep);line-height:1.5;
+}
+.hero .answer b{color:var(--accent-2)}
+.hero .sub{
+  margin-top:18px;font-size:13.5px;color:var(--ink-soft);
+  line-height:1.8;letter-spacing:.02em;
+}
+.hero .sub .x{color:var(--accent);font-weight:900;margin:0 4px}
+
+/* ====== 3. 主講對談區 ====== */
+.speakers{
+  background:linear-gradient(160deg,var(--paper-2),var(--paper));
+  padding:28px 24px;border-top:1px solid var(--line-soft);
+}
+.speakers-title{
+  text-align:center;font-size:11.5px;color:var(--accent-2);
+  letter-spacing:.3em;font-weight:800;margin-bottom:18px;
+}
+.speakers-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.speaker{
+  background:#fff;border-radius:14px;
+  padding:0;text-align:center;
+  border:1px solid var(--line-soft);
+  overflow:hidden;
+}
+.speaker .photo{
+  width:100%;
+  aspect-ratio: 4/5;
+  margin:0;
+  background:#0f2a26;
+  overflow:hidden;
+}
+.speaker .photo img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.speaker .text{padding:14px 12px 18px}
+.speaker .role{
+  display:inline-block;background:var(--accent);color:#fff;
+  font-size:11px;padding:2px 10px;border-radius:4px;
+  letter-spacing:.1em;font-weight:800;margin-bottom:8px;
+}
+.speaker .name{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:17px;color:var(--deep-2);
+}
+.speaker .org{
+  font-size:11.5px;color:var(--ink-soft);margin-top:4px;line-height:1.5;
+}
+
+/* ====== 4. 合作單位 ====== */
+.collab{
+  margin:18px 0 0;padding:14px 16px;
+  background:#fff;border-radius:12px;
+  border:1px dashed var(--accent);
+  text-align:center;
+}
+.collab .label{
+  display:inline-block;background:var(--deep-2);color:var(--paper);
+  font-size:10.5px;padding:3px 10px;border-radius:4px;
+  letter-spacing:.15em;font-weight:800;margin-bottom:8px;
+}
+.collab .title{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:16px;color:var(--deep-2);
+}
+.collab .sub{
+  font-size:12.5px;color:var(--ink-soft);margin-top:4px;
+}
+
+/* ====== 5. 你會帶走什麼 ====== */
+.takeaways{
+  background:#fff;
+  padding:30px 24px;
+  border-top:1px solid var(--line-soft);
+}
+.takeaways-head{text-align:center;margin-bottom:22px}
+.takeaways-head .eb{
+  font-size:11.5px;color:var(--accent-2);letter-spacing:.25em;
+  font-weight:800;margin-bottom:6px;
+}
+.takeaways-head h2{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:22px;color:var(--deep-2);margin:0;
+}
+.takeaways-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.takeaway{
+  background:var(--paper);border-radius:12px;
+  padding:18px 14px;text-align:center;
+  border:1px solid var(--line-soft);
+  transition:.2s;
+}
+.takeaway:hover{transform:translateY(-2px);box-shadow:0 8px 22px -10px rgba(15,42,38,.2)}
+.takeaway .ico{
+  width:42px;height:42px;border-radius:10px;margin:0 auto 10px;
+  background:linear-gradient(135deg,var(--accent-soft),var(--accent));
+  display:grid;place-items:center;color:#fff;font-size:18px;
+}
+.takeaway .title{
+  font-weight:800;font-size:13.5px;color:var(--deep-2);
+  margin-bottom:5px;
+}
+.takeaway .desc{
+  font-size:11.5px;color:var(--ink-soft);line-height:1.55;
+}
+
+/* ====== 6. 詳細資訊 ====== */
+.info{
+  background:linear-gradient(160deg,var(--deep),var(--deep-2));
+  color:var(--paper);padding:28px 24px;
+}
+.info-rows{display:grid;gap:12px}
+.info-row{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:12px 16px;
+}
+.info-row .icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(224,122,60,.2);color:var(--accent);
+  display:grid;place-items:center;font-size:14px;flex-shrink:0;
+}
+.info-row .label{
+  font-size:11.5px;color:rgba(250,246,238,.6);
+  letter-spacing:.1em;font-weight:700;min-width:48px;
+}
+.info-row .value{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:16px;color:#fff;flex:1;
+}
+.info-row .value small{font-weight:500;font-size:12px;color:rgba(250,246,238,.78);display:block;margin-top:2px;font-family:"Noto Sans TC",sans-serif}
+.info-row .value .price{color:var(--accent);font-size:22px}
+
+/* ====== 7. 三大贈禮 ====== */
+.gifts{
+  background:linear-gradient(160deg,#0a1f1c,var(--deep-2));
+  color:var(--paper);padding:32px 24px;
+  position:relative;overflow:hidden;
+}
+.gifts::before{
+  content:"";position:absolute;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,122,60,.18),transparent 70%);
+  top:-100px;right:-100px;
+}
+.gifts-head{text-align:center;margin-bottom:24px;position:relative;z-index:2}
+.gifts-head .eb{
+  display:inline-block;background:var(--accent);color:#fff;
+  font-size:11.5px;padding:5px 16px;border-radius:4px;
+  letter-spacing:.25em;font-weight:800;margin-bottom:14px;
+}
+.gifts-head h2{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:26px;color:#fff;margin:0;line-height:1.3;
+}
+.gifts-head h2 em{font-style:normal;color:var(--accent)}
+.gifts-list{display:grid;gap:14px;position:relative;z-index:2}
+.gift{
+  display:flex;gap:16px;align-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:16px;
+}
+.gift .num{
+  flex-shrink:0;width:40px;height:40px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  display:grid;place-items:center;
+  font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;
+}
+.gift .content{flex:1}
+.gift .title{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:15.5px;color:#fff;margin-bottom:3px;
+}
+.gift .desc{
+  font-size:12px;color:rgba(250,246,238,.78);line-height:1.55;
+}
+.gift .price{
+  flex-shrink:0;background:rgba(224,122,60,.2);
+  color:var(--accent);font-size:11px;font-weight:800;
+  padding:4px 9px;border-radius:6px;letter-spacing:.05em;
+}
+.gifts-total{
+  margin-top:20px;text-align:center;
+  font-size:13px;color:rgba(250,246,238,.85);position:relative;z-index:2;
+  padding-top:18px;border-top:1px dashed rgba(255,255,255,.2);
+}
+.gifts-total .num{
+  font-family:"Noto Serif TC",serif;font-weight:900;
+  font-size:24px;color:var(--accent);margin:0 4px;
+}
+
+/* ====== 8. CTA ====== */
+.cta{
+  background:var(--paper);padding:32px 24px;text-align:center;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#fff;padding:18px 36px;border-radius:999px;
+  font-weight:900;font-size:17px;
+  box-shadow:0 14px 30px -12px rgba(224,122,60,.55);
+  transition:.22s;width:100%;max-width:340px;
+}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 38px -12px rgba(224,122,60,.65)}
+.cta-line{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin-top:20px;padding:14px 18px;
+  background:#fff;border-radius:12px;
+  border:1px solid var(--line-soft);
+}
+.cta-line .qr{
+  width:72px;height:72px;background:var(--paper-2);
+  border-radius:8px;display:grid;place-items:center;
+  font-size:10px;color:var(--ink-soft);font-weight:700;
+  text-align:center;line-height:1.4;flex-shrink:0;
+}
+.cta-line .text{text-align:left;flex:1}
+.cta-line .text .l1{
+  display:inline-flex;align-items:center;gap:6px;
+  font-weight:900;color:var(--line-green);font-size:14px;
+}
+.cta-line .text .l2{font-size:12px;color:var(--ink-soft);margin-top:3px}
+
+/* ====== 9. 底部 ====== */
+.foot{
+  background:#0a1f1c;color:rgba(250,246,238,.65);
+  padding:20px 24px;text-align:center;font-size:11.5px;line-height:1.7;
+}
+.foot b{color:#fff;font-weight:800}
+.foot .row{margin-bottom:5px}
+
+/* mobile shrink */
+@media (max-width:420px){
+  .hero .questions{font-size:26px}
+  .hero .answer{font-size:21px}
+}
+
+/* ====== Registration Modal ====== */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.show{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px)}
+.modal-box{position:relative;background:#fff;border-radius:20px;width:100%;max-width:460px;overflow:hidden;box-shadow:0 28px 60px -20px rgba(0,0,0,.45);animation:modalIn .25s ease;max-height:92vh;overflow-y:auto}
+@keyframes modalIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.modal-head{background:linear-gradient(135deg,var(--deep),var(--deep-2));color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.modal-title{font-weight:900;font-size:20px;font-family:"Noto Serif TC",serif;line-height:1.3}
+.modal-sub{font-size:13px;color:var(--accent-soft);margin-top:4px}
+.modal-close{background:transparent;border:0;color:rgba(255,255,255,.75);font-size:30px;line-height:1;cursor:pointer;padding:0;flex-shrink:0}
+.modal-close:hover{color:#fff}
+.modal-body{padding:22px 24px 26px}
+.field{display:block;margin-bottom:13px}
+.field label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:6px}
+.field input{width:100%;border:1px solid var(--line-soft);border-radius:10px;padding:11px 14px;font-size:15px;font-family:inherit;outline:none;transition:.2s;background:var(--paper);box-sizing:border-box}
+.field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(224,122,60,.18);background:#fff}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field-check{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.field-check input{width:16px;height:16px;margin-top:3px;accent-color:var(--accent);flex-shrink:0}
+.modal-actions{display:flex;gap:10px;margin-top:22px}
+.btn-ghost{flex:1;height:48px;border:1px solid var(--line-soft);background:#fff;color:var(--ink);font-weight:700;border-radius:999px;font-size:15px;cursor:pointer;transition:.2s;font-family:inherit}
+.btn-ghost:hover{background:var(--paper-2)}
+.btn-submit{flex:1;height:48px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:900;border:0;border-radius:999px;font-size:15px;cursor:pointer;transition:.2s;box-shadow:0 10px 24px -10px rgba(224,122,60,.55);font-family:inherit}
+.btn-submit:hover{transform:translateY(-1px)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.success-box{padding:32px 24px;text-align:center}
+.success-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#9ee9d3,var(--line-green));margin:0 auto 18px;display:grid;place-items:center;color:#fff;font-size:36px}
+.success-box h3{font-family:"Noto Serif TC",serif;font-size:24px;font-weight:900;color:var(--deep-2);margin:0 0 8px}
+.success-box>p{color:var(--ink-soft);font-size:14.5px;margin:0 0 22px;line-height:1.7}
+.success-line-banner{background:#e6f8ee;border:1px solid #b9d6c8;border-radius:14px;padding:18px;margin-bottom:18px;text-align:left}
+.banner-head{font-weight:900;color:var(--line-green);display:flex;align-items:center;gap:8px;font-size:15px;margin-bottom:12px}
+.btn-line-confirm{width:100%;height:50px;background:var(--line-green);color:#fff;font-weight:900;border:0;border-radius:12px;font-size:15px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit}
+.btn-line-confirm:hover{background:#04a847}
+.btn-copy-msg{display:flex;align-items:center;justify-content:center;gap:5px;margin:10px auto 0;background:transparent;border:0;color:var(--line-green);font-size:13.5px;cursor:pointer;font-weight:700;font-family:inherit}
+.btn-copy-msg:hover{text-decoration:underline}
+.btn-close-modal{width:100%;height:42px;background:transparent;border:0;color:var(--ink-soft);font-size:14.5px;cursor:pointer;font-weight:500;font-family:inherit}
+.btn-close-modal:hover{color:var(--ink)}
+@media (max-width:420px){
+  .field-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="edm">
+
+  <!-- 1. 頂部小 banner -->
+  <div class="top-bar">
+    <span><b>2026 / 7 / 1</b>（三）· 台南</span>
+    <span class="tag">創 業 × 政 府 × AI</span>
+  </div>
+
+  <!-- 2. 主視覺：主標 + 副標 -->
+  <header class="hero">
+    <h1 style="font-family:'Noto Serif TC',serif;font-weight:900;font-size:46px;line-height:1.2;letter-spacing:.02em;color:var(--deep-2);margin:0 0 22px">
+      一個下午<br>
+      <em style="font-style:normal;color:var(--accent-2);background:linear-gradient(transparent 62%,rgba(224,122,60,.32) 62%);padding:0 6px">三 個 答 案</em>
+    </h1>
+    <div class="questions">
+      <span class="q">想<em>創業</em>，怕踩雷？</span>
+      <span class="q">想<em>擴張</em>，卡資金？</span>
+      <span class="q">想用 <em>AI</em>，怕不會？</span>
+    </div>
+  </header>
+
+  <!-- 3. 主講對談區 -->
+  <section class="speakers">
+    <div class="speakers-title">主 　 講 　 ＆ 　 對 　 談</div>
+    <div class="speakers-grid">
+      <div class="speaker">
+        <div class="photo"><img src="coach-hero.jpg" alt="大樹教練"></div>
+        <div class="text">
+          <span class="role">主 講</span>
+          <div class="name">大樹教練</div>
+          <div class="org">大樹教育顧問創辦人<br>26 年企業培訓 · 6,000+ 場</div>
+        </div>
+      </div>
+      <div class="speaker">
+        <div class="photo"><img src="speaker-yu.jpg" alt="謝扉榆"></div>
+        <div class="text">
+          <span class="role">對 談</span>
+          <div class="name">謝扉榆</div>
+          <div class="org">仟登生技國際有限公司<br>32 年美業實戰</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 中小微企業 -->
+    <div class="collab">
+      <span class="label">免 費 講 座 ｜ 自 由 參 加</span>
+      <div class="title">中小微企業多元發展貸款方案</div>
+      <div class="sub">方案講解</div>
+    </div>
+  </section>
+
+  <!-- 5. 你會帶走什麼 -->
+  <section class="takeaways">
+    <div class="takeaways-head">
+      <div class="eb">你 　 會 　 帶 　 走 　 什 　 麼</div>
+      <h2>4 件帶得回公司的事</h2>
+    </div>
+    <div class="takeaways-grid">
+      <div class="takeaway">
+        <div class="ico"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="title">創業避坑　九大提醒</div>
+        <div class="desc">32 年實戰<br>真實踩過的地圖</div>
+      </div>
+      <div class="takeaway">
+        <div class="ico"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="title">解決問題的步驟</div>
+        <div class="desc">6,000 場演講大樹教練<br>教你系統化拆解</div>
+      </div>
+      <div class="takeaway">
+        <div class="ico"><i class="fa-solid fa-landmark"></i></div>
+        <div class="title">貸款方案</div>
+        <div class="desc">中小微企業<br>多元發展方案</div>
+      </div>
+      <div class="takeaway">
+        <div class="ico"><i class="fa-solid fa-robot"></i></div>
+        <div class="title">小龍蝦</div>
+        <div class="desc">線上版小龍蝦<br>下載 App 通過驗證即可使用</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 詳細資訊 -->
+  <section class="info">
+    <div class="info-rows">
+      <div class="info-row">
+        <div class="icon"><i class="fa-solid fa-calendar"></i></div>
+        <div class="label">日期</div>
+        <div class="value">7 月 1 日（三）</div>
+      </div>
+      <div class="info-row">
+        <div class="icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="label">時間</div>
+        <div class="value">下午 1:30 - 5:00</div>
+      </div>
+      <div class="info-row">
+        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="label">地點</div>
+        <div class="value">維悅酒店<small>台南市安平區慶平路 539 號</small></div>
+      </div>
+      <div class="info-row">
+        <div class="icon"><i class="fa-solid fa-tag"></i></div>
+        <div class="label">費用</div>
+        <div class="value"><span class="price">600</span> 元<small>三大贈禮總價值超過 NT$ 5,980</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 三大贈禮 -->
+  <section class="gifts">
+    <div class="gifts-head">
+      <span class="eb">限 　 量 　 三 　 大 　 贈 　 禮</span>
+      <h2>600 元帶走<br><em>超過 5,980 元</em>的價值</h2>
+    </div>
+    <div class="gifts-list">
+      <div class="gift">
+        <div class="num">1</div>
+        <div class="content">
+          <div class="title">限量品牌香水</div>
+          <div class="desc">當天現場帶走，數量有限</div>
+        </div>
+        <div class="price">$ 2,980</div>
+      </div>
+      <div class="gift">
+        <div class="num">2</div>
+        <div class="content">
+          <div class="title">AI 小龍蝦 · 線上版</div>
+          <div class="desc">不必花錢組主機，直接用大樹教練訓練好的 AI 軍師</div>
+        </div>
+        <div class="price">無 價</div>
+      </div>
+      <div class="gift">
+        <div class="num">3</div>
+        <div class="content">
+          <div class="title">零基礎學 AI　起步比較快</div>
+          <div class="desc">
+            7 / 4（六）下午 2:00 - 4:30<br>
+            臺南東區 KR 養生廚房
+          </div>
+        </div>
+        <div class="price">限 量</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA -->
+  <section class="cta">
+    <div style="background:linear-gradient(135deg,#fff4e8,#fcd2b5);border:1.5px dashed var(--accent-2);border-radius:12px;padding:16px 20px;margin-bottom:22px;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-weight:900;color:var(--accent-2);font-size:14px;letter-spacing:.08em;margin-bottom:4px">
+        <i class="fa-solid fa-circle-exclamation"></i> 預 　 約 　 須 　 知
+      </div>
+      <div style="font-size:14.5px;color:var(--deep-2);font-weight:700;line-height:1.6">
+        本方案自由參加，<b style="color:var(--accent-2)">座位有限，請及早預約</b>。
+      </div>
+    </div>
+    <button type="button" onclick="showRegisterModal()" class="cta-btn" style="border:0;cursor:pointer;font-family:inherit">
+      <i class="fa-solid fa-calendar-check"></i>
+      立即報名
+    </button>
+    <div class="cta-line">
+      <div class="qr" style="background:#fff;padding:6px;border:1px solid var(--line-soft)"><img src="line-qr.png" alt="大樹教育官方 LINE" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+      <div class="text">
+        <span class="l1"><i class="fa-brands fa-line"></i> 加入大樹教育官方 LINE</span>
+        <div class="l2">掃碼加好友後回覆「7/1 報名」即可</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 底部 -->
+  <footer class="foot">
+    <div class="row"><b>主辦：</b>大樹教練（大樹教育顧問）</div>
+    <div class="row"><b>合作：</b>仟登生技</div>
+  </footer>
+
+</div>
+
+<!-- ===== Registration Modal ===== -->
+<div id="registerModal" class="modal">
+  <div class="modal-bg" onclick="hideRegisterModal()"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">報名講座（600 元）</div>
+        <div class="modal-sub">7/1 創業 × 政府 × AI 主題講座</div>
+      </div>
+      <button class="modal-close" onclick="hideRegisterModal()" aria-label="關閉">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="registerForm" onsubmit="submitRegistration(event)">
+        <div class="field">
+          <label>姓 　 名</label>
+          <input type="text" id="name" required placeholder="請輸入姓名">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>聯 絡 電 話</label>
+            <input type="tel" id="phone" required placeholder="0912-345-678">
+          </div>
+          <div class="field">
+            <label>電 子 郵 件</label>
+            <input type="email" id="email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="field">
+          <label>公 司 / 職 稱（選填）</label>
+          <input type="text" id="company" placeholder="例：○○美容工作室 負責人">
+        </div>
+        <div class="field-check">
+          <input type="checkbox" id="agree" required>
+          <label for="agree">我了解本講座費用為 600 元，並同意主辦單位以電話 / LINE 與我聯繫確認席次。</label>
+        </div>
+        <div class="modal-actions">
+          <button type="button" onclick="hideRegisterModal()" class="btn-ghost">取消</button>
+          <button type="submit" class="btn-submit">確認送出報名</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Success Modal ===== -->
+<div id="successModal" class="modal">
+  <div class="modal-bg" onclick="hideSuccessModal()"></div>
+  <div class="modal-box success-box">
+    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <h3>報名成功！</h3>
+    <p>您的報名資料已送出，<br>我們將盡速與您確認席次。</p>
+    <div class="success-line-banner">
+      <div class="banner-head"><i class="fa-brands fa-line"></i> 加入官方 LINE 完成報名</div>
+      <button onclick="sendToLine()" class="btn-line-confirm">
+        <i class="fa-brands fa-line"></i>
+        <span>點擊加入 LINE 並傳送報名資料</span>
+      </button>
+      <button onclick="copyLineMessage()" class="btn-copy-msg">
+        <i class="fa-solid fa-copy"></i><span>或複製訊息手動傳送</span>
+      </button>
+    </div>
+    <button onclick="hideSuccessModal()" class="btn-close-modal">關閉視窗</button>
+  </div>
+</div>
+
+<script>
+const LINE_REGISTRATION_URL = 'https://line.me/R/ti/p/@qaw8118h';
+const SESSION_NAME = '7/1 創業 × 政府 × AI 主題講座（維悅酒店）';
+
+function showRegisterModal(){
+  const m = document.getElementById('registerModal');
+  m.classList.add('show');
+  document.getElementById('registerForm').reset();
+}
+function hideRegisterModal(){
+  document.getElementById('registerModal').classList.remove('show');
+}
+function showSuccessModal(){
+  document.getElementById('successModal').classList.add('show');
+}
+function hideSuccessModal(){
+  document.getElementById('successModal').classList.remove('show');
+}
+
+let lastRegistration = null;
+function submitRegistration(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const company = document.getElementById('company').value.trim();
+  if(!name || !phone){ alert('請完整填寫姓名與聯絡電話'); return; }
+  lastRegistration = { name, phone, email, company };
+  fetch('https://sme-register-fn.netlify.app/.netlify/functions/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ session: SESSION_NAME, name, company, phone, email })
+  }).catch(()=>{});
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const origText = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 處理中...';
+  setTimeout(() => {
+    hideRegisterModal();
+    showSuccessModal();
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = origText;
+    form.reset();
+  }, 800);
+}
+
+function generateLineMessage(){
+  if(!lastRegistration) return '您好，我想報名【7/1 創業 × 政府 × AI 主題講座】，請協助確認席次，謝謝！';
+  const r = lastRegistration;
+  return '您好，我想報名【7/1 創業 × 政府 × AI 主題講座】\n\n姓名：' + r.name + '\n電話：' + r.phone + '\nEmail：' + (r.email || '未填寫') + '\n公司/職稱：' + (r.company || '未填寫') + '\n\n請協助確認席次，謝謝！';
+}
+function copyLineMessage(){
+  const msg = generateLineMessage();
+  navigator.clipboard.writeText(msg).then(() => {
+    alert('已複製報名訊息，請貼到 LINE 對話框送出。');
+  }).catch(() => prompt('請複製以下訊息傳送給大樹教育 LINE：', msg));
+}
+function sendToLine(){
+  window.open(LINE_REGISTRATION_URL, '_blank');
+}
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape'){
+    const sm = document.getElementById('successModal');
+    const rm = document.getElementById('registerModal');
+    if(sm.classList.contains('show')) hideSuccessModal();
+    else if(rm.classList.contains('show')) hideRegisterModal();
+  }
+});
+
+// URL hash 直達報名：?register / #register / #report 都觸發
+window.addEventListener('load', () => {
+  const h = location.hash.toLowerCase();
+  const s = location.search.toLowerCase();
+  if(h === '#register' || h === '#report' || h === '#報名' || s.includes('register')){
+    showRegisterModal();
+  }
+});
+</script>
+
+</body>
+</html>
