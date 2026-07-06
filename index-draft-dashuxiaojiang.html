@@ -20,10 +20,10 @@ tailwind.config = {
         paper:    '#faf6ee',
         paper2:   '#f1e9d8',
         paper3:   '#fffef7',
-        deep:     '#163b35',
-        deep2:    '#0f2a26',
-        deep3:    '#1f4a43',
-        tealsoft: '#b9d6c8',
+        deep:     '#2b3d15',
+        deep2:    '#1b260d',
+        deep3:    '#4c6a24',
+        tealsoft: '#bfdc99',
         accent:   '#e07a3c',
         accent2:  '#c25e22',
         accentsoft:'#fcd2b5',
@@ -41,13 +41,13 @@ tailwind.config = {
 <style>
   body{font-family:"Noto Sans TC",sans-serif;background:#f1e9d8;color:#1c2a28}
   .serif{font-family:"Noto Serif TC",serif}
-  .nav-scrolled{box-shadow:0 4px 20px rgba(15,42,38,.12)}
+  .nav-scrolled{box-shadow:0 4px 20px rgba(27,38,13,.12)}
   .btn-primary{background:#e07a3c;color:#fff;transition:background .2s}
   .btn-primary:hover{background:#c25e22}
   .btn-line{background:#06c755;color:#fff;transition:background .2s}
   .btn-line:hover{background:#049e46}
   .topic-card{transition:transform .2s, box-shadow .2s}
-  .topic-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,42,38,.15)}
+  .topic-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(27,38,13,.15)}
   .session-card{border:1px solid #e5ddc9}
   ::-webkit-scrollbar{height:6px}
   .news-track{scroll-snap-type:x mandatory}
@@ -94,9 +94,9 @@ tailwind.config = {
 
   <!-- ===== 品牌故事 ===== -->
   <section id="story" class="max-w-5xl mx-auto px-6 py-24">
-    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">緣起</p>
+    <p class="text-center text-accent2 font-black tracking-[0.2em] text-4xl mb-3">緣起</p>
     <h2 class="serif font-black text-4xl text-center text-deep mb-12">從 2013 年開始，一講就是十幾年</h2>
-    <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
       <div class="bg-white rounded-3xl p-8 shadow-sm border border-paper2">
         <div class="text-sm text-inksoft mb-2 font-bold tracking-wider">大紀元 · 2014年3月17日 桃園報導</div>
         <p class="text-ink leading-loose text-[15px]">
@@ -108,9 +108,15 @@ tailwind.config = {
       </div>
       <div class="space-y-4 text-inksoft leading-relaxed">
         <p>2014年3月是第五期公益巡講——換算回去，「大樹小講：無話不談」這個系列，從 <b class="text-deep">2013年10月</b> 左右就開始了。</p>
-        <p>十幾年來，主題橫跨溝通、親子、行銷、兩性、人際、職場、團隊——正如它的名字，<b class="text-accent2">無話不談</b>。</p>
+        <p>十幾年來，主題橫跨溝通、親子、行銷、兩性、人際、職場、團隊——包括時下最夯的AI話題；正如它的名字，<b class="text-accent2">無話不談</b>。</p>
         <p>現在，這個系列重新出發，變成一系列固定舉辦的線上與實體活動，繼續陪大家把話說開、把關係理順。</p>
       </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="coach-hero.jpg" alt="大樹教練" class="rounded-2xl border border-paper2 shadow-sm w-full h-56 object-cover">
+      <img src="speakers-2026/coach-profile.jpg" alt="大樹教練" class="rounded-2xl border border-paper2 shadow-sm w-full h-56 object-cover">
+      <img src="speakers-2026/photos/coach-speaking.jpg" alt="大樹教練演講" class="rounded-2xl border border-paper2 shadow-sm w-full h-56 object-cover">
+      <img src="speakers-2026/photos/coach-thinking.jpg" alt="大樹教練" class="rounded-2xl border border-paper2 shadow-sm w-full h-56 object-cover">
     </div>
   </section>
 
@@ -402,7 +408,7 @@ tailwind.config = {
   <!-- ===== Footer ===== -->
   <footer class="bg-deep py-10 px-6 text-center text-tealsoft text-base">
     <div class="serif font-black text-white text-xl mb-2">大樹小講．無話不談</div>
-    <div>大樹教練 吳大樹 © 2026</div>
+    <div>大樹教育 | 海餅乾俱樂部 | AI 百人導師計畫召集人 © 1999-2026</div>
   </footer>
 
   <!-- ===== Registration Modal ===== -->
