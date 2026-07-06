@@ -1,694 +1,585 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2026/7/1 創業 × 政府 × AI 主題講座｜大樹教練</title>
-<meta name="description" content="想創業又怕踩雷？想擴張又卡資金？想用 AI 又怕不會？7/1 一個下午，3 個答案——大樹教練 × 32 年美業實戰 × 政府貸款方案 × AI 軍師。台南維悅酒店，600 元三大限量贈禮。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大樹小講；無話不談 ｜ 大樹教練公益巡講</title>
+<meta name="description" content="大樹小講，從2013年開始的公益巡講，溝通表達、親子教育、行銷策略、兩性相處、人際話題、職場關係、團隊組建、零基礎學AI、口才訓練——無話不談。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:      '#241f1a',
+        inksoft:  '#5b5148',
+        paper:    '#fffdf9',
+        paper2:   '#f6f1e8',
+        paper3:   '#fffdf9',
+        deep:     '#2f3a35',
+        deep2:    '#212a26',
+        deep3:    '#435248',
+        tealsoft: '#b9956b',
+        accent:   '#9b5b3f',
+        accent2:  '#c8845b',
+        accentsoft:'#dfcfbb',
+        gold:     '#b9956b',
+        linegreen:'#06c755',
+      },
+      fontFamily: {
+        sans: ['"Noto Sans TC"', 'sans-serif'],
+        serif: ['"Noto Serif TC"', 'serif'],
+      }
+    }
+  }
+}
+</script>
 <style>
-:root{
-  --ink:#1c2a28;
-  --ink-soft:#4b5b58;
-  --paper:#faf6ee;
-  --paper-2:#f1e9d8;
-  --paper-3:#fffef7;
-  --deep:#163b35;
-  --deep-2:#0f2a26;
-  --deep-3:#1f4a43;
-  --teal-soft:#b9d6c8;
-  --accent:#e07a3c;
-  --accent-2:#c25e22;
-  --accent-soft:#fcd2b5;
-  --gold:#b58a4f;
-  --line-green:#06c755;
-  --line-soft:rgba(28,42,40,.12);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#dad0bc;font-family:"Noto Sans TC",system-ui,-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-
-/* ====== EDM 直式容器（窄欄） ====== */
-.edm{
-  max-width:480px;margin:24px auto;
-  background:var(--paper);
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 30px 80px -30px rgba(15,42,38,.45);
-}
-
-/* ====== 1. 頂部小 banner ====== */
-.top-bar{
-  background:linear-gradient(95deg,var(--deep-2),var(--deep-3));
-  color:var(--paper);padding:14px 24px;
-  font-size:12.5px;letter-spacing:.08em;font-weight:500;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
-}
-.top-bar b{font-weight:900;color:#fff}
-.top-bar .tag{
-  background:var(--accent);color:#fff;padding:3px 10px;border-radius:4px;
-  font-size:11px;letter-spacing:.1em;font-weight:800;
-}
-
-/* ====== 2. 主視覺：三段問句 ====== */
-.hero{
-  padding:44px 28px 32px;text-align:left;
-  background:
-    radial-gradient(380px 220px at 100% -10%, rgba(224,122,60,.18), transparent 60%),
-    radial-gradient(300px 180px at -10% 110%, rgba(22,59,53,.15), transparent 60%),
-    var(--paper);
-}
-.hero .questions{
-  font-family:"Noto Sans TC",sans-serif;
-  font-weight:700;
-  font-size:18px;
-  line-height:1.85;
-  color:var(--ink);
-  letter-spacing:.02em;
-  padding-left:18px;
-  border-left:3px solid var(--accent);
-}
-.hero .questions .q{display:block}
-.hero .questions .q em{font-style:normal;color:var(--accent-2);font-weight:900}
-.hero .arrow-row{
-  display:flex;align-items:center;gap:10px;
-  margin:24px 0 16px;
-}
-.hero .arrow-row .arrow-line{flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
-.hero .arrow-row .arrow-mark{
-  color:var(--accent-2);font-family:"Noto Serif TC",serif;font-weight:900;font-size:22px;
-}
-.hero .answer{
-  font-family:"Noto Serif TC",serif;
-  font-weight:900;font-size:24px;
-  color:var(--deep);line-height:1.5;
-}
-.hero .answer b{color:var(--accent-2)}
-.hero .sub{
-  margin-top:18px;font-size:13.5px;color:var(--ink-soft);
-  line-height:1.8;letter-spacing:.02em;
-}
-.hero .sub .x{color:var(--accent);font-weight:900;margin:0 4px}
-
-/* ====== 3. 主講對談區 ====== */
-.speakers{
-  background:linear-gradient(160deg,var(--paper-2),var(--paper));
-  padding:28px 24px;border-top:1px solid var(--line-soft);
-}
-.speakers-title{
-  text-align:center;font-size:11.5px;color:var(--accent-2);
-  letter-spacing:.3em;font-weight:800;margin-bottom:18px;
-}
-.speakers-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.speaker{
-  background:#fff;border-radius:14px;
-  padding:0;text-align:center;
-  border:1px solid var(--line-soft);
-  overflow:hidden;
-}
-.speaker .photo{
-  width:100%;
-  aspect-ratio: 4/5;
-  margin:0;
-  background:#0f2a26;
-  overflow:hidden;
-}
-.speaker .photo img{
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-}
-.speaker .text{padding:14px 12px 18px}
-.speaker .role{
-  display:inline-block;background:var(--accent);color:#fff;
-  font-size:11px;padding:2px 10px;border-radius:4px;
-  letter-spacing:.1em;font-weight:800;margin-bottom:8px;
-}
-.speaker .name{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:17px;color:var(--deep-2);
-}
-.speaker .org{
-  font-size:11.5px;color:var(--ink-soft);margin-top:4px;line-height:1.5;
-}
-
-/* ====== 4. 合作單位 ====== */
-.collab{
-  margin:18px 0 0;padding:14px 16px;
-  background:#fff;border-radius:12px;
-  border:1px dashed var(--accent);
-  text-align:center;
-}
-.collab .label{
-  display:inline-block;background:var(--deep-2);color:var(--paper);
-  font-size:10.5px;padding:3px 10px;border-radius:4px;
-  letter-spacing:.15em;font-weight:800;margin-bottom:8px;
-}
-.collab .title{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:16px;color:var(--deep-2);
-}
-.collab .sub{
-  font-size:12.5px;color:var(--ink-soft);margin-top:4px;
-}
-
-/* ====== 5. 你會帶走什麼 ====== */
-.takeaways{
-  background:#fff;
-  padding:30px 24px;
-  border-top:1px solid var(--line-soft);
-}
-.takeaways-head{text-align:center;margin-bottom:22px}
-.takeaways-head .eb{
-  font-size:11.5px;color:var(--accent-2);letter-spacing:.25em;
-  font-weight:800;margin-bottom:6px;
-}
-.takeaways-head h2{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:22px;color:var(--deep-2);margin:0;
-}
-.takeaways-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.takeaway{
-  background:var(--paper);border-radius:12px;
-  padding:18px 14px;text-align:center;
-  border:1px solid var(--line-soft);
-  transition:.2s;
-}
-.takeaway:hover{transform:translateY(-2px);box-shadow:0 8px 22px -10px rgba(15,42,38,.2)}
-.takeaway .ico{
-  width:42px;height:42px;border-radius:10px;margin:0 auto 10px;
-  background:linear-gradient(135deg,var(--accent-soft),var(--accent));
-  display:grid;place-items:center;color:#fff;font-size:18px;
-}
-.takeaway .title{
-  font-weight:800;font-size:13.5px;color:var(--deep-2);
-  margin-bottom:5px;
-}
-.takeaway .desc{
-  font-size:11.5px;color:var(--ink-soft);line-height:1.55;
-}
-
-/* ====== 6. 詳細資訊 ====== */
-.info{
-  background:linear-gradient(160deg,var(--deep),var(--deep-2));
-  color:var(--paper);padding:28px 24px;
-}
-.info-rows{display:grid;gap:12px}
-.info-row{
-  display:flex;align-items:center;gap:14px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:10px;padding:12px 16px;
-}
-.info-row .icon{
-  width:34px;height:34px;border-radius:8px;
-  background:rgba(224,122,60,.2);color:var(--accent);
-  display:grid;place-items:center;font-size:14px;flex-shrink:0;
-}
-.info-row .label{
-  font-size:11.5px;color:rgba(250,246,238,.6);
-  letter-spacing:.1em;font-weight:700;min-width:48px;
-}
-.info-row .value{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:16px;color:#fff;flex:1;
-}
-.info-row .value small{font-weight:500;font-size:12px;color:rgba(250,246,238,.78);display:block;margin-top:2px;font-family:"Noto Sans TC",sans-serif}
-.info-row .value .price{color:var(--accent);font-size:22px}
-
-/* ====== 7. 三大贈禮 ====== */
-.gifts{
-  background:linear-gradient(160deg,#0a1f1c,var(--deep-2));
-  color:var(--paper);padding:32px 24px;
-  position:relative;overflow:hidden;
-}
-.gifts::before{
-  content:"";position:absolute;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(224,122,60,.18),transparent 70%);
-  top:-100px;right:-100px;
-}
-.gifts-head{text-align:center;margin-bottom:24px;position:relative;z-index:2}
-.gifts-head .eb{
-  display:inline-block;background:var(--accent);color:#fff;
-  font-size:11.5px;padding:5px 16px;border-radius:4px;
-  letter-spacing:.25em;font-weight:800;margin-bottom:14px;
-}
-.gifts-head h2{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:26px;color:#fff;margin:0;line-height:1.3;
-}
-.gifts-head h2 em{font-style:normal;color:var(--accent)}
-.gifts-list{display:grid;gap:14px;position:relative;z-index:2}
-.gift{
-  display:flex;gap:16px;align-items:center;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;padding:16px;
-}
-.gift .num{
-  flex-shrink:0;width:40px;height:40px;border-radius:50%;
-  background:var(--accent);color:#fff;
-  display:grid;place-items:center;
-  font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;
-}
-.gift .content{flex:1}
-.gift .title{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:15.5px;color:#fff;margin-bottom:3px;
-}
-.gift .desc{
-  font-size:12px;color:rgba(250,246,238,.78);line-height:1.55;
-}
-.gift .price{
-  flex-shrink:0;background:rgba(224,122,60,.2);
-  color:var(--accent);font-size:11px;font-weight:800;
-  padding:4px 9px;border-radius:6px;letter-spacing:.05em;
-}
-.gifts-total{
-  margin-top:20px;text-align:center;
-  font-size:13px;color:rgba(250,246,238,.85);position:relative;z-index:2;
-  padding-top:18px;border-top:1px dashed rgba(255,255,255,.2);
-}
-.gifts-total .num{
-  font-family:"Noto Serif TC",serif;font-weight:900;
-  font-size:24px;color:var(--accent);margin:0 4px;
-}
-
-/* ====== 8. CTA ====== */
-.cta{
-  background:var(--paper);padding:32px 24px;text-align:center;
-}
-.cta-btn{
-  display:inline-flex;align-items:center;gap:10px;justify-content:center;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#fff;padding:18px 36px;border-radius:999px;
-  font-weight:900;font-size:17px;
-  box-shadow:0 14px 30px -12px rgba(224,122,60,.55);
-  transition:.22s;width:100%;max-width:340px;
-}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 38px -12px rgba(224,122,60,.65)}
-.cta-line{
-  display:flex;align-items:center;justify-content:center;gap:14px;
-  margin-top:20px;padding:14px 18px;
-  background:#fff;border-radius:12px;
-  border:1px solid var(--line-soft);
-}
-.cta-line .qr{
-  width:72px;height:72px;background:var(--paper-2);
-  border-radius:8px;display:grid;place-items:center;
-  font-size:10px;color:var(--ink-soft);font-weight:700;
-  text-align:center;line-height:1.4;flex-shrink:0;
-}
-.cta-line .text{text-align:left;flex:1}
-.cta-line .text .l1{
-  display:inline-flex;align-items:center;gap:6px;
-  font-weight:900;color:var(--line-green);font-size:14px;
-}
-.cta-line .text .l2{font-size:12px;color:var(--ink-soft);margin-top:3px}
-
-/* ====== 9. 底部 ====== */
-.foot{
-  background:#0a1f1c;color:rgba(250,246,238,.65);
-  padding:20px 24px;text-align:center;font-size:11.5px;line-height:1.7;
-}
-.foot b{color:#fff;font-weight:800}
-.foot .row{margin-bottom:5px}
-
-/* mobile shrink */
-@media (max-width:420px){
-  .hero .questions{font-size:26px}
-  .hero .answer{font-size:21px}
-}
-
-/* ====== Registration Modal ====== */
-.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:16px}
-.modal.show{display:flex}
-.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px)}
-.modal-box{position:relative;background:#fff;border-radius:20px;width:100%;max-width:460px;overflow:hidden;box-shadow:0 28px 60px -20px rgba(0,0,0,.45);animation:modalIn .25s ease;max-height:92vh;overflow-y:auto}
-@keyframes modalIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.modal-head{background:linear-gradient(135deg,var(--deep),var(--deep-2));color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.modal-title{font-weight:900;font-size:20px;font-family:"Noto Serif TC",serif;line-height:1.3}
-.modal-sub{font-size:13px;color:var(--accent-soft);margin-top:4px}
-.modal-close{background:transparent;border:0;color:rgba(255,255,255,.75);font-size:30px;line-height:1;cursor:pointer;padding:0;flex-shrink:0}
-.modal-close:hover{color:#fff}
-.modal-body{padding:22px 24px 26px}
-.field{display:block;margin-bottom:13px}
-.field label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:6px}
-.field input{width:100%;border:1px solid var(--line-soft);border-radius:10px;padding:11px 14px;font-size:15px;font-family:inherit;outline:none;transition:.2s;background:var(--paper);box-sizing:border-box}
-.field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(224,122,60,.18);background:#fff}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field-check{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:13.5px;color:var(--ink-soft);line-height:1.55}
-.field-check input{width:16px;height:16px;margin-top:3px;accent-color:var(--accent);flex-shrink:0}
-.modal-actions{display:flex;gap:10px;margin-top:22px}
-.btn-ghost{flex:1;height:48px;border:1px solid var(--line-soft);background:#fff;color:var(--ink);font-weight:700;border-radius:999px;font-size:15px;cursor:pointer;transition:.2s;font-family:inherit}
-.btn-ghost:hover{background:var(--paper-2)}
-.btn-submit{flex:1;height:48px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:900;border:0;border-radius:999px;font-size:15px;cursor:pointer;transition:.2s;box-shadow:0 10px 24px -10px rgba(224,122,60,.55);font-family:inherit}
-.btn-submit:hover{transform:translateY(-1px)}
-.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.success-box{padding:32px 24px;text-align:center}
-.success-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#9ee9d3,var(--line-green));margin:0 auto 18px;display:grid;place-items:center;color:#fff;font-size:36px}
-.success-box h3{font-family:"Noto Serif TC",serif;font-size:24px;font-weight:900;color:var(--deep-2);margin:0 0 8px}
-.success-box>p{color:var(--ink-soft);font-size:14.5px;margin:0 0 22px;line-height:1.7}
-.success-line-banner{background:#e6f8ee;border:1px solid #b9d6c8;border-radius:14px;padding:18px;margin-bottom:18px;text-align:left}
-.banner-head{font-weight:900;color:var(--line-green);display:flex;align-items:center;gap:8px;font-size:15px;margin-bottom:12px}
-.btn-line-confirm{width:100%;height:50px;background:var(--line-green);color:#fff;font-weight:900;border:0;border-radius:12px;font-size:15px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit}
-.btn-line-confirm:hover{background:#04a847}
-.btn-copy-msg{display:flex;align-items:center;justify-content:center;gap:5px;margin:10px auto 0;background:transparent;border:0;color:var(--line-green);font-size:13.5px;cursor:pointer;font-weight:700;font-family:inherit}
-.btn-copy-msg:hover{text-decoration:underline}
-.btn-close-modal{width:100%;height:42px;background:transparent;border:0;color:var(--ink-soft);font-size:14.5px;cursor:pointer;font-weight:500;font-family:inherit}
-.btn-close-modal:hover{color:var(--ink)}
-@media (max-width:420px){
-  .field-row{grid-template-columns:1fr}
-}
+  body{font-family:"Noto Sans TC",sans-serif;background:#f6f1e8;color:#241f1a}
+  .serif{font-family:"Noto Serif TC",serif}
+  .nav-scrolled{box-shadow:0 4px 20px rgba(89,67,46,.10)}
+  .btn-primary{background:#241f1a;color:#fff;transition:all .2s;box-shadow:0 14px 34px rgba(36,31,26,.14)}
+  .btn-primary:hover{background:#3a322a;transform:translateY(-2px)}
+  .btn-secondary{border:1px solid #b9956b;background:rgba(255,255,255,.75);color:#6b5134;transition:all .2s}
+  .btn-secondary:hover{transform:translateY(-2px)}
+  .chip{border:1px solid #b9956b;background:rgba(255,255,255,.72);color:#6b5134}
+  .btn-line{background:#06c755;color:#fff;transition:background .2s}
+  .btn-line:hover{background:#049e46}
+  .topic-card{transition:transform .2s, box-shadow .2s}
+  .topic-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(89,67,46,.10)}
+  .session-card{border:1px solid #dfcfbb}
+  ::-webkit-scrollbar{height:6px}
+  .news-track{scroll-snap-type:x mandatory}
+  .news-card{scroll-snap-align:start}
 </style>
 </head>
-<body>
+<body class="bg-paper2">
 
-<div class="edm">
+  <!-- ===== Navbar ===== -->
+  <nav id="navbar" class="fixed top-0 w-full bg-paper/95 backdrop-blur z-50 transition-shadow">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="serif font-black text-2xl text-deep">大樹小講<span class="text-accent">．</span>無話不談</a>
+      <div class="hidden md:flex items-center gap-x-8 text-base font-bold text-ink">
+        <a href="#story" class="hover:text-accent2">品牌故事</a>
+        <a href="#topics" class="hover:text-accent2">主題領域</a>
+        <a href="#sessions" class="hover:text-accent2">近期場次</a>
+        <a href="#testimonials" class="hover:text-accent2">學員見證</a>
+        <a href="#faq" class="hover:text-accent2">常見問答</a>
+        <a href="archive/大樹小講_歷史講座紀錄.html" class="hover:text-accent2">歷史紀錄</a>
+      </div>
+      <button onclick="showRegisterModal()" class="btn-primary px-5 py-2.5 rounded-full text-base font-bold">立即報名</button>
+    </div>
+  </nav>
 
-  <!-- 1. 頂部小 banner -->
-  <div class="top-bar">
-    <span><b>2026 / 7 / 1</b>（三）· 台南</span>
-    <span class="tag">創 業 × 政 府 × AI</span>
-  </div>
-
-  <!-- 2. 主視覺：主標 + 副標 -->
-  <header class="hero">
-    <h1 style="font-family:'Noto Serif TC',serif;font-weight:900;font-size:46px;line-height:1.2;letter-spacing:.02em;color:var(--deep-2);margin:0 0 22px">
-      一個下午<br>
-      <em style="font-style:normal;color:var(--accent-2);background:linear-gradient(transparent 62%,rgba(224,122,60,.32) 62%);padding:0 6px">三 個 答 案</em>
-    </h1>
-    <div class="questions">
-      <span class="q">想<em>創業</em>，怕踩雷？</span>
-      <span class="q">想<em>擴張</em>，卡資金？</span>
-      <span class="q">想用 <em>AI</em>，怕不會？</span>
+  <!-- ===== Hero ===== -->
+  <header class="pt-32 pb-20 px-6 bg-gradient-to-b from-paper to-paper2 relative overflow-hidden">
+    <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-accentsoft/40 blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-tealsoft/40 blur-3xl"></div>
+    <div class="max-w-5xl mx-auto text-center relative">
+      <p class="text-accent2 font-bold tracking-[0.3em] text-base mb-4">大樹教練公益巡講系列 · 2013-2026</p>
+      <h1 class="serif font-black text-5xl md:text-7xl text-deep leading-tight mb-6">大樹小講<span class="text-accent">．</span>無話不談</h1>
+      <p class="text-inksoft text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto mb-10">
+        溝通表達、親子教育、行銷策略、兩性相處、人際話題、職場關係、團隊組建、零基礎學AI、口才訓練⋯⋯<br class="hidden md:block">
+        沒有不能聊的主題，只有還沒被問到的問題。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#sessions" class="btn-primary px-8 py-4 rounded-full font-bold text-xl">查看近期場次</a>
+        <button onclick="showRegisterModal()" class="btn-line px-8 py-4 rounded-full font-bold text-xl flex items-center gap-x-2">
+          <i class="fa-brands fa-line"></i> 加入 LINE 立即報名
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- 3. 主講對談區 -->
-  <section class="speakers">
-    <div class="speakers-title">主 　 講 　 ＆ 　 對 　 談</div>
-    <div class="speakers-grid">
-      <div class="speaker">
-        <div class="photo"><img src="coach-hero.jpg" alt="大樹教練"></div>
-        <div class="text">
-          <span class="role">主 講</span>
-          <div class="name">大樹教練</div>
-          <div class="org">大樹教育顧問創辦人<br>26 年企業培訓 · 6,000+ 場</div>
-        </div>
+  <!-- ===== 品牌故事 ===== -->
+  <section id="story" class="relative overflow-hidden py-24 px-6" style="background:linear-gradient(to top right, #41261b 0%, #f6f1e8 60%)">
+    <div class="max-w-5xl mx-auto relative">
+    <p class="serif text-center text-deep font-black tracking-[0.15em] text-8xl mb-6" style="text-shadow:2px 2px 0 rgba(255,255,255,.5)">緣起</p>
+    <h2 class="serif font-black text-4xl text-center text-deep mb-12">從 2013 年開始，一講就是十幾年</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-paper2">
+        <div class="text-sm text-inksoft mb-2 font-bold tracking-wider">大紀元 · 2014年3月17日 桃園報導</div>
+        <p class="text-ink leading-loose text-[15px]">
+          「每個月在桃園婦女館都會有一場〝大樹小講〞演講。課程內容很廣，有溝通表達、親子教育、行銷策略、兩性關係、人際關係等等⋯這次已經是第五期。大樹教練受過國際級演講大師的訓練，口才、自信、談吐很有風格，可以用：幽默風趣，千變萬化，令人拍案叫絕來形容。」
+        </p>
+        <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="inline-flex items-center gap-x-1 text-accent2 font-bold text-base mt-4 hover:underline">
+          查看原始報導 <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </a>
       </div>
-      <div class="speaker">
-        <div class="photo"><img src="speaker-yu.jpg" alt="謝扉榆"></div>
-        <div class="text">
-          <span class="role">對 談</span>
-          <div class="name">謝扉榆</div>
-          <div class="org">仟登生技國際有限公司<br>32 年美業實戰</div>
-        </div>
+      <div class="space-y-4 text-inksoft leading-relaxed">
+        <p>2014年3月是第五期公益巡講——換算回去，「大樹小講：無話不談」這個系列，從 <b class="text-deep">2013年10月</b> 左右就開始了。</p>
+        <p>十幾年來，主題橫跨溝通、親子、行銷、兩性、人際、職場、團隊——包括時下最夯的AI話題；正如它的名字，<b class="text-accent2">無話不談</b>。</p>
+        <p>現在，這個系列重新出發，變成一系列固定舉辦的線上與實體活動，繼續陪大家把話說開、把關係理順。</p>
       </div>
     </div>
-
-    <!-- 4. 中小微企業 -->
-    <div class="collab">
-      <span class="label">免 費 講 座 ｜ 自 由 參 加</span>
-      <div class="title">中小微企業多元發展貸款方案</div>
-      <div class="sub">方案講解</div>
+    <div class="relative rounded-3xl overflow-hidden shadow-sm border border-paper2 bg-paper2 flex items-center justify-center" style="min-height:280px">
+      <img id="carouselImg" src="photos-carousel/photo-01.jpg" alt="大樹教練活動照片" style="max-height:70vh;max-width:100%;width:auto;margin:0 auto;display:block">
+      <button onclick="carouselPrev()" aria-label="上一張" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-left"></i></button>
+      <button onclick="carouselNext()" aria-label="下一張" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-right"></i></button>
+      <div id="carouselCounter" class="absolute bottom-3 right-4 bg-black/50 text-white text-sm font-bold px-3 py-1 rounded-full">1 / 24</div>
     </div>
-  </section>
-
-  <!-- 5. 你會帶走什麼 -->
-  <section class="takeaways">
-    <div class="takeaways-head">
-      <div class="eb">你 　 會 　 帶 　 走 　 什 　 麼</div>
-      <h2>4 件帶得回公司的事</h2>
-    </div>
-    <div class="takeaways-grid">
-      <div class="takeaway">
-        <div class="ico"><i class="fa-solid fa-triangle-exclamation"></i></div>
-        <div class="title">創業避坑　九大提醒</div>
-        <div class="desc">32 年實戰<br>真實踩過的地圖</div>
-      </div>
-      <div class="takeaway">
-        <div class="ico"><i class="fa-solid fa-clipboard-list"></i></div>
-        <div class="title">解決問題的步驟</div>
-        <div class="desc">6,000 場演講大樹教練<br>教你系統化拆解</div>
-      </div>
-      <div class="takeaway">
-        <div class="ico"><i class="fa-solid fa-landmark"></i></div>
-        <div class="title">貸款方案</div>
-        <div class="desc">中小微企業<br>多元發展方案</div>
-      </div>
-      <div class="takeaway">
-        <div class="ico"><i class="fa-solid fa-robot"></i></div>
-        <div class="title">小龍蝦</div>
-        <div class="desc">線上版小龍蝦<br>下載 App 通過驗證即可使用</div>
-      </div>
     </div>
   </section>
 
-  <!-- 6. 詳細資訊 -->
-  <section class="info">
-    <div class="info-rows">
-      <div class="info-row">
-        <div class="icon"><i class="fa-solid fa-calendar"></i></div>
-        <div class="label">日期</div>
-        <div class="value">7 月 1 日（三）</div>
+  <!-- ===== 7大主題領域 ===== -->
+  <section id="topics" class="py-24 px-6" style="background:linear-gradient(180deg,#2f3a35,#435248)">
+    <div class="max-w-6xl mx-auto">
+      <p class="serif text-center text-white/70 font-black tracking-[0.1em] text-3xl mb-3">涵蓋主題</p>
+      <h2 class="serif font-black text-4xl text-center text-white mb-14">無話不談，談的是這 9 件事</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">溝通表達</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">親子教育</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">行銷策略</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">兩性相處</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">人際話題</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">職場關係</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">團隊組建</div>
+        </div>
+        <div class="topic-card bg-white rounded-2xl p-8 text-center shadow-lg">
+          <div class="text-deep font-black text-5xl">零基礎學AI</div>
+        </div>
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/30">
+          <div class="text-white font-black text-5xl">口才訓練</div>
+        </div>
       </div>
-      <div class="info-row">
-        <div class="icon"><i class="fa-solid fa-clock"></i></div>
-        <div class="label">時間</div>
-        <div class="value">下午 1:30 - 5:00</div>
-      </div>
-      <div class="info-row">
-        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="label">地點</div>
-        <div class="value">維悅酒店<small>台南市安平區慶平路 539 號</small></div>
-      </div>
-      <div class="info-row">
-        <div class="icon"><i class="fa-solid fa-tag"></i></div>
-        <div class="label">費用</div>
-        <div class="value"><span class="price">600</span> 元<small>三大贈禮總價值超過 NT$ 5,980</small></div>
-      </div>
+      <p class="text-center text-white/80 mt-10">沒有不能聊的主題，只有還沒被問到的問題。</p>
     </div>
   </section>
 
-  <!-- 7. 三大贈禮 -->
-  <section class="gifts">
-    <div class="gifts-head">
-      <span class="eb">限 　 量 　 三 　 大 　 贈 　 禮</span>
-      <h2>600 元帶走<br><em>超過 5,980 元</em>的價值</h2>
-    </div>
-    <div class="gifts-list">
-      <div class="gift">
-        <div class="num">1</div>
-        <div class="content">
-          <div class="title">限量品牌香水</div>
-          <div class="desc">當天現場帶走，數量有限</div>
-        </div>
-        <div class="price">$ 2,980</div>
-      </div>
-      <div class="gift">
-        <div class="num">2</div>
-        <div class="content">
-          <div class="title">AI 小龍蝦 · 線上版</div>
-          <div class="desc">不必花錢組主機，直接用大樹教練訓練好的 AI 軍師</div>
-        </div>
-        <div class="price">無 價</div>
-      </div>
-      <div class="gift">
-        <div class="num">3</div>
-        <div class="content">
-          <div class="title">零基礎學 AI　起步比較快</div>
-          <div class="desc">
-            7 / 4（六）下午 2:00 - 4:30<br>
-            臺南東區 KR 養生廚房
+  <!-- ===== 近期場次（大樹小講專屬） ===== -->
+  <section id="sessions" class="max-w-6xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">大樹小講 · 場次資訊</p>
+    <h2 class="serif font-black text-4xl text-center text-deep mb-4">近期場次</h2>
+    <p class="text-center text-inksoft mb-14">每場 3 小時，歡迎報名參加</p>
+    <div id="sessionGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </section>
+
+  <!-- ===== 學員見證（比照 bymyway.com 真實學員回饋） ===== -->
+  <section id="testimonials" class="bg-paper py-24 px-6 border-y border-paper2">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">學員見證</p>
+      <h2 class="serif font-black text-4xl text-center text-deep mb-4">改變就是<span class="text-accent2">這麼簡單</span></h2>
+      <p class="text-center text-inksoft mb-10">真實學員回饋，來自大樹教練歷年課程與講座</p>
+      <div class="overflow-x-auto news-track pb-4">
+        <div class="flex gap-5 w-max">
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「您的演講以最白話、最貼近生活的方式，引導我們看懂溝通中最棘手的問題。有效的溝通並不需要艱深的理論，而是理解、同理與真誠的表達。」</p>
+            <div class="font-bold text-deep text-base">吳秀娟<span class="text-inksoft font-normal ml-2">新竹職訓中心學員</span></div>
           </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「謝謝大樹教練竭力、無私的打開我們大家的新視野，我自己有著滿滿的收獲和感動。這個團隊永遠站在我這一邊。」</p>
+            <div class="font-bold text-deep text-base">劉淑華<span class="text-inksoft font-normal ml-2">海餅乾俱樂部學員</span></div>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「這場深具啟發力與系統性的培訓，讓我重新審視了自己的態度、思維、責任感與團隊精神。只要願意開始，就一定來得及。」</p>
+            <div class="font-bold text-deep text-base">洪瑋澤<span class="text-inksoft font-normal ml-2">海餅乾俱樂部學員</span></div>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「若是每個公司老闆與職員都能聽這堂課，並能熟記理念與價值，運用在工作、待人處事，必能省下溝通成本。」</p>
+            <div class="font-bold text-deep text-base">語薇<span class="text-inksoft font-normal ml-2">海餅乾俱樂部學員</span></div>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「第一次上大樹教練的課，一開始就被教練的滿滿活力感染。自信，是打從心底深處的相信自己，無需證明！」</p>
+            <div class="font-bold text-deep text-base">馬詠淇<span class="text-inksoft font-normal ml-2">海餅乾俱樂部學員</span></div>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「課程從早上8點到晚上8點，有點害怕！但時間在大樹教練的課程中像坐了高鐵一樣咻一下就過了！內容滿滿的乾貨！」</p>
+            <div class="font-bold text-deep text-base">張敬媛 Amy<span class="text-inksoft font-normal ml-2">海餅乾俱樂部學員</span></div>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「非常感謝大樹教練及團隊的付出，創造了一個這麼棒的場域。三大信念及十大守則，讓我們能吸引到所要的人才。」</p>
+            <div class="font-bold text-deep text-base">曾誌偉 Wayne<span class="text-inksoft font-normal ml-2">AI 導入顧問</span></div>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-80 shrink-0">
+            <div class="text-accent mb-2">★★★★★</div>
+            <p class="text-base text-inksoft leading-relaxed mb-4">「雖執教多年，還是由衷感佩大樹教練在人力培訓領域的功力。整天下來亦覺無冷場，還精神奕奕，深深感受到感動與衝擊。」</p>
+            <div class="font-bold text-deep text-base">學校行政主管<span class="text-inksoft font-normal ml-2">曾邀請大樹教練蒞校講習</span></div>
+          </div>
+
         </div>
-        <div class="price">限 量</div>
       </div>
     </div>
   </section>
 
-  <!-- 8. CTA -->
-  <section class="cta">
-    <div style="background:linear-gradient(135deg,#fff4e8,#fcd2b5);border:1.5px dashed var(--accent-2);border-radius:12px;padding:16px 20px;margin-bottom:22px;text-align:center">
-      <div style="display:inline-flex;align-items:center;gap:8px;font-weight:900;color:var(--accent-2);font-size:14px;letter-spacing:.08em;margin-bottom:4px">
-        <i class="fa-solid fa-circle-exclamation"></i> 預 　 約 　 須 　 知
-      </div>
-      <div style="font-size:14.5px;color:var(--deep-2);font-weight:700;line-height:1.6">
-        本方案自由參加，<b style="color:var(--accent-2)">座位有限，請及早預約</b>。
-      </div>
+  <!-- ===== 文章專欄（比照 bymyway.com，連結乾淨世界真實文章） ===== -->
+  <section id="articles" class="max-w-6xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">知識分享</p>
+    <h2 class="serif font-black text-4xl text-center text-deep mb-4">大樹教練的<span class="text-accent2">文章專欄</span></h2>
+    <p class="text-center text-inksoft mb-14">精選大樹教練在「乾淨世界」平台發佈的教育觀點與人生智慧</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+      <a href="https://www.ganjingworld.com/article/1h2hvr7vnil5CRdZgIX5tk5zF1ht1c" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">品格教育</span>
+        <h3 class="font-bold mb-2">誠信與人品</h3>
+        <p class="text-base text-inksoft leading-relaxed mb-3">一位女高管把沒有密碼的信用卡借給流浪漢，結果會如何？這個真實故事告訴我們：人品，才是一個人最硬的底牌。</p>
+        <span class="text-base text-accent2 font-bold">閱讀全文 →</span>
+      </a>
+      <a href="https://www.ganjingworld.com/article/1h4jau0kq6q2tot2iBenPs3Vz1g51c" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">領導力</span>
+        <h3 class="font-bold mb-2">如何激勵別人</h3>
+        <p class="text-base text-inksoft leading-relaxed mb-3">在「哈囉大樹教練」社群有同學問：如何激勵別人？教練的回應：激勵自己才是關鍵，因為這是唯一的可控元素。</p>
+        <span class="text-base text-accent2 font-bold">閱讀全文 →</span>
+      </a>
+      <a href="https://www.ganjingworld.com/article/1h12753c9gq77W8zRDUFbRQsb1ml1c" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">人生智慧</span>
+        <h3 class="font-bold mb-2">令人回味的經典問答</h3>
+        <p class="text-base text-inksoft leading-relaxed mb-3">安全帶是為自己繫還是為交警繫？幾段直指人心的問答，讓你看完後不得不重新思考自己的生活態度。</p>
+        <span class="text-base text-accent2 font-bold">閱讀全文 →</span>
+      </a>
+      <a href="https://www.ganjingworld.com/article/1h1dorjefkd1TtjypM9fPFma71vi1c" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">心靈成長</span>
+        <h3 class="font-bold mb-2">一語點醒，直指人心</h3>
+        <p class="text-base text-inksoft leading-relaxed mb-3">一位求道的年輕人跋山涉水尋訪高僧，卻總覺得一無所獲。直到南山腳下遇見一位樵夫，才發現真理就在眼前。</p>
+        <span class="text-base text-accent2 font-bold">閱讀全文 →</span>
+      </a>
     </div>
-    <button type="button" onclick="showRegisterModal()" class="cta-btn" style="border:0;cursor:pointer;font-family:inherit">
-      <i class="fa-solid fa-calendar-check"></i>
-      立即報名
-    </button>
-    <div class="cta-line">
-      <div class="qr" style="background:#fff;padding:6px;border:1px solid var(--line-soft)"><img src="line-qr.png" alt="大樹教育官方 LINE" style="width:100%;height:100%;object-fit:contain;display:block"></div>
-      <div class="text">
-        <span class="l1"><i class="fa-brands fa-line"></i> 加入大樹教育官方 LINE</span>
-        <div class="l2">掃碼加好友後回覆「7/1 報名」即可</div>
+    <div class="text-center mt-10">
+      <a href="https://www.ganjingworld.com/@bymyway?tab=articles" target="_blank" rel="noopener" class="inline-block bg-gold text-white font-bold px-6 py-3 rounded-full hover:opacity-90">前往乾淨世界閱讀更多 →</a>
+    </div>
+  </section>
+
+  <!-- ===== 媒體報導與可信度（比照 bymyway.com 完整清單） ===== -->
+  <section id="trust" class="py-24 px-6" style="background:linear-gradient(180deg,#2f3a35,#435248)">
+    <div class="max-w-6xl mx-auto">
+    <p class="text-center text-white/70 font-bold tracking-[0.3em] text-base mb-3">公開肯定</p>
+    <h2 class="serif font-black text-4xl text-center text-white mb-4">大樹教練的<span class="text-accent2">媒體報導</span></h2>
+    <p class="text-center text-white/80 mb-14">超過 25 年教育與企業培訓歷程，獲多家媒體專訪報導</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">大樹小講起源</span>
+        <h3 class="font-bold mb-2">大樹小講第五期 桃園婦女館公益演講報導</h3>
+        <span class="text-base text-accent2 font-bold">查看報導 →</span>
+      </a>
+      <a href="https://event.ntdtv.com.tw/b5/20250111/video/400659.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
+        <h3 class="font-bold mb-2">讓愛延續　為重症兒童點亮生命的光公益講座登場</h3>
+        <span class="text-base text-accent2 font-bold">觀看報導 →</span>
+      </a>
+      <a href="https://www.ntdtv.com.tw/b5/20240422/video/388744.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
+        <h3 class="font-bold mb-2">心想事成的祕訣講座 分享品德人生攻略課</h3>
+        <span class="text-base text-accent2 font-bold">觀看報導 →</span>
+      </a>
+      <a href="https://www.ntdtv.com.tw/b5/20211021/video/307528.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
+        <h3 class="font-bold mb-2">啟發孩子的善念　獅子會舉辦品德教育研討會</h3>
+        <span class="text-base text-accent2 font-bold">觀看報導 →</span>
+      </a>
+      <a href="https://www.epochtimes.com/b5/20/12/2/n12591146.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
+        <h3 class="font-bold mb-2">國際獅子會結合神韻　弘揚傳統文化　關懷癌童</h3>
+        <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
+      </a>
+      <a href="https://www.soundofhope.org/post/351442?lang=b5" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">人際關係</span>
+        <h3 class="font-bold mb-2">以身作則　家長做到孩子才會做對的事</h3>
+        <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
+      </a>
+      <a href="https://www.soundofhope.org/post/329719?lang=b5" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">人際關係</span>
+        <h3 class="font-bold mb-2">人在這個世界上最需要什麼呢？答案一定令你驚訝！</h3>
+        <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
+      </a>
+      <a href="https://www.watchinese.com/article/2019/24591" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">雜誌專訪</span>
+        <h3 class="font-bold mb-2">從留級生到傑出校友　「大樹教練」願為培訓界清流</h3>
+        <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
+      </a>
+      <a href="https://www.epochtimes.com/b5/18/6/22/n10505519.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">電臺訪談</span>
+        <h3 class="font-bold mb-2">【轉動台灣】大樹教練的價值宣言　真誠善良不藏私</h3>
+        <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
+      </a>
+      <a href="https://www.ntdtv.com.tw/b5/20140718/video/129084.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">職場話題</span>
+        <h3 class="font-bold mb-2">悠活世說：談為何遇不見伯樂／如何讓團隊看見亮點</h3>
+        <span class="text-base text-accent2 font-bold">觀看報導 →</span>
+      </a>
+      <a href="https://www.epochtimes.com/b5/13/9/29/n3975111.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">九型人格</span>
+        <h3 class="font-bold mb-2">吳大樹：了解九型人格，解析成功密碼</h3>
+        <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
+      </a>
+      <a href="https://www.dcard.tw/f/ccu/p/258023416" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">演講邀約</span>
+        <h3 class="font-bold mb-2">網友分享聽講心得</h3>
+        <span class="text-base text-accent2 font-bold">查看貼文 →</span>
+      </a>
+      <a href="https://podcasts.apple.com/tw/podcast/%E5%A4%A7%E6%A8%B9%E6%95%99%E7%B7%B4/id740362803" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">希望之聲電台訪問</span>
+        <h3 class="font-bold mb-2">大樹教練（Podcast 節目全集）</h3>
+        <span class="text-base text-accent2 font-bold">收聽節目 →</span>
+      </a>
+      <a href="https://podcasts.apple.com/tw/podcast/%E6%95%99%E7%B7%B4%E9%83%BD%E5%9C%A8%E6%83%B3%E4%BB%80%E9%BA%BC/id1855176566" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
+        <span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-3">Apple Podcast</span>
+        <h3 class="font-bold mb-2">教練都在想什麼？（Podcast 節目全集）</h3>
+        <span class="text-base text-accent2 font-bold">收聽節目 →</span>
+      </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- ===== 常見問答 ===== -->
+  <section id="faq" class="max-w-4xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">解答疑惑</p>
+    <h2 class="serif font-black text-4xl text-center text-deep mb-14">大樹小講<span class="text-accent2">常見問答</span></h2>
+    <div class="space-y-4">
+      <details class="bg-white rounded-2xl p-6 border border-paper2">
+        <summary class="font-bold cursor-pointer">大樹小講適合什麼樣的人參加？</summary>
+        <p class="text-inksoft text-base mt-3 leading-relaxed">不論你是企業主管、創業者、業務人員、老師，或是想要提升自信心與溝通能力的任何人，都能在大樹小講找到啟發。主題橫跨溝通、親子、行銷、兩性、人際、職場、團隊、AI、口才，總有一場適合你。</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 border border-paper2">
+        <summary class="font-bold cursor-pointer">課程會很嚴肅嗎？會不會聽不懂？</summary>
+        <p class="text-inksoft text-base mt-3 leading-relaxed">完全不會！大樹教練最擅長的就是「用三歲小孩都聽得懂的話，講出深刻的人生道理」。超過25年的教學經驗，讓課程節奏明快、案例生動。</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 border border-paper2">
+        <summary class="font-bold cursor-pointer">大樹小講跟其他大樹教練的講座有什麼不同？</summary>
+        <p class="text-inksoft text-base mt-3 leading-relaxed">大樹小講是從2013年就開始的公益巡講系列，主題最廣、最貼近生活——正如「無話不談」這個名字，任何你生活中遇到的困惑都可能是下一場的主題。</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 border border-paper2">
+        <summary class="font-bold cursor-pointer">什麼是「海餅乾俱樂部」？</summary>
+        <p class="text-inksoft text-base mt-3 leading-relaxed">海餅乾俱樂部是大樹教練於2007年創辦的核心團隊，秉持「培育人才，創造奇蹟，做對社會有貢獻的事」的使命。每年只有1–2位能成為正式成員，是一群因理念相同而聚在一起的人。</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 border border-paper2">
+        <summary class="font-bold cursor-pointer">如何邀請大樹教練到企業或社團演講？</summary>
+        <p class="text-inksoft text-base mt-3 leading-relaxed">歡迎透過 LINE 官方帳號或 Email（bymyway7@gmail.com）聯繫。教練的演講主題可依需求客製化，過去合作對象包含上市公司、學校、政府機構等。</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 border border-paper2">
+        <summary class="font-bold cursor-pointer">報名後可以取消或更改場次嗎？</summary>
+        <p class="text-inksoft text-base mt-3 leading-relaxed">當然可以，加入 LINE 後直接留言告知即可，教練團隊會協助您改期或安排下一場。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== 相關連結（建立可信度） ===== -->
+  <section class="bg-deep2 py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="serif font-black text-3xl text-center text-white mb-10">更多大樹教練的內容</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <a href="https://www.bymyway.com/" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-8 text-center hover:bg-deep transition-colors">
+          <div class="text-white text-xl font-bold">大樹官網</div>
+        </a>
+        <a href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-8 text-center hover:bg-deep transition-colors">
+          <div class="text-white text-xl font-bold">結繩領導學</div>
+        </a>
+        <a href="https://www.bymyway.com/ai/" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-8 text-center hover:bg-deep transition-colors">
+          <div class="text-white text-xl font-bold">AI 導入教練</div>
+        </a>
+        <a href="https://www.ganjingworld.com/@bymyway" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-8 text-center hover:bg-deep transition-colors">
+          <div class="text-white text-xl font-bold">乾淨世界頻道</div>
+        </a>
+      </div>
+      <div class="text-center mt-8">
+        <a href="archive/大樹小講_歷史講座紀錄.html" class="text-tealsoft font-bold text-base hover:underline"><i class="fa-solid fa-clock-rotate-left mr-1"></i> 查看過往講座歷史紀錄</a>
       </div>
     </div>
   </section>
 
-  <!-- 9. 底部 -->
-  <footer class="foot">
-    <div class="row"><b>主辦：</b>大樹教練（大樹教育顧問）</div>
-    <div class="row"><b>合作：</b>仟登生技</div>
+  <!-- ===== Footer ===== -->
+  <footer class="bg-deep py-10 px-6 text-center text-tealsoft text-base">
+    <div class="serif font-black text-white text-xl mb-2">大樹小講．無話不談</div>
+    <div>大樹教育 | 海餅乾俱樂部 | AI 百人導師計畫召集人 © 1999-2026</div>
   </footer>
 
-</div>
-
-<!-- ===== Registration Modal ===== -->
-<div id="registerModal" class="modal">
-  <div class="modal-bg" onclick="hideRegisterModal()"></div>
-  <div class="modal-box">
-    <div class="modal-head">
-      <div>
-        <div class="modal-title">報名講座（600 元）</div>
-        <div class="modal-sub">7/1 創業 × 政府 × AI 主題講座</div>
+  <!-- ===== Registration Modal ===== -->
+  <div id="registerModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] items-center justify-center p-4">
+    <div onclick="event.target.id === 'registerModal' && hideRegisterModal()" class="absolute inset-0"></div>
+    <div class="bg-white rounded-3xl w-full max-w-lg relative shadow-2xl overflow-hidden">
+      <div class="bg-deep px-8 py-7 text-white flex items-center justify-between">
+        <div>
+          <div class="font-bold text-3xl serif">報名大樹小講</div>
+          <div id="modalSessionLabel" class="text-tealsoft text-base mt-1">選擇場次後送出，資料會直接帶到 LINE</div>
+        </div>
+        <button onclick="hideRegisterModal()" class="w-9 h-9 flex items-center justify-center text-white/70 hover:text-white text-4xl leading-none">&times;</button>
       </div>
-      <button class="modal-close" onclick="hideRegisterModal()" aria-label="關閉">&times;</button>
-    </div>
-    <div class="modal-body">
-      <form id="registerForm" onsubmit="submitRegistration(event)">
-        <div class="field">
-          <label>姓 　 名</label>
-          <input type="text" id="name" required placeholder="請輸入姓名">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label>聯 絡 電 話</label>
-            <input type="tel" id="phone" required placeholder="0912-345-678">
+      <div class="p-8">
+        <form id="registerForm" onsubmit="submitRegistration(event)">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-base font-bold text-inksoft mb-1.5">姓名</label>
+              <input type="text" id="regName" required class="w-full border border-paper2 rounded-2xl px-5 py-3.5" placeholder="請輸入姓名">
+            </div>
+            <div>
+              <label class="block text-base font-bold text-inksoft mb-1.5">聯絡電話</label>
+              <input type="tel" id="regPhone" required class="w-full border border-paper2 rounded-2xl px-5 py-3.5" placeholder="0912-345-678">
+            </div>
+            <div>
+              <label class="block text-base font-bold text-inksoft mb-1.5">想參加的場次</label>
+              <select id="regSession" class="w-full border border-paper2 rounded-2xl px-5 py-3.5"></select>
+            </div>
           </div>
-          <div class="field">
-            <label>電 子 郵 件</label>
-            <input type="email" id="email" placeholder="you@email.com">
-          </div>
-        </div>
-        <div class="field">
-          <label>公 司 / 職 稱（選填）</label>
-          <input type="text" id="company" placeholder="例：○○美容工作室 負責人">
-        </div>
-        <div class="field-check">
-          <input type="checkbox" id="agree" required>
-          <label for="agree">我了解本講座費用為 600 元，並同意主辦單位以電話 / LINE 與我聯繫確認席次。</label>
-        </div>
-        <div class="modal-actions">
-          <button type="button" onclick="hideRegisterModal()" class="btn-ghost">取消</button>
-          <button type="submit" class="btn-submit">確認送出報名</button>
-        </div>
-      </form>
+          <button type="submit" class="btn-line w-full h-14 font-bold rounded-3xl text-xl mt-8 flex items-center justify-center gap-x-2">
+            <i class="fa-brands fa-line"></i><span>送出並前往 LINE 完成報名</span>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-
-<!-- ===== Success Modal ===== -->
-<div id="successModal" class="modal">
-  <div class="modal-bg" onclick="hideSuccessModal()"></div>
-  <div class="modal-box success-box">
-    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-    <h3>報名成功！</h3>
-    <p>您的報名資料已送出，<br>我們將盡速與您確認席次。</p>
-    <div class="success-line-banner">
-      <div class="banner-head"><i class="fa-brands fa-line"></i> 加入官方 LINE 完成報名</div>
-      <button onclick="sendToLine()" class="btn-line-confirm">
-        <i class="fa-brands fa-line"></i>
-        <span>點擊加入 LINE 並傳送報名資料</span>
-      </button>
-      <button onclick="copyLineMessage()" class="btn-copy-msg">
-        <i class="fa-solid fa-copy"></i><span>或複製訊息手動傳送</span>
-      </button>
-    </div>
-    <button onclick="hideSuccessModal()" class="btn-close-modal">關閉視窗</button>
-  </div>
-</div>
 
 <script>
-const LINE_REGISTRATION_URL = 'https://line.me/R/ti/p/@qaw8118h';
-const SESSION_NAME = '7/1 創業 × 政府 × AI 主題講座（維悅酒店）';
+// ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
+const SLOTS = { '早':{start:'09:00',end:'12:00'}, '午':{start:'14:00',end:'17:00'}, '晚':{start:'18:00',end:'21:00'} };
+const SESSION_DATES = [
+  {date:'2026-07-22', label:'7/22（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-08-01', label:'8/1（六）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-08-26', label:'8/26（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-09-16', label:'9/16（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-10-03', label:'10/3（六）', slots:['午'], topic:'主題待定，敬請期待'},
+  {date:'2026-10-04', label:'10/4（日）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-10-21', label:'10/21（三）', slots:['午'], topic:'主題待定，敬請期待'},
+  {date:'2026-10-31', label:'10/31（六）', slots:['早','午','晚'], topic:'主題待定，敬請期待'},
+  {date:'2026-11-07', label:'11/7（六）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-11-18', label:'11/18（三）', slots:['午'], topic:'主題待定，敬請期待'},
+  {date:'2026-12-05', label:'12/5（六）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-12-07', label:'12/7（一）', slots:['早','午','晚'], topic:'主題待定，敬請期待'},
+  {date:'2026-12-16', label:'12/16（三）', slots:['午'], topic:'主題待定，敬請期待'},
+];
 
-function showRegisterModal(){
-  const m = document.getElementById('registerModal');
-  m.classList.add('show');
+function buildSessions() {
+  const grid = document.getElementById('sessionGrid');
+  const select = document.getElementById('regSession');
+  let n = 0;
+  SESSION_DATES.forEach(d => {
+    d.slots.forEach(s => {
+      n++;
+      const t = SLOTS[s];
+      const sessionLabel = `${d.label} ${s}場 ${t.start}–${t.end}`;
+      const card = document.createElement('div');
+      card.className = 'session-card bg-white rounded-2xl p-6';
+      card.innerHTML = `
+        <div class="text-sm font-bold text-accent2 tracking-widest mb-1">第 ${n} 場</div>
+        <div class="serif font-black text-3xl text-deep mb-1">${d.label}</div>
+        <div class="text-inksoft text-base mb-4">${s}場｜${t.start}–${t.end}（共3小時）</div>
+        <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
+        <button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>
+      `;
+      grid.appendChild(card);
+
+      const opt = document.createElement('option');
+      opt.value = sessionLabel;
+      opt.textContent = sessionLabel;
+      select.appendChild(opt);
+    });
+  });
+}
+
+function showRegisterModal(preselect) {
+  const modal = document.getElementById('registerModal');
+  modal.classList.remove('hidden'); modal.classList.add('flex');
   document.getElementById('registerForm').reset();
+  if (preselect) {
+    document.getElementById('regSession').value = preselect;
+    document.getElementById('modalSessionLabel').textContent = '場次：' + preselect;
+  } else {
+    document.getElementById('modalSessionLabel').textContent = '選擇場次後送出，資料會直接帶到 LINE';
+  }
 }
-function hideRegisterModal(){
-  document.getElementById('registerModal').classList.remove('show');
-}
-function showSuccessModal(){
-  document.getElementById('successModal').classList.add('show');
-}
-function hideSuccessModal(){
-  document.getElementById('successModal').classList.remove('show');
+function hideRegisterModal() {
+  const modal = document.getElementById('registerModal');
+  modal.classList.remove('flex'); modal.classList.add('hidden');
 }
 
-let lastRegistration = null;
-function submitRegistration(e){
+const LINE_URL = 'https://lin.ee/o5pODV8';
+
+function submitRegistration(e) {
   e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const company = document.getElementById('company').value.trim();
-  if(!name || !phone){ alert('請完整填寫姓名與聯絡電話'); return; }
-  lastRegistration = { name, phone, email, company };
-  fetch('https://sme-register-fn.netlify.app/.netlify/functions/register', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ session: SESSION_NAME, name, company, phone, email })
-  }).catch(()=>{});
-  const form = e.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const origText = submitBtn.innerHTML;
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 處理中...';
-  setTimeout(() => {
-    hideRegisterModal();
-    showSuccessModal();
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = origText;
-    form.reset();
-  }, 800);
+  const name = document.getElementById('regName').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const session = document.getElementById('regSession').value;
+  if (!name || !phone) { alert('請完整填寫姓名與聯絡電話'); return; }
+  const msg = `您好，我想報名【大樹小講．無話不談】\n場次：${session}\n姓名：${name}\n電話：${phone}\n請協助確認席次，謝謝！`;
+  navigator.clipboard.writeText(msg).catch(() => {});
+  hideRegisterModal();
+  window.open(LINE_URL, '_blank');
+  setTimeout(() => alert('報名訊息已複製，請在 LINE 對話框貼上送出，完成報名！'), 300);
 }
 
-function generateLineMessage(){
-  if(!lastRegistration) return '您好，我想報名【7/1 創業 × 政府 × AI 主題講座】，請協助確認席次，謝謝！';
-  const r = lastRegistration;
-  return '您好，我想報名【7/1 創業 × 政府 × AI 主題講座】\n\n姓名：' + r.name + '\n電話：' + r.phone + '\nEmail：' + (r.email || '未填寫') + '\n公司/職稱：' + (r.company || '未填寫') + '\n\n請協助確認席次，謝謝！';
-}
-function copyLineMessage(){
-  const msg = generateLineMessage();
-  navigator.clipboard.writeText(msg).then(() => {
-    alert('已複製報名訊息，請貼到 LINE 對話框送出。');
-  }).catch(() => prompt('請複製以下訊息傳送給大樹教育 LINE：', msg));
-}
-function sendToLine(){
-  window.open(LINE_REGISTRATION_URL, '_blank');
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) navbar.classList.add('nav-scrolled');
+    else navbar.classList.remove('nav-scrolled');
+  });
 }
 
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape'){
-    const sm = document.getElementById('successModal');
-    const rm = document.getElementById('registerModal');
-    if(sm.classList.contains('show')) hideSuccessModal();
-    else if(rm.classList.contains('show')) hideRegisterModal();
-  }
-});
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
 
-// URL hash 直達報名：?register / #register / #report 都觸發
-window.addEventListener('load', () => {
-  const h = location.hash.toLowerCase();
-  const s = location.search.toLowerCase();
-  if(h === '#register' || h === '#report' || h === '#報名' || s.includes('register')){
-    showRegisterModal();
-  }
-});
+// ===== 品牌故事照片輪播（24張，手動上一張/下一張，橫直照各自完整顯示不裁切） =====
+const CAROUSEL_TOTAL = 24;
+let carouselIndex = 0;
+function carouselRender() {
+  const img = document.getElementById('carouselImg');
+  const counter = document.getElementById('carouselCounter');
+  if (!img) return;
+  const n = String(carouselIndex + 1).padStart(2, '0');
+  img.src = `photos-carousel/photo-${n}.jpg`;
+  img.alt = `大樹教練活動照片 ${carouselIndex + 1}`;
+  counter.textContent = `${carouselIndex + 1} / ${CAROUSEL_TOTAL}`;
+}
+let carouselTimer = null;
+function carouselResetTimer() {
+  if (carouselTimer) clearInterval(carouselTimer);
+  carouselTimer = setInterval(carouselNext, 4000);
+}
+function carouselPrev() {
+  carouselIndex = (carouselIndex - 1 + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
+  carouselRender();
+  carouselResetTimer();
+}
+function carouselNext() {
+  carouselIndex = (carouselIndex + 1) % CAROUSEL_TOTAL;
+  carouselRender();
+}
+function initPhotoCarousel() {
+  carouselRender();
+  carouselResetTimer();
+}
+
+buildSessions();
+initNavbar();
+initSmoothScroll();
+initPhotoCarousel();
 </script>
-
 </body>
 </html>
