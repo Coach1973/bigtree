@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大樹小講；無話不談 ｜ 大樹教練公益巡講</title>
+<meta name="description" content="大樹小講，從2013年開始的公益巡講，溝通表達、親子教育、行銷策略、兩性關係、人際關係、職場關係、團隊組建——無話不談。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:      '#1c2a28',
+        inksoft:  '#4b5b58',
+        paper:    '#faf6ee',
+        paper2:   '#f1e9d8',
+        paper3:   '#fffef7',
+        deep:     '#163b35',
+        deep2:    '#0f2a26',
+        deep3:    '#1f4a43',
+        tealsoft: '#b9d6c8',
+        accent:   '#e07a3c',
+        accent2:  '#c25e22',
+        accentsoft:'#fcd2b5',
+        gold:     '#b58a4f',
+        linegreen:'#06c755',
+      },
+      fontFamily: {
+        sans: ['"Noto Sans TC"', 'sans-serif'],
+        serif: ['"Noto Serif TC"', 'serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  body{font-family:"Noto Sans TC",sans-serif;background:#f1e9d8;color:#1c2a28}
+  .serif{font-family:"Noto Serif TC",serif}
+  .nav-scrolled{box-shadow:0 4px 20px rgba(15,42,38,.12)}
+  .btn-primary{background:#e07a3c;color:#fff;transition:background .2s}
+  .btn-primary:hover{background:#c25e22}
+  .btn-line{background:#06c755;color:#fff;transition:background .2s}
+  .btn-line:hover{background:#049e46}
+  .topic-card{transition:transform .2s, box-shadow .2s}
+  .topic-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,42,38,.15)}
+  .session-card{border:1px solid #e5ddc9}
+  ::-webkit-scrollbar{height:6px}
+  .news-track{scroll-snap-type:x mandatory}
+  .news-card{scroll-snap-align:start}
+</style>
+</head>
+<body class="bg-paper2">
+
+  <!-- ===== Navbar ===== -->
+  <nav id="navbar" class="fixed top-0 w-full bg-paper/95 backdrop-blur z-50 transition-shadow">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="serif font-black text-xl text-deep">大樹小講<span class="text-accent">．</span>無話不談</a>
+      <div class="hidden md:flex items-center gap-x-8 text-sm font-bold text-ink">
+        <a href="#story" class="hover:text-accent2">品牌故事</a>
+        <a href="#topics" class="hover:text-accent2">主題領域</a>
+        <a href="#sessions" class="hover:text-accent2">近期場次</a>
+        <a href="#news" class="hover:text-accent2">活動快訊</a>
+        <a href="#trust" class="hover:text-accent2">媒體報導</a>
+        <a href="archive/大樹小講_歷史講座紀錄.html" class="hover:text-accent2">歷史紀錄</a>
+      </div>
+      <button onclick="showRegisterModal()" class="btn-primary px-5 py-2.5 rounded-full text-sm font-bold">立即報名</button>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="pt-32 pb-20 px-6 bg-gradient-to-b from-paper to-paper2 relative overflow-hidden">
+    <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-accentsoft/40 blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-tealsoft/40 blur-3xl"></div>
+    <div class="max-w-5xl mx-auto text-center relative">
+      <p class="text-accent2 font-bold tracking-[0.3em] text-sm mb-4">大樹教練公益巡講系列 · 2013 年起</p>
+      <h1 class="serif font-black text-4xl md:text-6xl text-deep leading-tight mb-6">大樹小講<span class="text-accent">．</span>無話不談</h1>
+      <p class="text-inksoft text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+        溝通表達、親子教育、行銷策略、兩性關係、人際關係、職場關係、團隊組建——<br class="hidden md:block">
+        沒有不能聊的主題，只有還沒被問到的問題。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#sessions" class="btn-primary px-8 py-4 rounded-full font-bold text-lg">查看近期場次</a>
+        <button onclick="showRegisterModal()" class="btn-line px-8 py-4 rounded-full font-bold text-lg flex items-center gap-x-2">
+          <i class="fa-brands fa-line"></i> 加入 LINE 立即報名
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 品牌故事 ===== -->
+  <section id="story" class="max-w-5xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-sm mb-3">緣起</p>
+    <h2 class="serif font-black text-3xl text-center text-deep mb-12">從 2013 年開始，一講就是十幾年</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-paper2">
+        <div class="text-xs text-inksoft mb-2 font-bold tracking-wider">大紀元 · 2014年3月17日 桃園報導</div>
+        <p class="text-ink leading-loose text-[15px]">
+          「每個月在桃園婦女館都會有一場〝大樹小講〞演講。課程內容很廣，有溝通表達、親子教育、行銷策略、兩性關係、人際關係等等⋯這次已經是第五期。大樹教練受過國際級演講大師的訓練，口才、自信、談吐很有風格，可以用：幽默風趣，千變萬化，令人拍案叫絕來形容。」
+        </p>
+        <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="inline-flex items-center gap-x-1 text-accent2 font-bold text-sm mt-4 hover:underline">
+          查看原始報導 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+      </div>
+      <div class="space-y-4 text-inksoft leading-relaxed">
+        <p>2014年3月是第五期公益巡講——換算回去，「大樹小講：無話不談」這個系列，從 <b class="text-deep">2013年10月</b> 左右就開始了。</p>
+        <p>十幾年來，主題橫跨溝通、親子、行銷、兩性、人際、職場、團隊——正如它的名字，<b class="text-accent2">無話不談</b>。</p>
+        <p>現在，這個系列重新出發，變成一系列固定舉辦的線上與實體活動，繼續陪大家把話說開、把關係理順。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7大主題領域 ===== -->
+  <section id="topics" class="bg-deep py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-accentsoft font-bold tracking-[0.3em] text-sm mb-3">涵蓋主題</p>
+      <h2 class="serif font-black text-3xl text-center text-white mb-14">無話不談，談的是這 7 件事</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-comments text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">溝通表達</div>
+        </div>
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-child-reaching text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">親子教育</div>
+        </div>
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-bullhorn text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">行銷策略</div>
+        </div>
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-heart text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">兩性關係</div>
+        </div>
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-people-arrows text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">人際關係</div>
+        </div>
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-briefcase text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">職場關係</div>
+        </div>
+        <div class="topic-card bg-deep2 rounded-2xl p-6 text-center border border-white/10">
+          <i class="fa-solid fa-people-group text-accent text-3xl mb-3"></i>
+          <div class="text-white font-bold">團隊組建</div>
+        </div>
+        <div class="topic-card bg-accent rounded-2xl p-6 text-center flex flex-col items-center justify-center">
+          <i class="fa-solid fa-plus text-white text-3xl mb-3"></i>
+          <div class="text-white font-bold">還有更多，無話不談</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 近期場次（大樹小講專屬） ===== -->
+  <section id="sessions" class="max-w-6xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-sm mb-3">大樹小講 · 場次資訊</p>
+    <h2 class="serif font-black text-3xl text-center text-deep mb-4">近期場次</h2>
+    <p class="text-center text-inksoft mb-14">每場 3 小時，主題現場公布，涵蓋 7 大領域，歡迎報名參加</p>
+    <div id="sessionGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </section>
+
+  <!-- ===== 活動快訊（複製自 bymyway.com / 大樹教育） ===== -->
+  <section id="news" class="bg-paper py-24 px-6 border-y border-paper2">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-accent2 font-bold tracking-[0.3em] text-sm mb-3">大樹教育 · 大樹教練</p>
+      <h2 class="serif font-black text-3xl text-center text-deep mb-4">活動快訊</h2>
+      <p class="text-center text-inksoft mb-10">線上座談會、工作坊、公益講座——大樹教練近期還有這些活動</p>
+      <div class="overflow-x-auto news-track pb-4">
+        <div class="flex gap-5 w-max">
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-accentsoft text-accent2 text-xs font-bold px-3 py-1 rounded-full mb-3">🔥 工作坊</span>
+            <h3 class="font-bold text-lg mb-2">台南場《結繩領導學》工作坊</h3>
+            <p class="text-sm text-inksoft mb-1">8/19–20（三、四）台南維悅酒店</p>
+            <p class="text-sm text-inksoft mb-4">兩天一夜深度體驗，學會用「結繩」串起團隊的信任與默契。</p>
+            <a href="https://forms.gle/uLacoA3UqGVg8G4s9" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">立即報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-accentsoft text-accent2 text-xs font-bold px-3 py-1 rounded-full mb-3">🔥 工作坊</span>
+            <h3 class="font-bold text-lg mb-2">台中場《結繩領導學》工作坊</h3>
+            <p class="text-sm text-inksoft mb-1">9/23–24（三、四）沃茲新創空間</p>
+            <p class="text-sm text-inksoft mb-4">兩天一夜深度體驗，學會用「結繩」串起團隊的信任與默契。</p>
+            <a href="https://forms.gle/FFrUM9wAdWSHtUaC8" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">立即報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-accentsoft text-accent2 text-xs font-bold px-3 py-1 rounded-full mb-3">🔥 工作坊</span>
+            <h3 class="font-bold text-lg mb-2">台北場《結繩領導學》工作坊</h3>
+            <p class="text-sm text-inksoft mb-1">11/25–26（三、四）劍潭青年活動中心</p>
+            <p class="text-sm text-inksoft mb-4">兩天一夜深度體驗，學會用「結繩」串起團隊的信任與默契。</p>
+            <a href="https://forms.gle/2gAqndb6cYASAu2XA" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">立即報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-tealsoft text-deep text-xs font-bold px-3 py-1 rounded-full mb-3">線上</span>
+            <h3 class="font-bold text-lg mb-2">7/10（五）線上座談會</h3>
+            <p class="text-sm text-inksoft mb-1">晚上 8:00–9:30｜主持人：大樹教練</p>
+            <p class="text-sm text-accent2 font-bold mb-4">免費・限額 100 人</p>
+            <a href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">LINE 報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-tealsoft text-deep text-xs font-bold px-3 py-1 rounded-full mb-3">線上</span>
+            <h3 class="font-bold text-lg mb-2">7/12（日）線上座談會</h3>
+            <p class="text-sm text-inksoft mb-1">晚上 8:00–9:30｜主持人：大樹教練</p>
+            <p class="text-sm text-accent2 font-bold mb-4">免費・限額 100 人</p>
+            <a href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">LINE 報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-tealsoft text-deep text-xs font-bold px-3 py-1 rounded-full mb-3">線上</span>
+            <h3 class="font-bold text-lg mb-2">7/19（日）線上座談會</h3>
+            <p class="text-sm text-inksoft mb-1">晚上 8:00–9:30｜主持人：大樹教練</p>
+            <p class="text-sm text-accent2 font-bold mb-4">免費・限額 100 人</p>
+            <a href="https://line.me/R/ti/p/@pbz5529q" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">LINE 報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-paper2 text-inksoft text-xs font-bold px-3 py-1 rounded-full mb-3">圓滿完成</span>
+            <h3 class="font-bold text-lg mb-2">7/1（三）一個下午三個答案</h3>
+            <p class="text-sm text-inksoft mb-4">台南維悅酒店｜活動已圓滿舉辦</p>
+            <a href="https://lin.ee/o5pODV8" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">加入 LINE 掌握下一場 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full mb-3">實體</span>
+            <h3 class="font-bold text-lg mb-2">7/4（六）零基礎學 AI 比較快</h3>
+            <p class="text-sm text-inksoft mb-4">台南東區 KR 養生廚房｜時間確認中</p>
+            <a href="https://lin.ee/o5pODV8" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">大樹教育 LINE 報名 →</a>
+          </div>
+
+          <div class="news-card session-card bg-white rounded-2xl p-6 w-72 shrink-0">
+            <span class="inline-block bg-tealsoft text-deep text-xs font-bold px-3 py-1 rounded-full mb-3">線上</span>
+            <h3 class="font-bold text-lg mb-2">7/18 線上讀書會</h3>
+            <p class="text-sm text-inksoft mb-4">時間確認中</p>
+            <a href="https://lin.ee/o5pODV8" target="_blank" rel="noopener" class="text-accent2 font-bold text-sm hover:underline">大樹教育 LINE 報名 →</a>
+          </div>
+
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://coach1973.github.io/jiesheng-leadership/#events" target="_blank" rel="noopener" class="inline-block bg-gold text-white font-bold px-6 py-3 rounded-full hover:opacity-90">查看完整活動列表 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 媒體報導與可信度 ===== -->
+  <section id="trust" class="max-w-5xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-sm mb-3">看過的人怎麼說</p>
+    <h2 class="serif font-black text-3xl text-center text-deep mb-14">媒體報導</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="text-xs font-bold text-accent2">大紀元 2014.03.17</span>
+        <h3 class="font-bold mt-2 mb-3">大樹小講第五期 桃園婦女館公益演講報導</h3>
+        <span class="text-sm text-accent2 font-bold">查看報導 →</span>
+      </a>
+      <a href="https://www.dcard.tw/f/ccu/p/258023416" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="text-xs font-bold text-accent2">Dcard 網友分享</span>
+        <h3 class="font-bold mt-2 mb-3">網友分享聽講心得</h3>
+        <span class="text-sm text-accent2 font-bold">查看貼文 →</span>
+      </a>
+      <a href="https://podcasts.apple.com/tw/podcast/%E5%A4%A7%E6%A8%B9%E6%95%99%E7%B7%B4/id740362803" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+        <span class="text-xs font-bold text-accent2">希望之聲電台訪問</span>
+        <h3 class="font-bold mt-2 mb-3">大樹教練 Podcast 節目全集</h3>
+        <span class="text-sm text-accent2 font-bold">收聽節目 →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 相關連結（建立可信度） ===== -->
+  <section class="bg-deep2 py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="serif font-black text-2xl text-center text-white mb-10">更多大樹教練的內容</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <a href="https://www.bymyway.com/" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-6 text-center hover:bg-deep transition-colors">
+          <i class="fa-solid fa-house text-accent text-2xl mb-2"></i>
+          <div class="text-white text-sm font-bold">大樹教育 / BYMYWAY<br>主頁</div>
+        </a>
+        <a href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-6 text-center hover:bg-deep transition-colors">
+          <i class="fa-solid fa-diagram-project text-accent text-2xl mb-2"></i>
+          <div class="text-white text-sm font-bold">結繩領導學</div>
+        </a>
+        <a href="https://www.bymyway.com/ai/" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-6 text-center hover:bg-deep transition-colors">
+          <i class="fa-solid fa-robot text-accent text-2xl mb-2"></i>
+          <div class="text-white text-sm font-bold">AI 導入教練</div>
+        </a>
+        <a href="https://www.ganjingworld.com/@bymyway" target="_blank" rel="noopener" class="bg-deep3 rounded-2xl p-6 text-center hover:bg-deep transition-colors">
+          <i class="fa-solid fa-play text-accent text-2xl mb-2"></i>
+          <div class="text-white text-sm font-bold">乾淨世界頻道</div>
+        </a>
+      </div>
+      <div class="text-center mt-8">
+        <a href="archive/大樹小講_歷史講座紀錄.html" class="text-tealsoft font-bold text-sm hover:underline"><i class="fa-solid fa-clock-rotate-left mr-1"></i> 查看過往講座歷史紀錄</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-deep py-10 px-6 text-center text-tealsoft text-sm">
+    <div class="serif font-black text-white text-lg mb-2">大樹小講．無話不談</div>
+    <div>大樹教練 吳大樹 © 2026</div>
+  </footer>
+
+  <!-- ===== Registration Modal ===== -->
+  <div id="registerModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] items-center justify-center p-4">
+    <div onclick="event.target.id === 'registerModal' && hideRegisterModal()" class="absolute inset-0"></div>
+    <div class="bg-white rounded-3xl w-full max-w-lg relative shadow-2xl overflow-hidden">
+      <div class="bg-deep px-8 py-7 text-white flex items-center justify-between">
+        <div>
+          <div class="font-bold text-2xl serif">報名大樹小講</div>
+          <div id="modalSessionLabel" class="text-tealsoft text-sm mt-1">選擇場次後送出，資料會直接帶到 LINE</div>
+        </div>
+        <button onclick="hideRegisterModal()" class="w-9 h-9 flex items-center justify-center text-white/70 hover:text-white text-3xl leading-none">&times;</button>
+      </div>
+      <div class="p-8">
+        <form id="registerForm" onsubmit="submitRegistration(event)">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-bold text-inksoft mb-1.5">姓名</label>
+              <input type="text" id="regName" required class="w-full border border-paper2 rounded-2xl px-5 py-3.5" placeholder="請輸入姓名">
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-inksoft mb-1.5">聯絡電話</label>
+              <input type="tel" id="regPhone" required class="w-full border border-paper2 rounded-2xl px-5 py-3.5" placeholder="0912-345-678">
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-inksoft mb-1.5">想參加的場次</label>
+              <select id="regSession" class="w-full border border-paper2 rounded-2xl px-5 py-3.5"></select>
+            </div>
+          </div>
+          <button type="submit" class="btn-line w-full h-14 font-bold rounded-3xl text-lg mt-8 flex items-center justify-center gap-x-2">
+            <i class="fa-brands fa-line"></i><span>送出並前往 LINE 完成報名</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>
+// ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
+const SLOTS = { '早':{start:'09:00',end:'12:00'}, '午':{start:'14:00',end:'17:00'}, '晚':{start:'18:00',end:'21:00'} };
+const SESSION_DATES = [
+  {date:'2026-07-22', label:'7/22（三）', slots:['午']},
+  {date:'2026-08-26', label:'8/26（三）', slots:['午']},
+  {date:'2026-09-16', label:'9/16（三）', slots:['午']},
+  {date:'2026-10-03', label:'10/3（六）', slots:['午']},
+  {date:'2026-10-21', label:'10/21（三）', slots:['午']},
+  {date:'2026-10-31', label:'10/31（六）', slots:['早','午','晚']},
+  {date:'2026-11-18', label:'11/18（三）', slots:['午']},
+  {date:'2026-12-07', label:'12/7（一）', slots:['早','午','晚']},
+  {date:'2026-12-16', label:'12/16（三）', slots:['午']},
+];
+
+function buildSessions() {
+  const grid = document.getElementById('sessionGrid');
+  const select = document.getElementById('regSession');
+  let n = 0;
+  SESSION_DATES.forEach(d => {
+    d.slots.forEach(s => {
+      n++;
+      const t = SLOTS[s];
+      const sessionLabel = `${d.label} ${s}場 ${t.start}–${t.end}`;
+      const card = document.createElement('div');
+      card.className = 'session-card bg-white rounded-2xl p-6';
+      card.innerHTML = `
+        <div class="text-xs font-bold text-accent2 tracking-widest mb-1">第 ${n} 場</div>
+        <div class="serif font-black text-2xl text-deep mb-1">${d.label}</div>
+        <div class="text-inksoft text-sm mb-4">${s}場｜${t.start}–${t.end}（共3小時）</div>
+        <div class="text-inksoft text-sm mb-5">主題現場公布，涵蓋溝通表達、親子教育、行銷策略、兩性關係、人際關係、職場關係、團隊組建 7 大領域</div>
+        <button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>
+      `;
+      grid.appendChild(card);
+
+      const opt = document.createElement('option');
+      opt.value = sessionLabel;
+      opt.textContent = sessionLabel;
+      select.appendChild(opt);
+    });
+  });
+}
+
+function showRegisterModal(preselect) {
+  const modal = document.getElementById('registerModal');
+  modal.classList.remove('hidden'); modal.classList.add('flex');
+  document.getElementById('registerForm').reset();
+  if (preselect) {
+    document.getElementById('regSession').value = preselect;
+    document.getElementById('modalSessionLabel').textContent = '場次：' + preselect;
+  } else {
+    document.getElementById('modalSessionLabel').textContent = '選擇場次後送出，資料會直接帶到 LINE';
+  }
+}
+function hideRegisterModal() {
+  const modal = document.getElementById('registerModal');
+  modal.classList.remove('flex'); modal.classList.add('hidden');
+}
+
+const LINE_URL = 'https://lin.ee/o5pODV8';
+
+function submitRegistration(e) {
+  e.preventDefault();
+  const name = document.getElementById('regName').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const session = document.getElementById('regSession').value;
+  if (!name || !phone) { alert('請完整填寫姓名與聯絡電話'); return; }
+  const msg = `您好，我想報名【大樹小講．無話不談】\n場次：${session}\n姓名：${name}\n電話：${phone}\n請協助確認席次，謝謝！`;
+  navigator.clipboard.writeText(msg).catch(() => {});
+  hideRegisterModal();
+  window.open(LINE_URL, '_blank');
+  setTimeout(() => alert('報名訊息已複製，請在 LINE 對話框貼上送出，完成報名！'), 300);
+}
+
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) navbar.classList.add('nav-scrolled');
+    else navbar.classList.remove('nav-scrolled');
+  });
+}
+
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+buildSessions();
+initNavbar();
+initSmoothScroll();
+</script>
+</body>
+</html>
