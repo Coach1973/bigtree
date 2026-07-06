@@ -112,46 +112,49 @@ tailwind.config = {
         <p>現在，這個系列重新出發，變成一系列固定舉辦的線上與實體活動，繼續陪大家把話說開、把關係理順。</p>
       </div>
     </div>
-    <div class="relative rounded-3xl overflow-hidden shadow-sm border border-paper2" style="height:420px">
-      <div id="photoCarousel" class="w-full h-full"></div>
+    <div class="relative rounded-3xl overflow-hidden shadow-sm border border-paper2 bg-paper2 flex items-center justify-center" style="min-height:280px">
+      <img id="carouselImg" src="photos-carousel/photo-01.jpg" alt="大樹教練活動照片" style="max-height:70vh;max-width:100%;width:auto;margin:0 auto;display:block">
+      <button onclick="carouselPrev()" aria-label="上一張" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-left"></i></button>
+      <button onclick="carouselNext()" aria-label="下一張" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-right"></i></button>
+      <div id="carouselCounter" class="absolute bottom-3 right-4 bg-black/50 text-white text-sm font-bold px-3 py-1 rounded-full">1 / 24</div>
     </div>
   </section>
 
   <!-- ===== 7大主題領域 ===== -->
-  <section id="topics" class="bg-deep py-24 px-6">
+  <section id="topics" class="py-24 px-6" style="background:linear-gradient(135deg,#9b5b3f,#c8845b)">
     <div class="max-w-6xl mx-auto">
-      <p class="text-center text-accentsoft font-bold tracking-[0.3em] text-base mb-3">涵蓋主題</p>
+      <p class="text-center text-white/80 font-bold tracking-[0.3em] text-base mb-3">涵蓋主題</p>
       <h2 class="serif font-black text-4xl text-center text-white mb-14">無話不談，談的是這 9 件事</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">溝通表達</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">親子教育</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">行銷策略</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">兩性相處</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">人際話題</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">職場關係</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">團隊組建</div>
         </div>
-        <div class="topic-card bg-accent rounded-2xl p-8 text-center">
-          <div class="text-white font-black text-5xl">零基礎學AI</div>
+        <div class="topic-card bg-white rounded-2xl p-8 text-center shadow-lg">
+          <div class="text-accent font-black text-5xl">零基礎學AI</div>
         </div>
-        <div class="topic-card bg-deep2 rounded-2xl p-8 text-center border border-white/10">
+        <div class="topic-card bg-white/15 backdrop-blur rounded-2xl p-8 text-center border-2 border-white/40">
           <div class="text-white font-black text-5xl">口才訓練</div>
         </div>
       </div>
-      <p class="text-center text-tealsoft mt-10">沒有不能聊的主題，只有還沒被問到的問題。</p>
+      <p class="text-center text-white/90 mt-10">沒有不能聊的主題，只有還沒被問到的問題。</p>
     </div>
   </section>
 
@@ -268,72 +271,72 @@ tailwind.config = {
     <h2 class="serif font-black text-4xl text-center text-deep mb-4">大樹教練的<span class="text-accent2">媒體報導</span></h2>
     <p class="text-center text-inksoft mb-14">超過 25 年教育與企業培訓歷程，獲多家媒體專訪報導</p>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-      <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">大樹小講起源</span>
         <h3 class="font-bold mb-2">大樹小講第五期 桃園婦女館公益演講報導</h3>
         <span class="text-base text-accent2 font-bold">查看報導 →</span>
       </a>
-      <a href="https://event.ntdtv.com.tw/b5/20250111/video/400659.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://event.ntdtv.com.tw/b5/20250111/video/400659.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
         <h3 class="font-bold mb-2">讓愛延續　為重症兒童點亮生命的光公益講座登場</h3>
         <span class="text-base text-accent2 font-bold">觀看報導 →</span>
       </a>
-      <a href="https://www.ntdtv.com.tw/b5/20240422/video/388744.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.ntdtv.com.tw/b5/20240422/video/388744.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
         <h3 class="font-bold mb-2">心想事成的祕訣講座 分享品德人生攻略課</h3>
         <span class="text-base text-accent2 font-bold">觀看報導 →</span>
       </a>
-      <a href="https://www.ntdtv.com.tw/b5/20211021/video/307528.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.ntdtv.com.tw/b5/20211021/video/307528.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
         <h3 class="font-bold mb-2">啟發孩子的善念　獅子會舉辦品德教育研討會</h3>
         <span class="text-base text-accent2 font-bold">觀看報導 →</span>
       </a>
-      <a href="https://www.epochtimes.com/b5/20/12/2/n12591146.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.epochtimes.com/b5/20/12/2/n12591146.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">公益演講</span>
         <h3 class="font-bold mb-2">國際獅子會結合神韻　弘揚傳統文化　關懷癌童</h3>
         <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
       </a>
-      <a href="https://www.soundofhope.org/post/351442?lang=b5" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.soundofhope.org/post/351442?lang=b5" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">人際關係</span>
         <h3 class="font-bold mb-2">以身作則　家長做到孩子才會做對的事</h3>
         <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
       </a>
-      <a href="https://www.soundofhope.org/post/329719?lang=b5" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.soundofhope.org/post/329719?lang=b5" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">人際關係</span>
         <h3 class="font-bold mb-2">人在這個世界上最需要什麼呢？答案一定令你驚訝！</h3>
         <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
       </a>
-      <a href="https://www.watchinese.com/article/2019/24591" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.watchinese.com/article/2019/24591" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">雜誌專訪</span>
         <h3 class="font-bold mb-2">從留級生到傑出校友　「大樹教練」願為培訓界清流</h3>
         <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
       </a>
-      <a href="https://www.epochtimes.com/b5/18/6/22/n10505519.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.epochtimes.com/b5/18/6/22/n10505519.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">電臺訪談</span>
         <h3 class="font-bold mb-2">【轉動台灣】大樹教練的價值宣言　真誠善良不藏私</h3>
         <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
       </a>
-      <a href="https://www.ntdtv.com.tw/b5/20140718/video/129084.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.ntdtv.com.tw/b5/20140718/video/129084.html" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">職場話題</span>
         <h3 class="font-bold mb-2">悠活世說：談為何遇不見伯樂／如何讓團隊看見亮點</h3>
         <span class="text-base text-accent2 font-bold">觀看報導 →</span>
       </a>
-      <a href="https://www.epochtimes.com/b5/13/9/29/n3975111.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.epochtimes.com/b5/13/9/29/n3975111.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">九型人格</span>
         <h3 class="font-bold mb-2">吳大樹：了解九型人格，解析成功密碼</h3>
         <span class="text-base text-accent2 font-bold">閱讀報導 →</span>
       </a>
-      <a href="https://www.dcard.tw/f/ccu/p/258023416" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://www.dcard.tw/f/ccu/p/258023416" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">演講邀約</span>
         <h3 class="font-bold mb-2">網友分享聽講心得</h3>
         <span class="text-base text-accent2 font-bold">查看貼文 →</span>
       </a>
-      <a href="https://podcasts.apple.com/tw/podcast/%E5%A4%A7%E6%A8%B9%E6%95%99%E7%B7%B4/id740362803" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://podcasts.apple.com/tw/podcast/%E5%A4%A7%E6%A8%B9%E6%95%99%E7%B7%B4/id740362803" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">希望之聲電台訪問</span>
         <h3 class="font-bold mb-2">大樹教練（Podcast 節目全集）</h3>
         <span class="text-base text-accent2 font-bold">收聽節目 →</span>
       </a>
-      <a href="https://podcasts.apple.com/tw/podcast/%E6%95%99%E7%B7%B4%E9%83%BD%E5%9C%A8%E6%83%B3%E4%BB%80%E9%BA%BC/id1855176566" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border border-paper2">
+      <a href="https://podcasts.apple.com/tw/podcast/%E6%95%99%E7%B7%B4%E9%83%BD%E5%9C%A8%E6%83%B3%E4%BB%80%E9%BA%BC/id1855176566" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">Apple Podcast</span>
         <h3 class="font-bold mb-2">教練都在想什麼？（Podcast 節目全集）</h3>
         <span class="text-base text-accent2 font-bold">收聽節目 →</span>
@@ -537,28 +540,28 @@ function initSmoothScroll() {
   });
 }
 
-// ===== 品牌故事照片輪播（24張，依教練下載順序，每4秒切換一張） =====
+// ===== 品牌故事照片輪播（24張，手動上一張/下一張，橫直照各自完整顯示不裁切） =====
+const CAROUSEL_TOTAL = 24;
+let carouselIndex = 0;
+function carouselRender() {
+  const img = document.getElementById('carouselImg');
+  const counter = document.getElementById('carouselCounter');
+  if (!img) return;
+  const n = String(carouselIndex + 1).padStart(2, '0');
+  img.src = `photos-carousel/photo-${n}.jpg`;
+  img.alt = `大樹教練活動照片 ${carouselIndex + 1}`;
+  counter.textContent = `${carouselIndex + 1} / ${CAROUSEL_TOTAL}`;
+}
+function carouselPrev() {
+  carouselIndex = (carouselIndex - 1 + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
+  carouselRender();
+}
+function carouselNext() {
+  carouselIndex = (carouselIndex + 1) % CAROUSEL_TOTAL;
+  carouselRender();
+}
 function initPhotoCarousel() {
-  const wrap = document.getElementById('photoCarousel');
-  if (!wrap) return;
-  const total = 24;
-  let current = 0;
-  const slides = [];
-  for (let i = 1; i <= total; i++) {
-    const n = String(i).padStart(2, '0');
-    const img = document.createElement('img');
-    img.src = `photos-carousel/photo-${n}.jpg`;
-    img.alt = `大樹教練活動照片 ${i}`;
-    img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000';
-    img.style.opacity = i === 1 ? '1' : '0';
-    wrap.appendChild(img);
-    slides.push(img);
-  }
-  setInterval(() => {
-    slides[current].style.opacity = '0';
-    current = (current + 1) % total;
-    slides[current].style.opacity = '1';
-  }, 4000);
+  carouselRender();
 }
 
 buildSessions();
