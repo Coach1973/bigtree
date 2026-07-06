@@ -93,9 +93,10 @@ tailwind.config = {
   </header>
 
   <!-- ===== 品牌故事 ===== -->
-  <section id="story" class="max-w-5xl mx-auto px-6 py-24">
-    <p class="serif text-center text-accent font-black tracking-[0.15em] text-8xl mb-6" style="text-shadow:2px 2px 0 rgba(0,0,0,.06)">緣起</p>
-    <h2 class="serif font-black text-4xl text-center text-deep mb-12">從 2013 年開始，一講就是十幾年</h2>
+  <section id="story" class="relative overflow-hidden py-24 px-6" style="background:linear-gradient(to top right, #41261b 0%, #f6f1e8 60%)">
+    <div class="max-w-5xl mx-auto relative">
+    <p class="serif text-center text-white font-black tracking-[0.15em] text-8xl mb-6" style="text-shadow:2px 2px 0 rgba(0,0,0,.15)">緣起</p>
+    <h2 class="serif font-black text-4xl text-center text-white mb-12" style="text-shadow:1px 1px 0 rgba(0,0,0,.15)">從 2013 年開始，一講就是十幾年</h2>
     <div class="grid md:grid-cols-2 gap-10 items-center mb-10">
       <div class="bg-white rounded-3xl p-8 shadow-sm border border-paper2">
         <div class="text-sm text-inksoft mb-2 font-bold tracking-wider">大紀元 · 2014年3月17日 桃園報導</div>
@@ -117,6 +118,7 @@ tailwind.config = {
       <button onclick="carouselPrev()" aria-label="上一張" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-left"></i></button>
       <button onclick="carouselNext()" aria-label="下一張" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-right"></i></button>
       <div id="carouselCounter" class="absolute bottom-3 right-4 bg-black/50 text-white text-sm font-bold px-3 py-1 rounded-full">1 / 24</div>
+    </div>
     </div>
   </section>
 
@@ -265,11 +267,11 @@ tailwind.config = {
   </section>
 
   <!-- ===== 媒體報導與可信度（比照 bymyway.com 完整清單） ===== -->
-  <section id="trust" class="bg-paper py-24 px-6 border-y border-paper2">
+  <section id="trust" class="py-24 px-6" style="background:linear-gradient(135deg,#9b5b3f,#c8845b)">
     <div class="max-w-6xl mx-auto">
-    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">公開肯定</p>
-    <h2 class="serif font-black text-4xl text-center text-deep mb-4">大樹教練的<span class="text-accent2">媒體報導</span></h2>
-    <p class="text-center text-inksoft mb-14">超過 25 年教育與企業培訓歷程，獲多家媒體專訪報導</p>
+    <p class="text-center text-white/80 font-bold tracking-[0.3em] text-base mb-3">公開肯定</p>
+    <h2 class="serif font-black text-4xl text-center text-white mb-4">大樹教練的<span class="text-deep">媒體報導</span></h2>
+    <p class="text-center text-white/90 mb-14">超過 25 年教育與企業培訓歷程，獲多家媒體專訪報導</p>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
       <a href="https://www.epochtimes.com/b5/14/3/17/n4108528.htm" target="_blank" rel="noopener" class="topic-card bg-white rounded-2xl p-6 border-2 border-accent">
         <span class="inline-block bg-accentsoft text-accent2 text-sm font-bold px-3 py-1 rounded-full mb-3">大樹小講起源</span>
@@ -552,9 +554,15 @@ function carouselRender() {
   img.alt = `大樹教練活動照片 ${carouselIndex + 1}`;
   counter.textContent = `${carouselIndex + 1} / ${CAROUSEL_TOTAL}`;
 }
+let carouselTimer = null;
+function carouselResetTimer() {
+  if (carouselTimer) clearInterval(carouselTimer);
+  carouselTimer = setInterval(carouselNext, 4000);
+}
 function carouselPrev() {
   carouselIndex = (carouselIndex - 1 + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
   carouselRender();
+  carouselResetTimer();
 }
 function carouselNext() {
   carouselIndex = (carouselIndex + 1) % CAROUSEL_TOTAL;
@@ -562,6 +570,7 @@ function carouselNext() {
 }
 function initPhotoCarousel() {
   carouselRender();
+  carouselResetTimer();
 }
 
 buildSessions();
