@@ -449,11 +449,12 @@ tailwind.config = {
 
 <script>
 // ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
-const SLOTS = { '早':{start:'09:00',end:'12:00'}, '午':{start:'14:00',end:'17:00'}, '晚':{start:'18:00',end:'21:00'} };
+const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '午':{start:'14:00',end:'17:00',hours:3}, '晚':{start:'18:00',end:'21:00',hours:3}, '線上':{start:'10:00',end:'12:00',hours:2} };
 const SESSION_DATES = [
-  {date:'2026-07-22', label:'7/22（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
-  {date:'2026-07-29', label:'7/29（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
-  {date:'2026-08-01', label:'8/1（六）', slots:['午'], topic:'零基礎學AI起步比較快'},
+  {date:'2026-07-18', label:'7/18（六）', slots:['線上'], topic:'線上讀書會'},
+  {date:'2026-07-22', label:'7/22（三）', slots:['午'], topic:'零基礎學AI起步比較快', location:'高雄場'},
+  {date:'2026-07-29', label:'7/29（三）', slots:['午'], topic:'零基礎學AI起步比較快', location:'臺南場'},
+  {date:'2026-08-01', label:'8/1（六）', slots:['午'], topic:'零基礎學AI起步比較快', location:'高雄場'},
   {date:'2026-08-26', label:'8/26（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
   {date:'2026-09-16', label:'9/16（三）', slots:['午'], topic:'零基礎學AI起步比較快'},
   {date:'2026-10-03', label:'10/3（六）', slots:['午'], topic:'主題待定，敬請期待'},
@@ -481,7 +482,8 @@ function buildSessions() {
       card.innerHTML = `
         <div class="text-sm font-bold text-accent2 tracking-widest mb-1">第 ${n} 場</div>
         <div class="serif font-black text-3xl text-deep mb-1">${d.label}</div>
-        <div class="text-inksoft text-base mb-4">${s}場｜${t.start}–${t.end}（共3小時）</div>
+        ${d.location ? `<span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-2"><i class="fa-solid fa-location-dot mr-1"></i>${d.location}</span>` : ''}
+        <div class="text-inksoft text-base mb-4">${s}場｜${t.start}–${t.end}（共${t.hours}小時）</div>
         <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
         <button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>
       `;
