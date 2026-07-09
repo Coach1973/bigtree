@@ -71,9 +71,28 @@ tailwind.config = {
         <a href="#faq" class="hover:text-accent2">常見問答</a>
         <a href="archive/大樹小講_歷史講座紀錄.html" class="hover:text-accent2">歷史紀錄</a>
       </div>
-      <button onclick="showRegisterModal()" class="btn-primary px-5 py-2.5 rounded-full text-base font-bold">立即報名</button>
+      <div class="flex items-center gap-x-3">
+        <button onclick="showRegisterModal()" class="hidden md:inline-block btn-primary px-5 py-2.5 rounded-full text-base font-bold">立即報名</button>
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center text-deep text-xl rounded-lg" aria-label="開啟選單">
+          <i class="fa-solid fa-bars" id="mobileMenuIcon"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden fixed top-16 left-0 w-full bg-paper shadow-lg flex-col text-center py-2">
+      <a href="#story" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">品牌故事</a>
+      <a href="#topics" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">主題領域</a>
+      <a href="#sessions" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">近期場次</a>
+      <a href="#testimonials" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">學員見證</a>
+      <a href="#faq" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">常見問答</a>
+      <a href="archive/大樹小講_歷史講座紀錄.html" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">歷史紀錄</a>
+      <button onclick="showRegisterModal();closeMobileMenu();" class="btn-primary mx-6 mt-2 mb-1 py-3 rounded-full font-bold">立即報名</button>
     </div>
   </nav>
+
+  <!-- ===== 回到最上面 ===== -->
+  <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-6 right-6 w-12 h-12 rounded-full btn-primary flex items-center justify-center text-lg opacity-0 pointer-events-none transition-opacity z-40" aria-label="回到最上面">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- ===== Hero ===== -->
   <header class="pt-32 pb-20 px-6 bg-gradient-to-b from-paper to-paper2 relative overflow-hidden">
@@ -536,6 +555,37 @@ function initNavbar() {
   });
 }
 
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('mobileMenuIcon');
+  const isOpen = menu.classList.contains('flex');
+  if (isOpen) { closeMobileMenu(); }
+  else {
+    menu.classList.remove('hidden'); menu.classList.add('flex');
+    icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+  }
+}
+function closeMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const icon = document.getElementById('mobileMenuIcon');
+  menu.classList.remove('flex'); menu.classList.add('hidden');
+  icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      btn.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+}
+
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -583,6 +633,7 @@ buildSessions();
 initNavbar();
 initSmoothScroll();
 initPhotoCarousel();
+initBackToTop();
 </script>
 </body>
 </html>
