@@ -500,8 +500,10 @@ function buildSessions() {
       card.className = 'session-card bg-white rounded-2xl p-6';
       card.innerHTML = `
         <div class="text-sm font-bold text-accent2 tracking-widest mb-1">第 ${n} 場</div>
-        <div class="serif font-black text-3xl text-deep mb-1">${d.label}</div>
-        ${d.location ? `<span class="chip inline-block text-sm font-bold px-3 py-1 rounded-full mb-2"><i class="fa-solid fa-location-dot mr-1"></i>${d.location}</span>` : ''}
+        <div class="serif font-black text-3xl text-deep mb-1 flex items-center flex-wrap gap-2">
+          <span>${d.label}</span>
+          ${d.location ? `<span class="chip inline-flex items-center text-sm font-bold px-3 py-1 rounded-full align-middle"><i class="fa-solid fa-location-dot mr-1"></i>${d.location}</span>` : ''}
+        </div>
         <div class="text-inksoft text-base mb-4">${s}場｜${t.start}–${t.end}（共${t.hours}小時）</div>
         <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
         <button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>
