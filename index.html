@@ -488,11 +488,6 @@ const SESSION_DATES = [
   {date:'2026-12-16', label:'12/16（三）', slots:['午'], topic:'主題待定，敬請期待'},
 ];
 
-// 直接跳報名的場次（QR掃碼用）：key是SESSION_DATES的date，value是網址帶的session參數
-const QR_SESSIONS = { '2026-07-22': true };
-function sessionDeepLink(date) {
-  return `${location.origin}${location.pathname}?session=${date}#signup`;
-}
 function buildSessions() {
   const grid = document.getElementById('sessionGrid');
   const select = document.getElementById('regSession');
@@ -504,12 +499,6 @@ function buildSessions() {
       const sessionLabel = `${d.label} ${s}場 ${t.start}–${t.end}`;
       const card = document.createElement('div');
       card.className = 'session-card bg-white rounded-2xl p-6';
-      const actionHtml = QR_SESSIONS[d.date]
-        ? `<div class="flex flex-col items-center gap-2 pt-2">
-             <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(sessionDeepLink(d.date))}" alt="掃碼直接報名這場" class="w-40 h-40 rounded-xl border border-line">
-             <div class="text-xs text-inksoft/70">掃碼直接報名這場</div>
-           </div>`
-        : `<button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>`;
       card.innerHTML = `
         <div class="text-sm font-bold text-accent2 tracking-widest mb-1">第 ${n} 場</div>
         <div class="serif font-black text-3xl text-deep mb-1 flex items-center flex-wrap gap-2">
@@ -519,7 +508,7 @@ function buildSessions() {
         <div class="text-inksoft text-base mb-4">${s}場｜${t.start}–${t.end}（共${t.hours}小時）</div>
         ${d.address ? `<div class="text-sm text-inksoft/80 mb-4 flex items-start gap-1.5"><i class="fa-solid fa-location-dot mt-0.5 text-accent2"></i><div>${d.venue ? `<span class="font-bold text-deep">${d.venue}</span>｜` : ''}${d.address}${d.transport ? `<br><span class="text-xs text-inksoft/60">${d.transport}</span>` : ''}</div></div>` : ''}
         <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
-        ${actionHtml}
+        <button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>
       `;
       grid.appendChild(card);
 
