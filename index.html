@@ -67,6 +67,7 @@ tailwind.config = {
         <a href="#story" class="hover:text-accent2">品牌故事</a>
         <a href="#topics" class="hover:text-accent2">主題領域</a>
         <a href="#sessions" class="hover:text-accent2">近期場次</a>
+        <a href="#highlights" class="hover:text-accent2">活動花絮</a>
         <a href="#testimonials" class="hover:text-accent2">學員見證</a>
         <a href="#faq" class="hover:text-accent2">常見問答</a>
         <a href="archive/大樹小講_歷史講座紀錄.html" class="hover:text-accent2">歷史紀錄</a>
@@ -82,6 +83,7 @@ tailwind.config = {
       <a href="#story" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">品牌故事</a>
       <a href="#topics" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">主題領域</a>
       <a href="#sessions" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">近期場次</a>
+      <a href="#highlights" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">活動花絮</a>
       <a href="#testimonials" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">學員見證</a>
       <a href="#faq" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">常見問答</a>
       <a href="archive/大樹小講_歷史講座紀錄.html" onclick="closeMobileMenu()" class="block py-3 font-bold text-ink hover:text-accent2">歷史紀錄</a>
@@ -188,6 +190,18 @@ tailwind.config = {
     <h2 class="serif font-black text-4xl text-center text-deep mb-4">近期場次</h2>
     <p class="text-center text-inksoft mb-14">每場 3 小時，歡迎報名參加</p>
     <div id="sessionGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </section>
+
+  <!-- ===== 近期活動花絮（7/29 AI微論壇台南場現場照片） ===== -->
+  <section id="highlights" class="max-w-5xl mx-auto px-6 py-24">
+    <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">7/29 AI微論壇 · 台南場</p>
+    <h2 class="serif font-black text-4xl text-center text-deep mb-14">近期活動花絮</h2>
+    <div class="relative rounded-3xl overflow-hidden shadow-sm border border-paper2 bg-paper2 flex items-center justify-center" style="min-height:280px">
+      <img id="carousel2Img" src="photos-carousel-0729/photo-01.jpg" alt="7/29 AI微論壇活動照片" style="max-height:70vh;max-width:100%;width:auto;margin:0 auto;display:block">
+      <button onclick="carousel2Prev()" aria-label="上一張" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-left"></i></button>
+      <button onclick="carousel2Next()" aria-label="下一張" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-accent text-xl"><i class="fa-solid fa-chevron-right"></i></button>
+      <div id="carousel2Counter" class="absolute bottom-3 right-4 bg-black/50 text-white text-sm font-bold px-3 py-1 rounded-full">1 / 24</div>
+    </div>
   </section>
 
   <!-- ===== 學員見證（比照 bymyway.com 真實學員回饋） ===== -->
@@ -493,13 +507,10 @@ tailwind.config = {
 
 <script>
 // ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
-const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '夜':{start:'19:30',end:'21:00',hours:1.5}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, 'TBD':{start:'',end:'',hours:null} };
+const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '夜':{start:'19:30',end:'21:30',hours:2}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, 'TBD':{start:'',end:'',hours:null} };
 const SESSION_DATES = [
-  {date:'2026-07-18', label:'7/18（六）', slots:['線上'], topic:'線上讀書會', location:'Zoom 會議', closed:true},
-  {date:'2026-07-22', label:'7/22（三）', slots:['午'], topic:'當古典音樂遇到AI科技', location:'高雄場', venue:'郭音樂廳', address:'高雄市鹽埕區建國四路306號2樓(藝文空間)', transport:'搭輕軌在「文武聖殿」C16下站，約500公尺就可到達郭音樂廳；附近有大停車收費場', closed:true},
-  {date:'2026-07-29', label:'7/29（三）', slots:['午'], topic:'AI微論壇', location:'臺南場', closed:true},
-  {date:'2026-08-21', label:'8/21（五）', slots:['夜'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'西浦頭社區'},
-  {date:'2026-08-22', label:'8/22（六）', slots:['下午'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'向陽吉第社區'},
+  {date:'2026-08-21', label:'8/21（五）', slots:['夜'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'西浦頭社區', address:'金門縣金寧鄉西浦頭231號', transport:'座位80人｜免費參加｜歡迎邀請非社區住戶參加'},
+  {date:'2026-08-22', label:'8/22（六）', slots:['下午'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'向陽吉第社區', address:'金門縣金城鎮西海路三段86號', transport:'座位60人｜免費參加｜歡迎邀請非社區住戶參加'},
   {date:'2026-08-26', label:'8/26（三）', slots:['午'], topic:'當古典音樂遇到AI科技', location:'高雄場', venue:'郭音樂廳', address:'高雄市鹽埕區建國四路306號2樓(藝文空間)', transport:'搭輕軌在「文武聖殿」C16下站，約500公尺就可到達郭音樂廳；附近有大停車收費場'},
   {date:'2026-08-28', label:'8/28（五）', slots:['午'], topic:'AI微論壇', location:'嘉義場'},
   {date:'2026-09-05', label:'9/5（六）', slots:['午半'], topic:'零基礎學 AI，起步比較快', location:'KR養生廚房'},
@@ -703,6 +714,37 @@ function initPhotoCarousel() {
   carouselResetTimer();
 }
 
+// ===== 近期活動花絮輪播（7/29 AI微論壇台南場，24張，獨立於上面的品牌故事輪播） =====
+const CAROUSEL2_TOTAL = 24;
+let carousel2Index = 0;
+function carousel2Render() {
+  const img = document.getElementById('carousel2Img');
+  const counter = document.getElementById('carousel2Counter');
+  if (!img) return;
+  const n = String(carousel2Index + 1).padStart(2, '0');
+  img.src = `photos-carousel-0729/photo-${n}.jpg`;
+  img.alt = `7/29 AI微論壇活動照片 ${carousel2Index + 1}`;
+  counter.textContent = `${carousel2Index + 1} / ${CAROUSEL2_TOTAL}`;
+}
+let carousel2Timer = null;
+function carousel2ResetTimer() {
+  if (carousel2Timer) clearInterval(carousel2Timer);
+  carousel2Timer = setInterval(carousel2Next, 4000);
+}
+function carousel2Prev() {
+  carousel2Index = (carousel2Index - 1 + CAROUSEL2_TOTAL) % CAROUSEL2_TOTAL;
+  carousel2Render();
+  carousel2ResetTimer();
+}
+function carousel2Next() {
+  carousel2Index = (carousel2Index + 1) % CAROUSEL2_TOTAL;
+  carousel2Render();
+}
+function initPhotoCarousel2() {
+  carousel2Render();
+  carousel2ResetTimer();
+}
+
 // 網址帶 ?session=YYYY-MM-DD 時（QR掃碼進站），自動跳出該場次的報名視窗，預選好場次不用再挑
 function openRegisterFromQuery() {
   const params = new URLSearchParams(location.search);
@@ -721,6 +763,7 @@ initNavbar();
 initSmoothScroll();
 openRegisterFromQuery();
 initPhotoCarousel();
+initPhotoCarousel2();
 initBackToTop();
 </script>
 </body>
