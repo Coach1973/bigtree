@@ -7,153 +7,230 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
-  body{margin:0;padding:60px 20px;font-family:"Noto Sans TC",sans-serif;background:#f1e9d8;color:#1c2a28}
+  body{margin:0;padding:56px 20px 40px;font-family:"Noto Sans TC",sans-serif;background:#f1e9d8;color:#1c2a28}
   .serif{font-family:"Noto Serif TC",serif}
-  h1{text-align:center;font-size:30px;margin-bottom:8px}
-  .sub{text-align:center;color:#4b5b58;margin-bottom:48px}
-  .wrap{max-width:820px;margin:0 auto}
-  .item{background:#fff;border-radius:16px;padding:26px 28px;margin-bottom:20px;border:1px solid #e5ddc9}
-  .item .date{color:#c25e22;font-weight:800;font-size:13px;letter-spacing:.05em;margin-bottom:6px}
-  .item h3{margin:0 0 10px;font-size:20px}
-  .item p{margin:4px 0;color:#4b5b58;line-height:1.7;font-size:14.5px}
-  .tag{display:inline-block;background:#fcd2b5;color:#c25e22;font-size:12px;font-weight:800;padding:2px 10px;border-radius:20px;margin-left:8px}
-  a.link{color:#c25e22;font-weight:700;text-decoration:none;font-size:14px}
-  a.link:hover{text-decoration:underline}
-  .edm{max-width:280px;width:100%;border-radius:12px;margin:12px 0;display:block;border:1px solid #e5ddc9;cursor:zoom-in}
-  .back{display:block;text-align:center;margin-top:40px;color:#163b35;font-weight:700;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto}
+
+  /* ===== 標題區 ===== */
+  h1{text-align:center;font-size:34px;margin:0 0 10px;letter-spacing:.02em}
+  .sub{text-align:center;color:#4b5b58;font-size:15px;margin-bottom:6px}
+  .note{text-align:center;color:#9a958a;font-size:13px;margin-bottom:28px}
+  .count{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:38px}
+  .count .num{font-family:"Noto Serif TC",serif;font-size:64px;font-weight:900;color:#c25e22;line-height:1}
+  .count .unit{font-size:17px;font-weight:800;color:#163b35;letter-spacing:.08em}
+
+  /* ===== 宮格 ===== */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .cell{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;cursor:pointer;
+        background:#1c2a28;border:1px solid #e5ddc9;transition:transform .22s ease,box-shadow .22s ease}
+  .cell:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(28,42,40,.28)}
+  .cell img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .35s ease}
+  .cell:hover img{transform:scale(1.06)}
+  .veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,20,19,.92) 0%,rgba(12,20,19,.55) 38%,rgba(12,20,19,0) 68%);
+        display:flex;flex-direction:column;justify-content:flex-end;padding:12px 13px}
+  .veil .d{color:#f6b98a;font-size:12.5px;font-weight:800;letter-spacing:.06em;margin-bottom:3px}
+  .veil .t{color:#fff;font-size:15px;font-weight:800;line-height:1.35;
+           display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .no{position:absolute;top:9px;left:10px;background:rgba(255,255,255,.9);color:#c25e22;
+      font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:20px;letter-spacing:.04em}
+  .web{position:absolute;top:9px;right:10px;background:#c25e22;color:#fff;
+       font-size:11px;font-weight:800;padding:2px 8px;border-radius:20px}
+
+  /* ===== 彈窗 ===== */
+  .modal{position:fixed;inset:0;background:rgba(12,20,19,.82);z-index:50;display:none;
+         align-items:center;justify-content:center;padding:24px}
+  .modal.on{display:flex}
+  .box{background:#fffdf7;border-radius:20px;max-width:860px;width:100%;max-height:88vh;overflow-y:auto;
+       display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:0;position:relative}
+  .box .pic{background:#f1e9d8;display:flex;align-items:center;justify-content:center;padding:18px;
+            border-radius:20px 0 0 20px}
+  .box .pic img{max-width:100%;max-height:70vh;border-radius:10px;display:block;border:1px solid #e5ddc9}
+  .box .info{padding:34px 32px 30px}
+  .box .date{color:#c25e22;font-weight:800;font-size:13.5px;letter-spacing:.05em;margin-bottom:8px}
+  .box h3{margin:0 0 14px;font-size:22px;line-height:1.4}
+  .box p{margin:0 0 18px;color:#4b5b58;line-height:1.85;font-size:14.5px}
+  .box a.link{display:inline-block;background:#c25e22;color:#fff;font-weight:800;text-decoration:none;
+              font-size:14px;padding:10px 20px;border-radius:30px}
+  .box a.link:hover{background:#a54d18}
+  .tag{display:inline-block;background:#fcd2b5;color:#c25e22;font-size:12px;font-weight:800;
+       padding:2px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+  .x{position:absolute;top:12px;right:14px;width:34px;height:34px;border:none;border-radius:50%;
+     background:rgba(28,42,40,.08);color:#1c2a28;font-size:20px;cursor:pointer;line-height:1}
+  .x:hover{background:rgba(28,42,40,.18)}
+
+  .back{display:block;text-align:center;margin-top:44px;color:#163b35;font-weight:700;text-decoration:none}
+
+  @media(max-width:900px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+    .box{grid-template-columns:1fr;max-height:86vh}
+    .box .pic{border-radius:20px 20px 0 0;padding:16px}
+    .box .pic img{max-height:44vh}
+    .box .info{padding:24px 22px 26px}
+  }
+  @media(max-width:560px){
+    body{padding:36px 14px 30px}
+    h1{font-size:26px}
+    .count .num{font-size:50px}
+    .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .veil .t{font-size:13.5px}
+    .veil .d{font-size:11.5px}
+  }
 </style>
 </head>
 <body>
   <div class="wrap">
     <h1 class="serif">過往講座歷史紀錄</h1>
     <div class="sub">2026 年 3 月起的巡講足跡（凡走過必留痕跡）</div>
-    <p style="text-align:center;color:#999;font-size:13px;margin-top:-30px;margin-bottom:40px;">每一場都是公開舉辦的真實活動，主持或主講都是教練親自規劃</p>
+    <div class="note">每一場都是公開舉辦的真實活動，主持或主講都是教練親自規劃</div>
 
-    <div class="item">
-      <div class="date">2026 年 3 月 17 日（二）14:00–17:00</div>
-      <h3>AI 一鍵起飛（台南場）<span class="tag">有網頁</span></h3>
-      <p>台南安平維悅酒店B1（慶平路539號）｜3小時學會AI工作術，報名600元・限量60席</p>
-      <img class="edm" loading="lazy" src="edm/edm_0317_tainan.jpg" alt="AI一鍵起飛台南場EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://coach1973.github.io/goeasy-ai/" target="_blank" rel="noopener">查看原始網頁 →</a>
+    <div class="count">
+      <span class="num" id="countNum">0</span>
+      <span class="unit">場 · 全部走過</span>
     </div>
 
-    <div class="item">
-      <div class="date">2026 年 3 月 21 日（六）14:00–17:00</div>
-      <h3>聚勢AI・智贏未來高峰論壇（嘉義首場發佈會）</h3>
-      <p>鈺通大飯店 鈺華廳B1（嘉義市東區維新路7號）｜限量60席，學AI送華碩Meta系列軟體</p>
-      <img class="edm" loading="lazy" src="edm/edm_0321_jiayi.jpg" alt="聚勢AI嘉義場EDM" onclick="window.open(this.src)">
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 4 月 22 日（三）10:00–15:30</div>
-      <h3>115年度園區產業供應鏈協同與韌性轉型輔導計畫｜供應鏈韌性計畫推廣說明會</h3>
-      <p>經濟部新營產業園區服務中心2樓會議室（臺南市新營區新工路28號）｜AI賦能產業韌性，實作包含 GhatGPT、NotebookLM、Canva</p>
-      <img class="edm" loading="lazy" src="edm/edm_0422_xinying.jpg" alt="新營場EDM" onclick="window.open(this.src)">
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 5 月 14 日（四）14:00–18:00・18:30–21:30</div>
-      <h3>SEA BISCUIT CLUB 海餅乾俱樂部 19週年慶 <span class="tag">有網頁</span></h3>
-      <p>三道實門文創旅店（台南市中西區成功路77號）</p>
-      <img class="edm" loading="lazy" src="edm/edm_0514_haibinggan.jpg" alt="海餅乾俱樂部19週年慶EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://seabiscuitclub.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 6 月 5 日（五）晚上 8:00–9:30</div>
-      <h3>線上座談會：朋友，你值得 <span class="tag">有網頁</span></h3>
-      <p>ZOOM線上直播｜與談人：蔡曜隆先生｜在風雨中看見人品，在患難時認清真心</p>
-      <img class="edm" loading="lazy" src="edm/edm_0605_pengyou.jpg" alt="6/5朋友你值得EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 6 月 14 日（日）晚上 8:00–9:30</div>
-      <h3>週日晚上八點檔：與你聊聊不同性格的人要怎麼相處 <span class="tag">有網頁</span></h3>
-      <p>ZOOM直播｜與談人：蔡曜隆先生</p>
-      <img class="edm" loading="lazy" src="edm/edm_0614_zuotanhui.jpg" alt="6/14週日晚上八點檔EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 6 月 21 日（日）11:00–17:00</div>
-      <h3>621 海狗班結業式（聚餐・結業・成果發表）</h3>
-      <p>特別嘉賓：大樹教練｜13:30–15:30 大樹教練 AI 進階分享｜15:30–17:00 結業式・成果發表</p>
-      <img class="edm" loading="lazy" src="edm/edm_0621_haigoban.jpg" alt="621海狗班結業式EDM" onclick="window.open(this.src)">
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 6 月 21 日（日）晚上 8:00–9:30</div>
-      <h3>線上座談會：老闆難搞、員工難帶？學會不干預的領導智慧 <span class="tag">有網頁</span></h3>
-      <p>ZOOM會議室｜與談人：蔡曜隆先生（作者）｜免費</p>
-      <img class="edm" loading="lazy" src="edm/edm_0621_zoom.jpg" alt="6/21線上座談會EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 1 日（三）13:30–17:00</div>
-      <h3>一個下午，三個答案 <span class="tag">有網頁</span></h3>
-      <p>台南維悅酒店（安平區慶平路539號）｜對談：謝扉榆（仟登生技國際・32年美業實戰）｜費用600元</p>
-      <img class="edm" loading="lazy" src="edm/edm_0701_sanwenda.jpg" alt="7/1一個下午三個答案EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://coach1973.github.io/bigtree/old/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 4 日（六）14:00–16:30</div>
-      <h3>KR養生廚房講座：零基礎學AI起步比較快</h3>
-      <p>台南市東區崇明十一街31巷5號｜免費講座，座位有限</p>
-      <img class="edm" loading="lazy" src="edm/edm_0704_ai.jpg" alt="7/4零基礎學AI起步比較快EDM" onclick="window.open(this.src)">
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 5 日（日）晚上 8:00–9:30</div>
-      <h3>週日八點檔之見微知著：通過觀察發現人際相處之道 <span class="tag">有網頁</span></h3>
-      <p>ZOOM會議室｜與談人：蔡曜隆先生（作者）｜免費</p>
-      <img class="edm" loading="lazy" src="edm/edm_0705_jianweizhizhu.jpg" alt="7/5見微知著EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 10 日（五）晚上 8:00–9:30</div>
-      <h3>線上座談會：告訴我什麼叫尊重？ <span class="tag">有網頁</span></h3>
-      <p>ZOOM會議室｜主持人：大樹教練｜與談人：蔡曜隆先生（作者）｜免費</p>
-      <img class="edm" loading="lazy" src="edm/edm_0710_zunzhong.jpg" alt="7/10告訴我什麼叫尊重EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 18 日（六）10:00–11:50</div>
-      <h3>6城市心靈領袖公益線上讀書會：九型人際策略 <span class="tag">有網頁</span></h3>
-      <p>ZOOM線上｜主講：吳大樹老師｜讀懂九種性格，提升溝通力與影響力｜免費</p>
-      <img class="edm" loading="lazy" src="edm/edm_0718_jiuxing.jpg" alt="7/18九型人際策略EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://bigtree-tw.netlify.app/?session=2026-07-18#signup" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 19 日（日）晚上 8:00–9:30</div>
-      <h3>週日八點檔：危機就是轉機 <span class="tag">有網頁</span></h3>
-      <p>ZOOM線上座談會｜主持人：大樹教練｜與談人：蔡曜隆先生（作者）｜學會化解危機，創造轉機，成為團隊最可靠的領航者｜免費</p>
-      <img class="edm" loading="lazy" src="edm/edm_0719_weiji.jpg" alt="7/19危機就是轉機EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://jiesheng-leadership.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 22 日（三）午場 14:00–16:30（13:30入場）</div>
-      <h3>當古典音樂遇到AI科技 <span class="tag">有網頁</span></h3>
-      <p>郭音樂廳（高雄市鹽埕區建國四路306號2樓・藝文空間）｜主講者：大樹教練｜主辦：高雄藝起來推動藝術｜協辦：郭音樂廳｜免費入場，座位有限</p>
-      <img class="edm" loading="lazy" src="edm/edm_0722_gudian.jpg" alt="7/22當古典音樂遇到AI科技EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://bigtree-tw.netlify.app/?session=2026-07-22#signup" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
-    <div class="item">
-      <div class="date">2026 年 7 月 29 日（三）14:00–17:00</div>
-      <h3>AI微型論壇 <span class="tag">有網頁</span></h3>
-      <p>台南安平維悅酒店｜講者：王彤・蘇秦・燒茶・大樹教練｜從最落地的AI應用開始，效率直接翻倍｜免費入場，名額有限100席</p>
-      <img class="edm" loading="lazy" src="edm/edm_0729_luntan.jpg" alt="7/29AI微型論壇EDM" onclick="window.open(this.src)">
-      <a class="link" href="https://ai-talk-tw.netlify.app/" target="_blank" rel="noopener">查看原始網頁 →</a>
-    </div>
-
+    <div class="grid" id="grid"></div>
   </div>
+
+  <div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+    <div class="box">
+      <button class="x" onclick="closeModal()" aria-label="關閉">&times;</button>
+      <div class="pic"><img id="mImg" src="" alt=""></div>
+      <div class="info">
+        <div class="date" id="mDate"></div>
+        <h3 id="mTitle"></h3>
+        <p id="mDesc"></p>
+        <a class="link" id="mLink" href="#" target="_blank" rel="noopener">查看原始網頁 →</a>
+      </div>
+    </div>
+  </div>
+
   <a class="back" href="../index.html">← 回大樹小講首頁</a>
+
+<script>
+// ===== 歷史講座資料（新增一場只要在這裡加一筆） =====
+const EVENTS = [
+  { grid:'3/17', date:'2026 年 3 月 17 日（二）14:00–17:00',
+    short:'AI 一鍵起飛（台南場）', title:'AI 一鍵起飛（台南場）',
+    desc:'台南安平維悅酒店B1（慶平路539號）｜3小時學會AI工作術，報名600元・限量60席',
+    img:'edm/edm_0317_tainan.jpg', link:'https://coach1973.github.io/goeasy-ai/' },
+
+  { grid:'3/21', date:'2026 年 3 月 21 日（六）14:00–17:00',
+    short:'聚勢AI・智贏未來高峰論壇', title:'聚勢AI・智贏未來高峰論壇（嘉義首場發佈會）',
+    desc:'鈺通大飯店 鈺華廳B1（嘉義市東區維新路7號）｜限量60席，學AI送華碩Meta系列軟體',
+    img:'edm/edm_0321_jiayi.jpg', link:'' },
+
+  { grid:'4/22', date:'2026 年 4 月 22 日（三）10:00–15:30',
+    short:'供應鏈韌性計畫推廣說明會', title:'115年度園區產業供應鏈協同與韌性轉型輔導計畫｜供應鏈韌性計畫推廣說明會',
+    desc:'經濟部新營產業園區服務中心2樓會議室（臺南市新營區新工路28號）｜AI賦能產業韌性，實作包含 GhatGPT、NotebookLM、Canva',
+    img:'edm/edm_0422_xinying.jpg', link:'' },
+
+  { grid:'5/14', date:'2026 年 5 月 14 日（四）14:00–18:00・18:30–21:30',
+    short:'海餅乾俱樂部 19週年慶', title:'SEA BISCUIT CLUB 海餅乾俱樂部 19週年慶',
+    desc:'三道實門文創旅店（台南市中西區成功路77號）',
+    img:'edm/edm_0514_haibinggan.jpg', link:'https://seabiscuitclub.netlify.app/' },
+
+  { grid:'6/5', date:'2026 年 6 月 5 日（五）晚上 8:00–9:30',
+    short:'線上座談會：朋友，你值得', title:'線上座談會：朋友，你值得',
+    desc:'ZOOM線上直播｜與談人：蔡曜隆先生｜在風雨中看見人品，在患難時認清真心',
+    img:'edm/edm_0605_pengyou.jpg', link:'https://jiesheng-leadership.netlify.app/' },
+
+  { grid:'6/14', date:'2026 年 6 月 14 日（日）晚上 8:00–9:30',
+    short:'不同性格的人要怎麼相處', title:'週日晚上八點檔：與你聊聊不同性格的人要怎麼相處',
+    desc:'ZOOM直播｜與談人：蔡曜隆先生',
+    img:'edm/edm_0614_zuotanhui.jpg', link:'https://jiesheng-leadership.netlify.app/' },
+
+  { grid:'6/21', date:'2026 年 6 月 21 日（日）11:00–17:00',
+    short:'621 海狗班結業式', title:'621 海狗班結業式（聚餐・結業・成果發表）',
+    desc:'特別嘉賓：大樹教練｜13:30–15:30 大樹教練 AI 進階分享｜15:30–17:00 結業式・成果發表',
+    img:'edm/edm_0621_haigoban.jpg', link:'' },
+
+  { grid:'6/21', date:'2026 年 6 月 21 日（日）晚上 8:00–9:30',
+    short:'學會不干預的領導智慧', title:'線上座談會：老闆難搞、員工難帶？學會不干預的領導智慧',
+    desc:'ZOOM會議室｜與談人：蔡曜隆先生（作者）｜免費',
+    img:'edm/edm_0621_zoom.jpg', link:'https://jiesheng-leadership.netlify.app/' },
+
+  { grid:'7/1', date:'2026 年 7 月 1 日（三）13:30–17:00',
+    short:'一個下午，三個答案', title:'一個下午，三個答案',
+    desc:'台南維悅酒店（安平區慶平路539號）｜對談：謝扉榆（仟登生技國際・32年美業實戰）｜費用600元',
+    img:'edm/edm_0701_sanwenda.jpg', link:'https://coach1973.github.io/bigtree/old/' },
+
+  { grid:'7/4', date:'2026 年 7 月 4 日（六）14:00–16:30',
+    short:'零基礎學 AI，起步比較快', title:'KR養生廚房講座：零基礎學 AI，起步比較快',
+    desc:'台南市東區崇明十一街31巷5號｜免費講座，座位有限',
+    img:'edm/edm_0704_ai.jpg', link:'' },
+
+  { grid:'7/5', date:'2026 年 7 月 5 日（日）晚上 8:00–9:30',
+    short:'見微知著：人際相處之道', title:'週日八點檔之見微知著：通過觀察發現人際相處之道',
+    desc:'ZOOM會議室｜與談人：蔡曜隆先生（作者）｜免費',
+    img:'edm/edm_0705_jianweizhizhu.jpg', link:'https://jiesheng-leadership.netlify.app/' },
+
+  { grid:'7/10', date:'2026 年 7 月 10 日（五）晚上 8:00–9:30',
+    short:'告訴我什麼叫尊重？', title:'線上座談會：告訴我什麼叫尊重？',
+    desc:'ZOOM會議室｜主持人：大樹教練｜與談人：蔡曜隆先生（作者）｜免費',
+    img:'edm/edm_0710_zunzhong.jpg', link:'https://jiesheng-leadership.netlify.app/' },
+
+  { grid:'7/18', date:'2026 年 7 月 18 日（六）10:00–11:50',
+    short:'九型人際策略', title:'6城市心靈領袖公益線上讀書會：九型人際策略',
+    desc:'ZOOM線上｜主講：吳大樹老師｜讀懂九種性格，提升溝通力與影響力｜免費',
+    img:'edm/edm_0718_jiuxing.jpg', link:'https://bigtree-tw.netlify.app/?session=2026-07-18#signup' },
+
+  { grid:'7/19', date:'2026 年 7 月 19 日（日）晚上 8:00–9:30',
+    short:'危機就是轉機', title:'週日八點檔：危機就是轉機',
+    desc:'ZOOM線上座談會｜主持人：大樹教練｜與談人：蔡曜隆先生（作者）｜學會化解危機，創造轉機，成為團隊最可靠的領航者｜免費',
+    img:'edm/edm_0719_weiji.jpg', link:'https://jiesheng-leadership.netlify.app/' },
+
+  { grid:'7/22', date:'2026 年 7 月 22 日（三）午場 14:00–16:30（13:30入場）',
+    short:'當古典音樂遇到AI科技', title:'當古典音樂遇到AI科技',
+    desc:'郭音樂廳（高雄市鹽埕區建國四路306號2樓・藝文空間）｜主講者：大樹教練｜主辦：高雄藝起來推動藝術｜協辦：郭音樂廳｜免費入場，座位有限',
+    img:'edm/edm_0722_gudian.jpg', link:'https://bigtree-tw.netlify.app/?session=2026-07-22#signup' },
+
+  { grid:'7/29', date:'2026 年 7 月 29 日（三）14:00–17:00',
+    short:'AI微型論壇（台南場）', title:'AI微型論壇',
+    desc:'台南安平維悅酒店｜講者：王彤・蘇秦・燒茶・大樹教練｜從最落地的AI應用開始，效率直接翻倍｜免費入場，名額有限100席',
+    img:'edm/edm_0729_luntan.jpg', link:'https://ai-talk-tw.netlify.app/' },
+];
+
+function buildGrid(){
+  const grid = document.getElementById('grid');
+  EVENTS.forEach((e, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.onclick = () => openModal(i);
+    cell.innerHTML = `
+      <img loading="lazy" src="${e.img}" alt="${e.short}">
+      <div class="veil">
+        <div class="d">${e.grid}</div>
+        <div class="t">${e.short}</div>
+      </div>
+      <div class="no">第 ${i + 1} 場</div>
+      ${e.link ? '<div class="web">有網頁</div>' : ''}
+    `;
+    grid.appendChild(cell);
+  });
+  document.getElementById('countNum').textContent = EVENTS.length;
+}
+
+function openModal(i){
+  const e = EVENTS[i];
+  document.getElementById('mImg').src = e.img;
+  document.getElementById('mImg').alt = e.short;
+  document.getElementById('mDate').textContent = e.date;
+  document.getElementById('mTitle').innerHTML = e.title + (e.link ? '<span class="tag">有網頁</span>' : '');
+  document.getElementById('mDesc').textContent = e.desc;
+  const link = document.getElementById('mLink');
+  if (e.link) { link.href = e.link; link.style.display = 'inline-block'; }
+  else { link.style.display = 'none'; }
+  document.getElementById('modal').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('on');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+buildGrid();
+</script>
 </body>
 </html>
