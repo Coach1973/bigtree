@@ -468,11 +468,13 @@ tailwind.config = {
 
 <script>
 // ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
-const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '全日':{start:'09:00',end:'17:00',hours:8}, 'TBD':{start:'',end:'',hours:null} };
+const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '夜':{start:'19:30',end:'21:00',hours:1.5}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, 'TBD':{start:'',end:'',hours:null} };
 const SESSION_DATES = [
   {date:'2026-07-18', label:'7/18（六）', slots:['線上'], topic:'線上讀書會', location:'Zoom 會議', closed:true},
   {date:'2026-07-22', label:'7/22（三）', slots:['午'], topic:'當古典音樂遇到AI科技', location:'高雄場', venue:'郭音樂廳', address:'高雄市鹽埕區建國四路306號2樓(藝文空間)', transport:'搭輕軌在「文武聖殿」C16下站，約500公尺就可到達郭音樂廳；附近有大停車收費場', closed:true},
   {date:'2026-07-29', label:'7/29（三）', slots:['午'], topic:'AI微論壇', location:'臺南場', closed:true},
+  {date:'2026-08-21', label:'8/21（五）', slots:['夜'], topic:'主題待定，敬請期待', location:'金門場', venue:'西浦頭社區'},
+  {date:'2026-08-22', label:'8/22（六）', slots:['下午'], topic:'主題待定，敬請期待', location:'金門場'},
   {date:'2026-08-26', label:'8/26（三）', slots:['午'], topic:'當古典音樂遇到AI科技', location:'高雄場'},
   {date:'2026-08-28', label:'8/28（五）', slots:['午'], topic:'AI微論壇', location:'嘉義場'},
   {date:'2026-09-05', label:'9/5（六）', slots:['午半'], topic:'零基礎學AI起步比較快', location:'KR養生廚房'},
@@ -505,7 +507,7 @@ function buildSessions() {
           ${d.location ? `<span class="chip inline-flex items-center text-sm font-bold px-3 py-1 rounded-full align-middle"><i class="fa-solid fa-location-dot mr-1"></i>${d.location}</span>` : ''}
         </div>
         <div class="text-inksoft text-base mb-4">${isTBD ? '時間確認後公告' : `${s}場｜${t.start}–${t.end}（共${t.hours}小時）`}</div>
-        ${d.address ? `<div class="text-sm text-inksoft/80 mb-4 flex items-start gap-1.5"><i class="fa-solid fa-location-dot mt-0.5 text-accent2"></i><div>${d.venue ? `<span class="font-bold text-deep">${d.venue}</span>｜` : ''}${d.address}${d.transport ? `<br><span class="text-xs text-inksoft/60">${d.transport}</span>` : ''}</div></div>` : ''}
+        ${(d.venue || d.address) ? `<div class="text-sm text-inksoft/80 mb-4 flex items-start gap-1.5"><i class="fa-solid fa-location-dot mt-0.5 text-accent2"></i><div>${d.venue ? `<span class="font-bold text-deep">${d.venue}</span>${d.address ? '｜' : ''}` : ''}${d.address || ''}${d.transport ? `<br><span class="text-xs text-inksoft/60">${d.transport}</span>` : ''}</div></div>` : ''}
         <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
         ${d.closed ? `<button disabled class="w-full py-3 rounded-full font-bold bg-gray-300 text-gray-500 cursor-not-allowed">已截止報名</button>` : `<button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>`}
       `;
