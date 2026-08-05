@@ -459,9 +459,34 @@ tailwind.config = {
             </div>
           </div>
           <button type="submit" class="btn-line w-full h-14 font-bold rounded-3xl text-xl mt-8 flex items-center justify-center gap-x-2">
-            <i class="fa-brands fa-line"></i><span>送出並前往 LINE 完成報名</span>
+            <i class="fa-brands fa-line"></i><span>送出報名資料</span>
           </button>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Success Modal（比照 AI 微論壇：送出→後端通知→成功頁→使用者主動點擊才開 LINE，避免瀏覽器擋彈窗） ===== -->
+  <div id="successModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] items-center justify-center p-4">
+    <div onclick="event.target.id === 'successModal' && hideSuccessModal()" class="absolute inset-0"></div>
+    <div class="bg-white rounded-3xl w-full max-w-lg relative shadow-2xl overflow-hidden text-center">
+      <div class="bg-deep px-8 py-8 text-white">
+        <div class="text-6xl mb-2 text-linegreen"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="font-bold text-3xl serif">報名資料已送出！</div>
+        <div class="text-tealsoft text-base mt-2">我們已收到通知，將盡速與您確認席次</div>
+      </div>
+      <div class="p-8">
+        <div class="bg-paper2 rounded-2xl p-6 mb-5">
+          <div class="font-bold text-deep text-lg mb-1">最後一步：加入官方 LINE</div>
+          <div class="text-inksoft text-base mb-5">加入後把報名訊息傳給我們，席次確認更快</div>
+          <button onclick="sendToLine()" class="btn-line w-full h-14 font-bold rounded-3xl text-lg flex items-center justify-center gap-x-2">
+            <i class="fa-brands fa-line"></i><span>加入 LINE 並傳送報名資料</span>
+          </button>
+          <button onclick="copyLineMessage()" class="w-full h-12 mt-3 font-bold rounded-3xl text-base border border-accentsoft text-inksoft hover:bg-white">
+            或複製訊息手動傳送
+          </button>
+        </div>
+        <button onclick="hideSuccessModal()" class="text-inksoft/70 text-base underline">關閉視窗</button>
       </div>
     </div>
   </div>
@@ -538,6 +563,10 @@ function hideRegisterModal() {
 }
 
 const LINE_URL = 'https://lin.ee/o5pODV8';
+// 報名通知後端（與 AI 微論壇 ai-talk-tw 同一支，送出後教練的 LINE 會直接收到通知）
+const REGISTER_API = 'https://sme-register-fn.netlify.app/.netlify/functions/register';
+
+let lastRegistration = null;
 
 function submitRegistration(e) {
   e.preventDefault();
@@ -545,11 +574,51 @@ function submitRegistration(e) {
   const phone = document.getElementById('regPhone').value.trim();
   const session = document.getElementById('regSession').value;
   if (!name || !phone) { alert('請完整填寫姓名與聯絡電話'); return; }
-  const msg = `您好，我想報名【大樹小講．無話不談】\n場次：${session}\n姓名：${name}\n電話：${phone}\n請協助確認席次，謝謝！`;
-  navigator.clipboard.writeText(msg).catch(() => {});
-  hideRegisterModal();
+  lastRegistration = { name, phone, session };
+
+  // 先打後端 → 教練 LINE 立刻收到通知（不阻塞畫面，失敗也不影響使用者後續動作）
+  fetch(REGISTER_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ session: '【大樹小講】' + session, name, company: '', phone, email: '' })
+  }).catch(() => {});
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const origText = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '處理中...';
+  setTimeout(() => {
+    hideRegisterModal();
+    showSuccessModal();
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = origText;
+    form.reset();
+  }, 800);
+}
+
+function generateLineMessage() {
+  if (!lastRegistration) return '您好，我想報名【大樹小講．無話不談】，請協助確認席次，謝謝！';
+  const r = lastRegistration;
+  return `您好，我想報名【大樹小講．無話不談】\n場次：${r.session}\n姓名：${r.name}\n電話：${r.phone}\n請協助確認席次，謝謝！`;
+}
+function copyLineMessage() {
+  const msg = generateLineMessage();
+  navigator.clipboard.writeText(msg).then(() => {
+    alert('已複製報名訊息，請貼到 LINE 對話框送出。');
+  }).catch(() => prompt('請複製以下訊息傳送給大樹教育 LINE：', msg));
+}
+function sendToLine() {
+  navigator.clipboard.writeText(generateLineMessage()).catch(() => {});
   window.open(LINE_URL, '_blank');
-  setTimeout(() => alert('報名訊息已複製，請在 LINE 對話框貼上送出，完成報名！'), 300);
+}
+function showSuccessModal() {
+  const m = document.getElementById('successModal');
+  m.classList.remove('hidden'); m.classList.add('flex');
+}
+function hideSuccessModal() {
+  const m = document.getElementById('successModal');
+  m.classList.remove('flex'); m.classList.add('hidden');
 }
 
 function initNavbar() {
