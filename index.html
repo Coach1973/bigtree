@@ -536,7 +536,7 @@ function buildSessions() {
       n++;
       const t = SLOTS[s];
       const isTBD = s === 'TBD';
-      const sessionLabel = isTBD ? `${d.label} 時間確認後公告` : `${d.label} ${s}場 ${t.start}–${t.end}`;
+      const sessionLabel = isTBD ? `${d.label} 時間確認後公告` : `${d.label} ${t.start}–${t.end}`;
       const card = document.createElement('div');
       card.className = 'session-card bg-white rounded-2xl p-6';
       card.innerHTML = `
@@ -545,7 +545,7 @@ function buildSessions() {
           <span>${d.label}</span>
           ${d.location ? `<span class="chip inline-flex items-center text-sm font-bold px-3 py-1 rounded-full align-middle"><i class="fa-solid fa-location-dot mr-1"></i>${d.location}</span>` : ''}
         </div>
-        <div class="text-inksoft text-base mb-4">${isTBD ? '時間確認後公告' : `${s}場｜${t.start}–${t.end}（共${t.hours}小時）`}</div>
+        <div class="text-inksoft text-base mb-4">${isTBD ? '時間確認後公告' : `${t.start}–${t.end}（共${t.hours}小時）`}</div>
         ${(d.venue || d.address) ? `<div class="text-sm text-inksoft/80 mb-4 flex items-start gap-1.5"><i class="fa-solid fa-location-dot mt-0.5 text-accent2"></i><div>${d.venue ? `<span class="font-bold text-deep">${d.venue}</span>${d.address ? '｜' : ''}` : ''}${d.address || ''}${d.transport ? `<br><span class="text-xs text-inksoft/60">${d.transport}</span>` : ''}</div></div>` : ''}
         <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
         ${d.closed ? `<button disabled class="w-full py-3 rounded-full font-bold bg-gray-300 text-gray-500 cursor-not-allowed">已截止報名</button>` : `<button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary w-full py-3 rounded-full font-bold">我要報名這場</button>`}
@@ -566,7 +566,7 @@ function findSessionMeta(label) {
     for (const s of d.slots) {
       const t = SLOTS[s];
       const isTBD = s === 'TBD';
-      const sessionLabel = isTBD ? `${d.label} 時間確認後公告` : `${d.label} ${s}場 ${t.start}–${t.end}`;
+      const sessionLabel = isTBD ? `${d.label} 時間確認後公告` : `${d.label} ${t.start}–${t.end}`;
       if (sessionLabel === label) return d;
     }
   }
@@ -779,7 +779,7 @@ function openRegisterFromQuery() {
   if (!d) return;
   const s = d.slots[0];
   const t = SLOTS[s];
-  const sessionLabel = `${d.label} ${s}場 ${t.start}–${t.end}`;
+  const sessionLabel = `${d.label} ${t.start}–${t.end}`;
   showRegisterModal(sessionLabel);
 }
 
