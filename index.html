@@ -453,6 +453,7 @@ tailwind.config = {
         <div>
           <div class="font-bold text-3xl serif">報名大樹小講</div>
           <div id="modalSessionLabel" class="text-tealsoft text-base mt-1">選擇場次後送出，資料會直接帶到 LINE</div>
+          <div id="modalSessionMeta" class="hidden text-tealsoft/80 text-sm mt-1.5 leading-relaxed"></div>
         </div>
         <button onclick="hideRegisterModal()" class="w-9 h-9 flex items-center justify-center text-white/70 hover:text-white text-4xl leading-none">&times;</button>
       </div>
@@ -557,15 +558,37 @@ function buildSessions() {
   });
 }
 
+// 依sessionLabel反查SESSION_DATES裡的場地資訊(地址/費用等)，跟buildSessions()同一套sessionLabel組法
+function findSessionMeta(label) {
+  for (const d of SESSION_DATES) {
+    for (const s of d.slots) {
+      const t = SLOTS[s];
+      const isTBD = s === 'TBD';
+      const sessionLabel = isTBD ? `${d.label} 時間確認後公告` : `${d.label} ${s}場 ${t.start}–${t.end}`;
+      if (sessionLabel === label) return d;
+    }
+  }
+  return null;
+}
+
 function showRegisterModal(preselect) {
   const modal = document.getElementById('registerModal');
   modal.classList.remove('hidden'); modal.classList.add('flex');
   document.getElementById('registerForm').reset();
+  const metaEl = document.getElementById('modalSessionMeta');
   if (preselect) {
     document.getElementById('regSession').value = preselect;
     document.getElementById('modalSessionLabel').textContent = '場次：' + preselect;
+    const d = findSessionMeta(preselect);
+    if (d && (d.venue || d.address || d.transport)) {
+      metaEl.innerHTML = `${d.venue ? `<span class="font-bold">${d.venue}</span>${d.address ? '｜' : ''}` : ''}${d.address || ''}${d.transport ? `<br>${d.transport}` : ''}`;
+      metaEl.classList.remove('hidden');
+    } else {
+      metaEl.innerHTML = ''; metaEl.classList.add('hidden');
+    }
   } else {
     document.getElementById('modalSessionLabel').textContent = '選擇場次後送出，資料會直接帶到 LINE';
+    metaEl.innerHTML = ''; metaEl.classList.add('hidden');
   }
 }
 function hideRegisterModal() {
