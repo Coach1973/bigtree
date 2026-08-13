@@ -771,11 +771,14 @@ function initPhotoCarousel2() {
 }
 
 // 網址帶 ?session=YYYY-MM-DD 時（QR掃碼進站），自動跳出該場次的報名視窗，預選好場次不用再挑
+// 同一天有多場次時，可另外帶 &slot=晚半 指定要開哪一場（不帶則預設第一筆）
 function openRegisterFromQuery() {
   const params = new URLSearchParams(location.search);
   const date = params.get('session');
   if (!date) return;
-  const d = SESSION_DATES.find(x => x.date === date);
+  const slot = params.get('slot');
+  const d = (slot && SESSION_DATES.find(x => x.date === date && x.slots.includes(slot)))
+    || SESSION_DATES.find(x => x.date === date);
   if (!d) return;
   const s = d.slots[0];
   const t = SLOTS[s];
