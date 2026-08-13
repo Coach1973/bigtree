@@ -494,6 +494,7 @@ tailwind.config = {
         <div class="bg-paper2 rounded-2xl p-6 mb-5">
           <div class="font-bold text-deep text-lg mb-1">最後一步：加入官方 LINE</div>
           <div class="text-inksoft text-base mb-5">加入後把報名訊息傳給我們，席次確認更快</div>
+          <div id="paymentNotice" class="hidden text-left bg-white border border-accentsoft rounded-xl px-4 py-3 mb-5 text-sm text-deep font-bold">請加入官方 LINE 取得匯款帳號以完成報名資格</div>
           <button onclick="sendToLine()" class="btn-line w-full h-14 font-bold rounded-3xl text-lg flex items-center justify-center gap-x-2">
             <i class="fa-brands fa-line"></i><span>加入 LINE 並傳送報名資料</span>
           </button>
@@ -601,6 +602,8 @@ function hideRegisterModal() {
 const LINE_URL = 'https://lin.ee/o5pODV8';
 // 報名通知後端（與 AI 微論壇 ai-talk-tw 同一支，送出後教練的 LINE 會直接收到通知）
 const REGISTER_API = 'https://sme-register-fn.netlify.app/.netlify/functions/register';
+// 報名資訊轉發（2026-08-14新增）：小龍蝦LINE官方帳號直接推播給指定收件人（目前：佩佩老師）
+const NOTIFY_API = 'https://xiaolongxia-notify.netlify.app/.netlify/functions/notify';
 
 let lastRegistration = null;
 
@@ -613,10 +616,16 @@ function submitRegistration(e) {
   lastRegistration = { name, phone, session };
 
   // 先打後端 → 教練 LINE 立刻收到通知（不阻塞畫面，失敗也不影響使用者後續動作）
+  const registerBody = { session: '【大樹小講】' + session, name, company: '', phone, email: '' };
   fetch(REGISTER_API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ session: '【大樹小講】' + session, name, company: '', phone, email: '' })
+    body: JSON.stringify(registerBody)
+  }).catch(() => {});
+  fetch(NOTIFY_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(registerBody)
   }).catch(() => {});
 
   const form = e.target;
@@ -651,6 +660,9 @@ function sendToLine() {
 function showSuccessModal() {
   const m = document.getElementById('successModal');
   m.classList.remove('hidden'); m.classList.add('flex');
+  const notice = document.getElementById('paymentNotice');
+  const isAug25 = lastRegistration && lastRegistration.session && lastRegistration.session.includes('8/25');
+  notice.classList.toggle('hidden', !isAug25);
 }
 function hideSuccessModal() {
   const m = document.getElementById('successModal');
