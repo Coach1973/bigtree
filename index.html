@@ -511,21 +511,21 @@ tailwind.config = {
 // ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
 const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '晚半':{start:'18:00',end:'20:30',hours:2.5}, '夜':{start:'19:30',end:'21:30',hours:2}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, 'TBD':{start:'',end:'',hours:null} };
 const SESSION_DATES = [
-  {date:'2026-08-21', label:'8/21（五）', slots:['夜'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'西浦頭社區', address:'金門縣金寧鄉西浦頭231號', transport:'座位60人｜免費參加｜歡迎邀請非社區住戶參加'},
-  {date:'2026-08-22', label:'8/22（六）', slots:['下午'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'向陽吉第社區', address:'金門縣金城鎮西海路三段86號', transport:'座位60人｜免費參加｜歡迎邀請非社區住戶參加'},
-  {date:'2026-08-25', label:'8/25（二）', slots:['午半'], topic:'AI精準提問+AI基因晶片檢測', location:'台南場', venue:'三道門文創旅店', address:'台南市中西區成功路77號', transport:'費用1人200元｜座位50人｜附點心飲料｜13:30進場，17:00轉場'},
-  {date:'2026-08-25', label:'8/25（二）', slots:['晚半'], topic:'如何輕輕鬆鬆使用AI之轉念心法+HOWA改善情緒睡眠品質', location:'台南場', venue:'三道門文創旅店', address:'台南市中西區成功路77號', transport:'費用1人888元｜座位50人｜附高級餐盒+音樂表演｜17:30進場，20:30 QA收尾'},
-  {date:'2026-08-26', label:'8/26（三）', slots:['午'], topic:'當古典音樂遇到AI科技', location:'高雄場', venue:'郭音樂廳', address:'高雄市鹽埕區建國四路306號2樓(藝文空間)', transport:'報名費100元｜搭輕軌在「文武聖殿」C16下站，約500公尺就可到達郭音樂廳；附近有大停車收費場'},
-  {date:'2026-08-28', label:'8/28（五）', slots:['午'], topic:'AI微論壇', location:'嘉義場'},
-  {date:'2026-09-05', label:'9/5（六）', slots:['午半'], topic:'零基礎學 AI，起步比較快', location:'KR養生廚房'},
-  {date:'2026-09-19', label:'9/19（六）', slots:['上午'], topic:'領導力培訓（中正大學社團幹部專場，約50人）', location:'嘉義場', venue:'國立中正大學'},
-  {date:'2026-09-23', label:'9/23（三）', slots:['全日'], topic:'AI微論壇', location:'台中場'},
-  {date:'2026-09-24', label:'9/24（四）', slots:['全日'], topic:'AI微論壇', location:'台中場'},
-  {date:'2026-10-03', label:'10/3（六）', slots:['午'], topic:'主題待定，敬請期待'},
-  {date:'2026-10-31', label:'10/31（六）', slots:['TBD'], topic:'主題待定，敬請期待'},
-  {date:'2026-11-07', label:'11/7（六）', slots:['午'], topic:'零基礎學 AI，起步比較快'},
-  {date:'2026-12-05', label:'12/5（六）', slots:['午'], topic:'零基礎學 AI，起步比較快'},
-  {date:'2026-12-07', label:'12/7（一）', slots:['TBD'], topic:'主題待定，敬請期待'},
+  {date:'2026-08-21', label:'8/21（五）', slots:['夜'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'西浦頭社區', address:'金門縣金寧鄉西浦頭231號', transport:'座位60人｜免費參加｜歡迎邀請非社區住戶參加', slug:'bigtree-0821'},
+  {date:'2026-08-22', label:'8/22（六）', slots:['下午'], topic:'零基礎學 AI，起步比較快', location:'金門場', venue:'向陽吉第社區', address:'金門縣金城鎮西海路三段86號', transport:'座位60人｜免費參加｜歡迎邀請非社區住戶參加', slug:'bigtree-0822'},
+  {date:'2026-08-25', label:'8/25（二）', slots:['午半'], topic:'AI精準提問+AI基因晶片檢測', location:'台南場', venue:'三道門文創旅店', address:'台南市中西區成功路77號', transport:'費用1人200元｜座位50人｜附點心飲料｜13:30進場，17:00轉場', slug:'bigtree-0825-day'},
+  {date:'2026-08-25', label:'8/25（二）', slots:['晚半'], topic:'如何輕輕鬆鬆使用AI之轉念心法+HOWA改善情緒睡眠品質', location:'台南場', venue:'三道門文創旅店', address:'台南市中西區成功路77號', transport:'費用1人888元｜座位50人｜附高級餐盒+音樂表演｜17:30進場，20:30 QA收尾', slug:'bigtree-0825-night'},
+  {date:'2026-08-26', label:'8/26（三）', slots:['午'], topic:'當古典音樂遇到AI科技', location:'高雄場', venue:'郭音樂廳', address:'高雄市鹽埕區建國四路306號2樓(藝文空間)', transport:'報名費100元｜搭輕軌在「文武聖殿」C16下站，約500公尺就可到達郭音樂廳；附近有大停車收費場', slug:'bigtree-0826'},
+  {date:'2026-08-28', label:'8/28（五）', slots:['午'], topic:'AI微論壇', location:'嘉義場', slug:'bigtree-0828'},
+  {date:'2026-09-05', label:'9/5（六）', slots:['午半'], topic:'零基礎學 AI，起步比較快', location:'KR養生廚房', slug:'bigtree-0905'},
+  {date:'2026-09-19', label:'9/19（六）', slots:['上午'], topic:'領導力培訓（中正大學社團幹部專場，約50人）', location:'嘉義場', venue:'國立中正大學', slug:'bigtree-0919'},
+  {date:'2026-09-23', label:'9/23（三）', slots:['全日'], topic:'AI微論壇', location:'台中場', slug:'bigtree-0923'},
+  {date:'2026-09-24', label:'9/24（四）', slots:['全日'], topic:'AI微論壇', location:'台中場', slug:'bigtree-0924'},
+  {date:'2026-10-03', label:'10/3（六）', slots:['午'], topic:'主題待定，敬請期待', slug:'bigtree-1003'},
+  {date:'2026-10-31', label:'10/31（六）', slots:['TBD'], topic:'主題待定，敬請期待', slug:'bigtree-1031'},
+  {date:'2026-11-07', label:'11/7（六）', slots:['午'], topic:'零基礎學 AI，起步比較快', slug:'bigtree-1107'},
+  {date:'2026-12-05', label:'12/5（六）', slots:['午'], topic:'零基礎學 AI，起步比較快', slug:'bigtree-1205'},
+  {date:'2026-12-07', label:'12/7（一）', slots:['TBD'], topic:'主題待定，敬請期待', slug:'bigtree-1207'},
 ];
 
 function buildSessions() {
@@ -556,6 +556,7 @@ function buildSessions() {
       const opt = document.createElement('option');
       opt.value = sessionLabel;
       opt.textContent = sessionLabel;
+      opt.dataset.slug = d.slug || '';
       select.appendChild(opt);
     });
   });
@@ -604,6 +605,10 @@ const LINE_URL = 'https://lin.ee/o5pODV8';
 const REGISTER_API = 'https://sme-register-fn.netlify.app/.netlify/functions/register';
 // 報名資訊轉發（2026-08-14新增）：小龍蝦LINE官方帳號直接推播給指定收件人（目前：佩佩老師）
 const NOTIFY_API = 'https://xiaolongxia-notify.netlify.app/.netlify/functions/notify';
+// 2026-08-14教練裁示：報名資料要真正落地在bymyway.com自己的資料庫，不能只活在LINE通知訊息裡。
+// 雙寫並存期：上面兩支Netlify通知完全不動，這支只是「多一路」寫進event-signup的event.db，
+// 任何失敗都不能影響訪客報名（fire-and-forget，跟上面兩支同一種寫法）。
+const BYMYWAY_API = 'https://event.bymyway.com/api/register';
 
 let lastRegistration = null;
 
@@ -611,7 +616,9 @@ function submitRegistration(e) {
   e.preventDefault();
   const name = document.getElementById('regName').value.trim();
   const phone = document.getElementById('regPhone').value.trim();
-  const session = document.getElementById('regSession').value;
+  const sessionSelect = document.getElementById('regSession');
+  const session = sessionSelect.value;
+  const slug = sessionSelect.selectedOptions[0]?.dataset.slug || '';
   if (!name || !phone) { alert('請完整填寫姓名與聯絡電話'); return; }
   lastRegistration = { name, phone, session };
 
@@ -627,6 +634,14 @@ function submitRegistration(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(registerBody)
   }).catch(() => {});
+  // 雙寫並存：同步寫進bymyway.com自己的資料庫（有slug才打，避免未定案場次寫入失敗）
+  if (slug) {
+    fetch(BYMYWAY_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, name, phone, company: '' })
+    }).catch(() => {});
+  }
 
   const form = e.target;
   const submitBtn = form.querySelector('button[type="submit"]');
