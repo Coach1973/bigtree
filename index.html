@@ -609,13 +609,9 @@ function hideRegisterModal() {
 }
 
 const LINE_URL = 'https://lin.ee/o5pODV8';
-// 報名通知後端（與 AI 微論壇 ai-talk-tw 同一支，送出後教練的 LINE 會直接收到通知）
-const REGISTER_API = 'https://sme-register-fn.netlify.app/.netlify/functions/register';
-// 報名資訊轉發（2026-08-14新增）：小龍蝦LINE官方帳號直接推播給指定收件人（目前：佩佩老師）
-const NOTIFY_API = 'https://xiaolongxia-notify.netlify.app/.netlify/functions/notify';
-// 2026-08-14教練裁示：報名資料要真正落地在bymyway.com自己的資料庫，不能只活在LINE通知訊息裡。
-// 雙寫並存期：上面兩支Netlify通知完全不動，這支只是「多一路」寫進event-signup的event.db，
-// 任何失敗都不能影響訪客報名（fire-and-forget，跟上面兩支同一種寫法）。
+// 2026-08-24教練裁示：報名通知全面改走Telegram「活動報名即時通知」群組（教練+佩佩老師同見），
+// 舊的兩條LINE轉發路徑（sme-register-fn通知教練／xiaolongxia-notify通知佩佩老師）已無存在必要，
+// 移除。BYMYWAY_API會同時寫入資料庫+發Telegram，取代這兩支原本的功能。
 const BYMYWAY_API = 'https://event.bymyway.com/api/register';
 
 let lastRegistration = null;
@@ -630,19 +626,7 @@ function submitRegistration(e) {
   if (!name || !phone) { alert('請完整填寫姓名與聯絡電話'); return; }
   lastRegistration = { name, phone, session };
 
-  // 先打後端 → 教練 LINE 立刻收到通知（不阻塞畫面，失敗也不影響使用者後續動作）
-  const registerBody = { session: '【大樹小講】' + session, name, company: '', phone, email: '' };
-  fetch(REGISTER_API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(registerBody)
-  }).catch(() => {});
-  fetch(NOTIFY_API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(registerBody)
-  }).catch(() => {});
-  // 雙寫並存：同步寫進bymyway.com自己的資料庫（有slug才打，避免未定案場次寫入失敗）
+  // 寫進bymyway.com資料庫，同時發Telegram通知教練+佩佩老師（有slug才打，避免未定案場次寫入失敗）
   if (slug) {
     fetch(BYMYWAY_API, {
       method: 'POST',
