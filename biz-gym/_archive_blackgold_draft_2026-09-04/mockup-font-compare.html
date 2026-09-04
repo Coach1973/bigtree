@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【字體對比測試】黑金版內文字清晰度 4 方案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c8a96e;
+  --dark:#0a0a0a;
+  --dark2:#131313;
+  --hair:rgba(200,169,110,.22);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--dark);font-family:"Noto Sans TC",system-ui,sans-serif;color:#fff}
+.banner{background:var(--gold);color:#0a0a0a;text-align:center;padding:14px 20px;font-weight:900;font-size:14px;letter-spacing:.04em;position:sticky;top:0;z-index:9}
+.panel{padding:70px 8vw 80px;border-bottom:1px solid var(--hair);background:var(--dark2)}
+.panel:nth-child(even){background:var(--dark)}
+.tag{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.1em;color:#0a0a0a;background:var(--gold);padding:6px 14px;border-radius:2px;margin-bottom:26px}
+.desc{font-size:13.5px;color:var(--gold);margin:0 0 40px;letter-spacing:.02em;font-weight:500}
+.sample{max-width:760px}
+.eyebrow{font-size:12.5px;letter-spacing:.32em;font-weight:600;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:34px;height:1px;background:var(--gold)}
+h1{font-family:"Noto Serif TC",serif;font-weight:700;font-size:44px;line-height:1.35;color:#f4efe4;margin:0 0 22px}
+h1 em{font-style:normal;color:var(--gold)}
+.sub{margin:0 0 30px;font-size:16.5px;line-height:1.95}
+.trust{display:flex;flex-wrap:wrap;gap:0;font-size:13px;margin-bottom:30px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.trust span{padding:15px 20px 15px 0;margin-right:20px;border-right:1px solid var(--hair)}
+.trust span:last-child{border-right:0}
+.trust b{color:var(--gold)}
+.caption{font-size:12.5px;letter-spacing:.14em}
+
+/* ============ A. 目前版（基準對照，偏透明） ============ */
+.a .sub{color:rgba(244,239,228,.62);font-weight:300}
+.a .trust{color:rgba(244,239,228,.38)}
+.a .trust b{font-weight:600}
+.a .caption{color:rgba(244,239,228,.38);font-weight:400}
+
+/* ============ B. 提高亮度＋加重字重（實色，不用透明度） ============ */
+.b .sub{color:#d8d3c4;font-weight:400}
+.b .trust{color:#b7b0a0}
+.b .trust b{font-weight:700;color:var(--gold)}
+.b .caption{color:#a9a293;font-weight:500}
+
+/* ============ C. 純白＋粗黑體 ============ */
+.c .sub{color:#ffffff;font-weight:700}
+.c .trust{color:#efece4;font-weight:600}
+.c .trust b{font-weight:900;color:var(--gold)}
+.c .caption{color:#efece4;font-weight:700}
+.c h1{font-weight:900}
+
+/* ============ D. 高亮白＋微立體陰影（實色 + 深色描邊營造厚度） ============ */
+.d .sub{color:#f3f1ea;font-weight:500;text-shadow:0 1px 0 rgba(0,0,0,.55), 0 2px 4px rgba(0,0,0,.35)}
+.d .trust{color:#e4e0d4;font-weight:600;text-shadow:0 1px 0 rgba(0,0,0,.5)}
+.d .trust b{font-weight:800;color:var(--gold)}
+.d .caption{color:#e4e0d4;font-weight:600;text-shadow:0 1px 0 rgba(0,0,0,.5)}
+.d h1{text-shadow:0 2px 6px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+
+<div class="banner">【字體對比測試・僅供教練挑選，非正式頁面】同一段內容套 4 種文字處理方式，由上往下對照</div>
+
+<div class="panel a">
+  <span class="tag">方案 A · 目前版（基準對照）</span>
+  <p class="desc">內文用半透明白（62% / 38% 透明度）＋ 細字重 300。這是您反映「虛虛的、看不清楚」的版本。</p>
+  <div class="sample">
+    <div class="eyebrow">戰略地圖　·　完整公開　·　不藏一字</div>
+    <h1>付了會費，只是買到<em>進門的權利</em>。</h1>
+    <p class="sub">真正的商業肌肉，要靠當責訓練長出來。這是一張完整的戰略地圖——所有規則公開，因為信心不來自神秘。</p>
+    <div class="trust">
+      <span><b>大樹教練</b>主理</span>
+      <span>台南<b>最優質商務團隊</b>創辦人</span>
+      <span><b>26 年</b>培訓 · <b>6,000+ 場</b>演講 · 足跡<b>四國</b></span>
+    </div>
+    <div class="caption">大樹教練是海餅乾俱樂部創辦人，也是台南最優質商務團隊的主理人。</div>
+  </div>
+</div>
+
+<div class="panel b">
+  <span class="tag">方案 B · 提高亮度＋加重字重</span>
+  <p class="desc">拿掉透明度，改用實色米白（不再是黑底透出來的虛色）＋ 字重從 300 拉到 400～700。份量感明顯提升，但保留原本氣質。</p>
+  <div class="sample">
+    <div class="eyebrow">戰略地圖　·　完整公開　·　不藏一字</div>
+    <h1>付了會費，只是買到<em>進門的權利</em>。</h1>
+    <p class="sub">真正的商業肌肉，要靠當責訓練長出來。這是一張完整的戰略地圖——所有規則公開，因為信心不來自神秘。</p>
+    <div class="trust">
+      <span><b>大樹教練</b>主理</span>
+      <span>台南<b>最優質商務團隊</b>創辦人</span>
+      <span><b>26 年</b>培訓 · <b>6,000+ 場</b>演講 · 足跡<b>四國</b></span>
+    </div>
+    <div class="caption">大樹教練是海餅乾俱樂部創辦人，也是台南最優質商務團隊的主理人。</div>
+  </div>
+</div>
+
+<div class="panel c">
+  <span class="tag">方案 C · 純白＋粗黑體</span>
+  <p class="desc">內文改純白（#fff）＋ 粗黑體字重（700～900），標題也加粗。最堅實、最醒目，但質感會偏向「強勢」，比較沒有 A/B 的細緻感。</p>
+  <div class="sample">
+    <div class="eyebrow">戰略地圖　·　完整公開　·　不藏一字</div>
+    <h1>付了會費，只是買到<em>進門的權利</em>。</h1>
+    <p class="sub">真正的商業肌肉，要靠當責訓練長出來。這是一張完整的戰略地圖——所有規則公開，因為信心不來自神秘。</p>
+    <div class="trust">
+      <span><b>大樹教練</b>主理</span>
+      <span>台南<b>最優質商務團隊</b>創辦人</span>
+      <span><b>26 年</b>培訓 · <b>6,000+ 場</b>演講 · 足跡<b>四國</b></span>
+    </div>
+    <div class="caption">大樹教練是海餅乾俱樂部創辦人，也是台南最優質商務團隊的主理人。</div>
+  </div>
+</div>
+
+<div class="panel d">
+  <span class="tag">方案 D · 高亮白＋微立體陰影</span>
+  <p class="desc">字色接近白＋中等字重，額外加一層極淡的深色陰影墊在文字下方，讓文字有「浮起來」的厚度感（您說的立體感），但不像 C 那麼剛硬。</p>
+  <div class="sample">
+    <div class="eyebrow">戰略地圖　·　完整公開　·　不藏一字</div>
+    <h1>付了會費，只是買到<em>進門的權利</em>。</h1>
+    <p class="sub">真正的商業肌肉，要靠當責訓練長出來。這是一張完整的戰略地圖——所有規則公開，因為信心不來自神秘。</p>
+    <div class="trust">
+      <span><b>大樹教練</b>主理</span>
+      <span>台南<b>最優質商務團隊</b>創辦人</span>
+      <span><b>26 年</b>培訓 · <b>6,000+ 場</b>演講 · 足跡<b>四國</b></span>
+    </div>
+    <div class="caption">大樹教練是海餅乾俱樂部創辦人，也是台南最優質商務團隊的主理人。</div>
+  </div>
+</div>
+
+</body>
+</html>

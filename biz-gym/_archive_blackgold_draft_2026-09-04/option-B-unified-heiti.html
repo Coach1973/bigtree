@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【字型方案 B】統一粗黑體（Noto Sans TC 全站）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c8a96e;
+  --gold-light:#e3cd9c;
+  --gold-dim:rgba(200,169,110,.35);
+  --dark:#0a0a0a;
+  --dark2:#131313;
+  --dark3:#1c1c1c;
+  --cream:#f4efe4;
+  --cream-dim:#ffffff;
+  --cream-faint:#ffffff;
+  --hair:rgba(200,169,110,.22);
+  --lose:#8a5a4a;
+  --win:#5a8a6e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:var(--dark);color:var(--cream);font-family:"Noto Sans TC",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.75}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.gold{color:var(--gold)}
+
+/* ===== banner ===== */
+.proposal-banner{background:var(--gold);color:#0a0a0a;text-align:center;padding:12px 20px;font-weight:900;font-size:14px;letter-spacing:.05em}
+
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:18px 28px}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.nav-logo .badge{width:44px;height:44px;border:1px solid var(--gold-dim);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+.nav-logo .name{font-family:"Noto Sans TC",sans-serif;font-weight:700;font-size:19px;letter-spacing:.04em;color:var(--cream)}
+.nav-logo .sub{font-size:12px;color:var(--gold);letter-spacing:.2em;margin-top:4px;font-weight:700}
+.nav-links{display:flex;gap:26px;font-size:15px;font-weight:700;color:var(--cream-dim);letter-spacing:.01em}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.btn-line-nav{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border:1px solid var(--hair);border-radius:2px;font-size:15px;font-weight:700;color:var(--cream-dim)}
+.btn-line-nav:hover{border-color:var(--gold);color:var(--gold)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:2px;background:var(--gold);color:#0a0a0a;font-size:15px;font-weight:800;letter-spacing:.04em;border:0;cursor:pointer;font-family:inherit;transition:.25s}
+.btn-primary:hover{background:var(--gold-light);letter-spacing:.08em}
+@media (max-width:1080px){.nav-links{display:none}}
+
+/* ===== HERO ===== */
+.hero{
+  background:
+    radial-gradient(900px 500px at 88% -8%, rgba(200,169,110,.10), transparent 62%),
+    radial-gradient(700px 400px at 5% 105%, rgba(200,169,110,.06), transparent 60%),
+    var(--dark);
+  padding:110px 28px 120px;border-bottom:1px solid var(--hair);
+}
+.hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:80px;align-items:center}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:19px;font-weight:700;color:var(--gold);letter-spacing:.18em;margin-bottom:32px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold)}
+.hero h1{font-family:"Noto Sans TC",sans-serif;font-weight:800;font-size:58px;line-height:1.32;letter-spacing:.01em;color:var(--cream);margin:0 0 26px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:21px;color:var(--cream-dim);max-width:560px;margin:0 0 36px;line-height:1.85;font-weight:700}
+.hero-trust{display:flex;flex-wrap:wrap;gap:0;font-size:19px;color:var(--cream-faint);margin-bottom:44px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);font-weight:600}
+.hero-trust span{padding:16px 22px 16px 0;margin-right:22px;border-right:1px solid var(--hair)}
+.hero-trust span:last-child{border-right:0;margin-right:0}
+.hero-trust b{color:var(--gold);font-weight:800}
+.hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:10px;padding:17px 30px;background:var(--gold);color:#0a0a0a;border-radius:2px;font-size:19px;font-weight:800;letter-spacing:.02em;border:0;cursor:pointer;font-family:inherit;transition:.25s}
+.btn-hero-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border:1px solid var(--hair);color:var(--cream-dim);border-radius:2px;font-size:19px;font-weight:700;transition:.25s}
+.btn-hero-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-manifesto{position:relative;padding-left:26px;border-left:1px solid var(--gold-dim)}
+.hero-manifesto p{font-family:"Noto Sans TC",sans-serif;font-size:20px;color:var(--cream-dim);line-height:1.85;margin:0 0 10px;font-weight:600}
+.hero-manifesto b{color:var(--gold);font-weight:800}
+.hero-manifesto span{font-size:18px;color:var(--gold);letter-spacing:.2em;font-weight:700}
+
+.hero-portrait{position:relative}
+.hero-portrait .frame{position:relative;padding:14px;border:1px solid var(--gold-dim)}
+.hero-portrait img{width:100%;filter:grayscale(28%) contrast(1.05)}
+.hero-portrait .badge{position:absolute;left:34px;right:34px;bottom:-28px;background:var(--dark2);border:1px solid var(--gold-dim);padding:18px 22px}
+.hero-portrait .badge .name{font-family:"Noto Sans TC",sans-serif;font-weight:700;color:var(--gold);font-size:19px;margin-bottom:4px}
+.hero-portrait .badge div:last-child{font-size:18px;color:var(--cream-faint);font-weight:600}
+
+/* ===== SECTION shared ===== */
+section{padding:120px 28px}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:19px;letter-spacing:.18em;font-weight:700;color:var(--gold);margin-bottom:22px}
+.eyebrow::before{content:'';width:34px;height:1px;background:var(--gold)}
+.sec-title{font-family:"Noto Sans TC",sans-serif;font-weight:800;font-size:36px;line-height:1.5;color:var(--cream);margin:0 0 24px;max-width:820px}
+.sec-lead{font-size:20px;color:var(--cream-dim);max-width:680px;margin:0 0 48px;line-height:1.85;font-weight:700}
+.shift{background:var(--dark2);border-bottom:1px solid var(--hair)}
+
+.phil-quote{position:relative;padding:36px 44px;border:1px solid var(--hair);margin-bottom:60px;background:var(--dark)}
+.phil-quote::before{content:'"';position:absolute;top:6px;left:20px;font-family:"Noto Sans TC",sans-serif;font-size:64px;color:var(--gold);opacity:.4}
+.phil-quote .q{font-family:"Noto Sans TC",sans-serif;font-size:20px;color:var(--cream-dim);line-height:1.95;margin:0 0 14px;font-weight:600}
+.phil-quote .src{font-size:18px;color:var(--gold);letter-spacing:.2em;font-weight:700}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair)}
+.compare-col{background:var(--dark2);padding:40px}
+.compare-col h4{display:flex;align-items:center;gap:14px;font-family:"Noto Sans TC",sans-serif;font-size:20px;font-weight:800;margin:0 0 26px;color:var(--cream)}
+.compare-col.lose h4{color:var(--cream-faint)}
+.compare-col .ico{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;border:1px solid currentColor}
+.compare-col.lose .ico{color:var(--lose)}
+.compare-col.win .ico{color:var(--gold)}
+.compare-col ul{list-style:none;margin:0;padding:0}
+.compare-col li{padding:14px 0;border-top:1px solid var(--hair);font-size:19px;color:var(--cream-dim);font-weight:600}
+.compare-col li:first-child{border-top:0}
+.compare-col.win li{color:var(--cream)}
+
+/* ===== WHY / STATS ===== */
+.why-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:90px;align-items:start}
+.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);margin-top:52px;border:1px solid var(--hair)}
+.why-stat{background:var(--dark);padding:32px 28px}
+.why-stat .n{font-family:"Noto Sans TC",sans-serif;font-weight:800;font-size:38px;color:var(--gold);line-height:1;margin-bottom:10px}
+.why-stat .l{font-size:18px;color:var(--cream-faint);letter-spacing:.02em;font-weight:600}
+
+.traits-label{font-size:18px;color:var(--gold);letter-spacing:.2em;margin:0 0 28px;font-weight:700}
+.trait{display:flex;gap:22px;padding:26px 0;border-top:1px solid var(--hair)}
+.trait:first-child{border-top:0}
+.trait .ch{width:52px;height:52px;flex-shrink:0;border:1px solid var(--gold-dim);border-radius:50%;display:grid;place-items:center;font-family:"Noto Sans TC",sans-serif;font-weight:700;color:var(--gold);font-size:18px}
+.trait h4{font-family:"Noto Sans TC",sans-serif;font-size:20px;font-weight:800;color:var(--cream);margin:0 0 6px}
+.trait p{font-size:19px;color:var(--cream-faint);margin:0;line-height:1.75;font-weight:600}
+
+@media (max-width:900px){
+  .hero-grid,.why-grid{grid-template-columns:1fr}
+  .hero h1{font-size:40px}
+  .compare{grid-template-columns:1fr}
+  .why-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="proposal-banner">【字型方案 B・目前教練選定版】全站統一 Noto Sans TC 粗黑體，標題內文同一套字型</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8v8M4 10v4M18 8v8M20 10v4M8 12h8"/></svg>
+      </div>
+      <div>
+        <div class="name">海餅乾俱樂部</div>
+        <div class="sub">SEA BISCUIT CLUB · 商務健身房</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#shift">認知翻轉</a>
+      <a href="#why">為什麼是大樹教練</a>
+      <a href="#canon">海餅乾正典</a>
+      <a href="#equipment">六大器材</a>
+      <a href="#accountable">當責方程式</a>
+      <a href="#faq">常見問題</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn-line-nav" href="https://line.me/R/ti/p/@qaw8118h" target="_blank" rel="noopener">LINE 預約</a>
+      <button type="button" class="btn-primary">預約 90 分鐘</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">戰略地圖　·　完整公開　·　不藏一字</div>
+      <h1>付了會費，<br>只是買到<em>進門的權利</em>。</h1>
+      <p class="hero-sub">真正的商業肌肉，要靠當責訓練長出來。這是一張完整的戰略地圖——所有規則公開，因為信心不來自神秘。</p>
+      <div class="hero-trust">
+        <span><b>大樹教練</b>主理</span>
+        <span><b>最優質商務團隊</b>的幕後推手</span>
+        <span><b>26 年</b>培訓 · <b>6,000+ 場</b>演講 · 足跡<b>四國</b></span>
+      </div>
+      <div class="hero-cta-row">
+        <button type="button" class="btn-hero-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+          預約 90 分鐘認知翻轉
+        </button>
+        <a class="btn-hero-ghost" href="#equipment">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8v8M4 10v4M18 8v8M20 10v4M8 12h8"/></svg>
+          先看六大商務器材
+        </a>
+      </div>
+      <div class="hero-manifesto">
+        <p>「我把所有規則公開——不藏招、不藏制度、不藏菜單。因為這套標準能不能執行，從來不在於知道，而在於：<b>你願不願意堅信</b>。」</p>
+        <span>— 大 樹 教 練</span>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="frame">
+        <img src="coach-hero.jpg" alt="大樹教練">
+      </div>
+      <div class="badge">
+        <div class="name">大樹教練</div>
+        <div>海餅乾俱樂部創辦人 · 大樹教育顧問</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="shift" class="shift">
+  <div class="wrap">
+    <div class="eyebrow">大樹教練的開場</div>
+    <h2 class="sec-title">大多數老闆把分會當「社交聯誼」——<br>那不是健身房，那是浪費生命。</h2>
+    <p class="sec-lead">換換名片、喝喝下午茶、繳費後等業務自動上門——這些是把分會當成俱樂部。但「商務健身房」要的是：兼職的工作，全職的態度。</p>
+
+    <div class="phil-quote">
+      <p class="q">「加入了健身房，會自動變健康嗎？絕對不會——你得懂器材、得持續鍛鍊，否則只會受傷。<br>商務團隊也一樣：繳了會費卻不練，就是浪費生命。」</p>
+      <span class="src">— 大 樹 教 練</span>
+    </div>
+
+    <div class="compare">
+      <div class="compare-col lose">
+        <h4><span class="ico">✕</span>把分會當聯誼會的人</h4>
+        <ul>
+          <li>繳費後消極等待業務自動上門</li>
+          <li>把會議當負擔，能不來就不來</li>
+          <li>1 對 1 變成下午茶閒聊</li>
+          <li>不帶來賓，不上培訓</li>
+          <li>只想獲取，不願付出</li>
+        </ul>
+      </div>
+      <div class="compare-col win">
+        <h4><span class="ico">✓</span>把分會當健身房的人</h4>
+        <ul>
+          <li>認知會費是「進門權」，產出靠鍛鍊</li>
+          <li>每次出席都帶具體目標</li>
+          <li>1 對 1 是為了引薦的商務會議</li>
+          <li>持續邀來賓、上培訓、用器材</li>
+          <li>致力於先「給」，深信付出者收穫</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <div class="eyebrow">為什麼是大樹教練</div>
+        <h2 class="sec-title">因為——<br>他用 26 年，做這一件事。</h2>
+        <p class="sec-lead">大樹教練是海餅乾俱樂部創辦人，也是最優質商務團隊的幕後推手。從 2007 年第一場 8 人的小講開始，走過台、星、馬、中四國，累積六千多場演講、超過十萬人現場。在這裡，他把 26 年的培訓底蘊變成你的商務器材。</p>
+        <div class="why-stats">
+          <div class="why-stat"><div class="n">26 年</div><div class="l">企業培訓資歷</div></div>
+          <div class="why-stat"><div class="n">6,000+</div><div class="l">場演講累計</div></div>
+          <div class="why-stat"><div class="n">10 萬人</div><div class="l">現場受眾累計</div></div>
+          <div class="why-stat"><div class="n">四　國</div><div class="l">台 · 星 · 馬 · 中</div></div>
+        </div>
+      </div>
+      <div>
+        <p class="traits-label">人　格　特　質</p>
+        <div class="trait">
+          <div class="ch">真</div>
+          <div><h4>真實的人</h4><p>知無不答，言無不盡，事無不可對人言。</p></div>
+        </div>
+        <div class="trait">
+          <div class="ch">誠</div>
+          <div><h4>真誠的課</h4><p>不要不懂裝懂，不要故作玄虛，不要惺惺作態。</p></div>
+        </div>
+        <div class="trait">
+          <div class="ch">心</div>
+          <div><h4>真心的給</h4><p>不管免費或付費，全力以赴，沒有保留。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
