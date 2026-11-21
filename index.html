@@ -188,10 +188,10 @@ tailwind.config = {
   <section id="sessions" class="max-w-6xl mx-auto px-6 py-24">
     <p class="text-center text-accent2 font-bold tracking-[0.3em] text-base mb-3">大樹小講 · 場次資訊</p>
     <h2 class="serif font-black text-4xl text-center text-deep mb-4">近期場次</h2>
-    <p class="text-center text-inksoft mb-14">每場 3 小時，歡迎報名參加</p>
+    <p class="text-center text-inksoft mb-14">歡迎報名參加</p>
     <div id="sessionGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     <div class="text-center mt-12">
-      <a href="archive/lecture-history.html" class="btn-primary inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-2xl"><i class="fa-solid fa-clock-rotate-left"></i> 看今年所有的活動</a>
+      <a href="archive/lecture-history.html" class="inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-2xl text-white" style="background:#f26b0f;box-shadow:0 14px 34px rgba(242,107,15,.38)" onmouseover="this.style.background='#d95a05'" onmouseout="this.style.background='#f26b0f'"><i class="fa-solid fa-clock-rotate-left"></i> 看今年所有的活動</a>
     </div>
   </section>
 
@@ -826,7 +826,8 @@ function mergeCampaignSessions(list) {
     return {date: x.date, label: x.label, slots: [key], topic: x.topic, location: x.location, venue: x.venue,
             address: x.address, slug: x.slug, eventUrl: x.eventUrl, role: x.role || ''};
   });
-  const teasers = SESSION_DATES.filter(d => d.slots.includes('TBD') && !fromAdmin.some(f => f.date === d.date));
+  // 有活動網頁的備用場次（eventUrl）一律保留；只有純「主題待定」預告，才在同一天已有正式場次時讓位
+  const teasers = SESSION_DATES.filter(d => d.slots.includes('TBD') && (d.eventUrl || !fromAdmin.some(f => f.date === d.date)));
   SESSION_DATES.length = 0;
   SESSION_DATES.push(...fromAdmin, ...teasers);
 }
