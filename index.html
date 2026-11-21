@@ -190,6 +190,9 @@ tailwind.config = {
     <h2 class="serif font-black text-4xl text-center text-deep mb-4">近期場次</h2>
     <p class="text-center text-inksoft mb-14">每場 3 小時，歡迎報名參加</p>
     <div id="sessionGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <div class="text-center mt-12">
+      <a href="archive/lecture-history.html" class="btn-primary inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-2xl"><i class="fa-solid fa-clock-rotate-left"></i> 看今年所有的活動</a>
+    </div>
   </section>
 
   <!-- ===== 近期活動花絮（7/29 AI微論壇台南場現場照片） ===== -->
@@ -512,7 +515,7 @@ tailwind.config = {
 
 <script>
 // ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
-const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '早半':{start:'10:00',end:'12:30',hours:2.5}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '晚半':{start:'18:00',end:'20:30',hours:2.5}, '夜':{start:'19:30',end:'21:30',hours:2}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, 'AM':{start:'09:00',end:'12:00',hours:3}, 'PM':{start:'13:00',end:'16:00',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, '全場':{start:'13:00',end:'21:00',hours:8},'私廚':{start:'11:30',end:'15:30',hours:4},'午後':{start:'15:00',end:'17:30',hours:2.5}, 'TBD':{start:'',end:'',hours:null} };
+const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '早半':{start:'10:00',end:'12:30',hours:2.5}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '晚半':{start:'18:00',end:'20:30',hours:2.5}, '夜':{start:'19:30',end:'21:30',hours:2}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, 'AM':{start:'09:00',end:'12:00',hours:3}, 'PM':{start:'13:00',end:'16:00',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, '全場':{start:'13:00',end:'21:00',hours:8},'私廚':{start:'11:30',end:'15:30',hours:4},'午後':{start:'15:00',end:'17:30',hours:2.5}, '13:30–15:30':{start:'13:30',end:'15:30',hours:2}, '09:00–18:00':{start:'09:00',end:'18:00',hours:9}, 'TBD':{start:'',end:'',hours:null} };
 const SESSION_DATES = [
   {date:'2026-12-06', label:'12/6（日）', slots:['私廚'], topic:'秋瑩姐的金門私廚 × AI 餐桌', location:'台南場', venue:'KR養生廚房', address:'台南市東區崇明十一街31巷5號', slug:'bigtree-1206', eventUrl:'https://event.bymyway.com/curated/kinmen-kitchen-1206/'},
   {date:'2026-12-07', label:'12/7（一）', slots:['TBD'], topic:'主題待定，敬請期待', slug:'bigtree-1207'},
@@ -543,6 +546,7 @@ function buildSessions() {
         <div class="text-sm font-bold text-accent2 tracking-widest mb-1">第 ${n} 場</div>
         <div class="serif font-black text-3xl text-deep mb-1 flex items-center flex-wrap gap-2">
           <span>${d.label}</span>
+          ${d.role === 'lead' ? `<span class="inline-flex items-center text-sm font-bold px-3 py-1 rounded-full align-middle bg-deep text-white">大樹主講</span>` : (d.role === 'assist' ? `<span class="inline-flex items-center text-sm font-bold px-3 py-1 rounded-full align-middle border border-accentsoft text-inksoft">大樹協辦</span>` : '')}
           ${d.location ? `<span class="chip inline-flex items-center text-sm font-bold px-3 py-1 rounded-full align-middle"><i class="fa-solid fa-location-dot mr-1"></i>${d.location}</span>` : ''}
         </div>
         <div class="text-inksoft text-base mb-4">${isTBD ? '時間確認後公告' : `${t.start}–${t.end}（共${t.hours}小時）`}</div>
@@ -550,7 +554,9 @@ function buildSessions() {
         <div class="font-bold text-accent2 text-base mb-5">主題：${d.topic}</div>
         ${d.closed
           ? `<button disabled class="w-full py-3 rounded-full font-bold bg-gray-300 text-gray-500 cursor-not-allowed">已截止報名</button>`
-          : (d.eventUrl
+          : (d.role === 'assist' && d.eventUrl
+              ? `<a href="${d.eventUrl}" target="_blank" rel="noopener" class="btn-primary block w-full py-3 rounded-full font-bold text-center">前往活動網頁報名</a>`
+              : d.eventUrl
               ? `<div class="flex gap-3">
                    <button onclick="showRegisterModal('${sessionLabel}')" class="btn-primary flex-1 py-3 rounded-full font-bold">我要報名這場</button>
                    <a href="${d.eventUrl}" target="_blank" rel="noopener" class="btn-secondary flex-1 py-3 rounded-full font-bold text-center">我要看活動網頁</a>
@@ -818,7 +824,7 @@ function mergeCampaignSessions(list) {
       }
     }
     return {date: x.date, label: x.label, slots: [key], topic: x.topic, location: x.location, venue: x.venue,
-            address: x.address, slug: x.slug, eventUrl: x.eventUrl};
+            address: x.address, slug: x.slug, eventUrl: x.eventUrl, role: x.role || ''};
   });
   const teasers = SESSION_DATES.filter(d => d.slots.includes('TBD') && !fromAdmin.some(f => f.date === d.date));
   SESSION_DATES.length = 0;
