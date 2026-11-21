@@ -515,7 +515,7 @@ tailwind.config = {
 
 <script>
 // ===== 大樹小講專屬場次資料（教練 2026-07-06 親口提供） =====
-const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '早半':{start:'10:00',end:'12:30',hours:2.5}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '晚半':{start:'18:00',end:'20:30',hours:2.5}, '夜':{start:'19:30',end:'21:30',hours:2}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, 'AM':{start:'09:00',end:'12:00',hours:3}, 'PM':{start:'13:00',end:'16:00',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, '全場':{start:'13:00',end:'21:00',hours:8},'私廚':{start:'11:30',end:'15:30',hours:4},'午後':{start:'15:00',end:'17:30',hours:2.5}, '13:30–15:30':{start:'13:30',end:'15:30',hours:2}, '09:00–18:00':{start:'09:00',end:'18:00',hours:9}, 'TBD':{start:'',end:'',hours:null} };
+const SLOTS = { '早':{start:'09:00',end:'12:00',hours:3}, '早半':{start:'10:00',end:'12:30',hours:2.5}, '午':{start:'14:00',end:'17:00',hours:3}, '午半':{start:'14:00',end:'16:30',hours:2.5}, '晚':{start:'18:00',end:'21:00',hours:3}, '晚半':{start:'18:00',end:'20:30',hours:2.5}, '夜':{start:'19:30',end:'21:30',hours:2}, '線上':{start:'10:00',end:'12:00',hours:2}, '上午':{start:'10:00',end:'12:00',hours:2}, '下午':{start:'13:30',end:'16:30',hours:3}, 'AM':{start:'09:00',end:'12:00',hours:3}, 'PM':{start:'13:00',end:'16:00',hours:3}, '全日':{start:'09:00',end:'17:00',hours:8}, '全場':{start:'13:00',end:'21:00',hours:8},'私廚':{start:'11:30',end:'15:30',hours:4},'午後':{start:'15:00',end:'17:30',hours:2.5}, '13:30–15:30':{start:'13:30',end:'15:30',hours:2}, '09:00–18:00':{start:'09:00',end:'18:00',hours:9}, '14:00–15:00':{start:'14:00',end:'15:00',hours:1}, 'TBD':{start:'',end:'',hours:null} };
 const SESSION_DATES = [
   {date:'2026-12-06', label:'12/6（日）', slots:['私廚'], topic:'秋瑩姐的金門私廚 × AI 餐桌', location:'台南場', venue:'KR養生廚房', address:'台南市東區崇明十一街31巷5號', slug:'bigtree-1206', eventUrl:'https://event.bymyway.com/curated/kinmen-kitchen-1206/'},
   {date:'2026-12-07', label:'12/7（一）', slots:['TBD'], topic:'主題待定，敬請期待', slug:'bigtree-1207'},
@@ -827,7 +827,7 @@ function mergeCampaignSessions(list) {
             address: x.address, slug: x.slug, eventUrl: x.eventUrl, role: x.role || ''};
   });
   // 有活動網頁的備用場次（eventUrl）一律保留；只有純「主題待定」預告，才在同一天已有正式場次時讓位
-  const teasers = SESSION_DATES.filter(d => d.slots.includes('TBD') && (d.eventUrl || !fromAdmin.some(f => f.date === d.date)));
+  const teasers = SESSION_DATES.filter(d => d.pinned || (d.slots.includes('TBD') && !fromAdmin.some(f => f.date === d.date)));
   SESSION_DATES.length = 0;
   SESSION_DATES.push(...fromAdmin, ...teasers);
 }
